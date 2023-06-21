@@ -17,9 +17,8 @@ module.exports = {
     colors: {
       transparent: "transparent",
       primary: "#32414e",
-      secondary: "#c5b9af",
-      tertiary: "#a99889",
-      accent: "#dbdac7",
+      secondary: "#dbdac7",
+      accent: "#a99889",
       white: "#ffffff",
       black: "#000000",
       yellow: "#f9e71c",
@@ -48,6 +47,8 @@ module.exports = {
     },
 
     extend: {
+      animation: ['group-hover'],
+
       spacing: {
         13: "3.25rem",
         15: "3.75rem",
