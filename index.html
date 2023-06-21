@@ -92,7 +92,7 @@
                 <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
               </li>
 
-              <li class="group hidden pl-6">
+              <li class="group pl-6">
                 <span @click="triggerNavItem('#education')"
                   class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Education</span>
 
@@ -146,7 +146,7 @@
                 class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Work</span>
             </li>
 
-            <li class="hidden py-2">
+            <li class="py-2">
               <span @click="triggerMobileNavItem('#education')"
                 class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Education</span>
             </li>
@@ -232,12 +232,10 @@
               </p>
 
             </div>
-            <a href="https://github.com/cvandijck/Resume/releases/latest/download/resume.pdf"
-              <button class="flex text-center items-center space-x-4 h-20 rounded bg-primary px-8 font-header text-lg font-bold uppercase text-white hover:bg-grey-20 my-8 lg:my-auto lg:mx-24 lg:w-128">
-                <i class="bx bx-download text-3xl"></i>
-                <p class="">
-                  Download Resume
-                </p>            
+            <a href="https://github.com/cvandijck/Resume/releases/latest/download/resume.pdf" <button
+              class="flex text-center items-center space-x-4 h-20 rounded bg-primary px-8 font-header text-lg font-bold uppercase text-white hover:bg-grey-20 my-8 lg:my-auto lg:mx-24 lg:w-128">
+              <i class="bx bx-download text-3xl"></i>
+              <p> Download Resume </p>
               </button>
             </a>
           </div>
@@ -310,7 +308,8 @@
                   Trust-based<br>Leadership
                 </h3>
                 <p class="invisible group-hover:visible text-grey pt-4 text-sm group-hover:text-white md:text-base">
-                  With trust and transparency, I cultivate an environment where everyone is encouraged to contribute and take ownership.
+                  With trust and transparency, I cultivate an environment where everyone is encouraged to contribute and
+                  take ownership.
                 </p>
               </div>
             </div>
@@ -405,6 +404,50 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        <!-- education -->
+        <div class="container py-16 md:py-20" id="education">
+          <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
+            My Education
+          </h2>
+          <h3 class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
+            Formal training as biomedical engineer
+          </h3>
+
+          <div class="grid grid-cols-1 gap-6 pt-10 md:grid-cols-2 md:gap-10 md:pt-12">
+            <!-- Msc -->
+            <div class="flex flex-col group px-8 py-12">
+              <img class="h-32" src="/assets/img/my/ugent_vub.svg" alt="ugent-vub" />
+              <div class="text-center">
+                <h3 class="text-green pt-8 text-lg font-semibold uppercase lg:text-xl">
+                  MSc in Biomedical Engineering
+                </h3>
+                <p class="text-grey pt-4 text-sm md:text-base">
+                  Focus on medical imaging, medical image processing and computational modelling.<br>Graduated with
+                  honours
+                </p>
+              </div>
+            </div>
+
+            <!-- Phd -->
+            <div class="flex flex-col group px-8 py-12">
+              <img class="h-32" src="/assets/img/my/kuleuven.svg" alt="kuleuven" />
+              <div class="text-center">
+                <h3 class="text-green pt-8 text-lg font-semibold uppercase lg:text-xl">
+                  PhD in Biomedical Engineering
+                </h3>
+                <p class="text-grey pt-4 text-sm md:text-base">
+                  Mass Personalisation of Preoperative Planning for TKA<br>Evaluation of Statistical Models to Predict
+                  Patient-Specific Shape Information
+                  <a href="https://lirias.kuleuven.be/retrieve/632232">
+                    <i class="bx bx-download text-grey"></i>
+                  </a>
+                </p>
+              </div>
+            </div>
+
           </div>
         </div>
 
