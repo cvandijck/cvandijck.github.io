@@ -232,14 +232,15 @@
               </p>
 
             </div>
-            <div class="lg:basis-1/3 mx-12 mt-12 lg:my-auto lg: ml-24">
-            <a href="https://github.com/cvandijck/Resume/releases/latest/download/resume.pdf">
-              <button class="flex justify-center w-full items-center h-20 rounded bg-primary space-x-4 px-8 font-header text-lg font-bold uppercase text-white hover:bg-grey-20">
-                <i class="bx bx-download text-3xl"></i>
-                <p>Download Resume</p>
-              </button>
-            </a>
-          </div>
+            <div class="lg:basis-1/3 mt-12 mx-12 lg:my-auto lg:ml-24">
+              <a href="https://github.com/cvandijck/Resume/releases/latest/download/resume.pdf">
+                <button
+                  class="flex justify-center w-full items-center h-20 rounded bg-primary space-x-4 px-8 font-header text-lg font-bold uppercase text-white hover:bg-grey-20">
+                  <i class="bx bx-download text-3xl"></i>
+                  <p>Download Resume</p>
+                </button>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -252,7 +253,7 @@
             The skills I have to offer
           </h3>
 
-          <div class="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 lg:gap-10 lg:pt-12 lg:grid-cols-4">
+          <div class="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 xl:gap-10 xl:pt-12 xl:grid-cols-4">
             <!-- Prototyping -->
             <div class="group rounded px-8 py-12 shadow hover:bg-primary">
               <div class="mx-auto h-48 w-48 text-center xl:h-64 xl:w-64">
@@ -341,7 +342,7 @@
         </div>
 
         <!-- work experience -->
-        <div class="bg-grey-50 container py-16 md:py-20" id="work">
+        <div class="bg-grey-50 py-16 md:py-20" id="work">
           <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
             My work experience
           </h2>
@@ -486,8 +487,8 @@
 
             <div class="mx-auto grid w-full grid-cols-1 gap-6 pt-12 sm:w-3/4 lg:w-full lg:grid-cols-3 xl:gap-10">
               <!-- cookiecutter for python -->
-              <a href="/post" class="shadow">
-                <div style="background-image: url(/assets/img/post-01.png)"
+              <a href="/posts/cookiecutter" class="shadow">
+                <div style="background-image: url(/assets/img/my/cookiecutter.png)"
                   class="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72">
                   <span
                     class="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"></span>
@@ -499,12 +500,12 @@
                   <span class="block font-body text-lg font-semibold text-black">Get your projects out there</span>
                   <span class="block pt-2 font-body text-grey-20">
                     I developed a cookiecutter template to quickly setup your
-                    projects, package them and release them into the wild!
+                    python projects, package them and share them with others!
                   </span>
                 </div>
-              </a>
-              <a href="/post" class="shadow">
-                <div style="background-image: url(/assets/img/post-02.png)"
+              </a>      
+              <a href="/posts/vtk" class="shadow">
+                <div style="background-image: url(/assets/img/my/doctoraat.jpg)"
                   class="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72">
                   <span
                     class="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"></span>
@@ -513,26 +514,12 @@
                     More</span>
                 </div>
                 <div class="bg-white py-6 px-5 xl:py-8">
-                  <span class="block font-body text-lg font-semibold text-black">My personal productivity system</span>
-                  <span class="block pt-2 font-body text-grey-20">Lorem ipsum dolor sit amet, consectetur adipiscing
-                    elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-                </div>
-              </a>
-              <a href="/post" class="shadow">
-                <div style="background-image: url(/assets/img/post-03.png)"
-                  class="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72">
-                  <span
-                    class="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"></span>
-                  <span
-                    class="absolute right-0 bottom-0 mr-4 mb-4 block rounded-full border-2 border-white px-6 py-2 text-center font-body text-sm font-bold uppercase text-white md:text-base">Read
-                    More</span>
-                </div>
-                <div class="bg-white py-6 px-5 xl:py-8">
-                  <span class="block font-body text-lg font-semibold text-black">My year in review 2020</span>
-                  <span class="block pt-2 font-body text-grey-20">Lorem ipsum dolor sit amet, consectetur adipiscing
-                    elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                  <span class="block font-body text-lg font-semibold text-black">Fitting 250 pages in one blog post</span>
+                  <span class="block pt-2 font-body text-grey-20">
+                    TL;DR<br>
+                    Do not worry, here you get the summary of my PhD in a short
+                    (and interactive!) blog post.
+                  </span>
                 </div>
               </a>
             </div>
@@ -597,7 +584,7 @@
                   <div class="bg-primary">
                     <div class="container flex flex-col justify-between py-6 sm:flex-row">
                       <p class="text-center font-body text-sm text-white md:text-left">
-                        © Copyright 2023. All right reserved, Christophe Van Dijck.
+                        © Copyright 2023. <br class="md:hidden"> All right reserved, Christophe Van Dijck.
                         <br />
                         <a href="https://storyset.com/idea">Illustrations by Storyset</a>,
                         Webdesign by ATOM.
