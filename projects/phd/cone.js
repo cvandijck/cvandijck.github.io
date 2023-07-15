@@ -1,35 +1,25 @@
-//Select div for rendering
-const vtkRenderScreen = vtk.Rendering.Misc.vtkFullScreenRenderWindow.newInstance({
-    container: document.querySelector('#cone'),
+var fullScreenRenderer = vtk.Rendering.Misc.vtkFullScreenRenderWindow.newInstance({
+    container: document.querySelector('#cone_container'),
     background: [1., 1., 1.]
 });
 
-vtkRenderScreen.R = [0., 0., 0.]
-
-//Create volume to render
-const actor = vtk.Rendering.Core.vtkActor.newInstance();
-const mapper = vtk.Rendering.Core.vtkMapper.newInstance();
-const cone = vtk.Filters.Sources.vtkConeSource.newInstance();
-
-
-// create orientation widget
-const axes = vtk.Rendering.Core.vtkAxesActor.newInstance();
-const orientationWidget = vtk.Interaction.Widgets.vtkOrientationMarkerWidget.newInstance({
-    actor: axes,
-    interactor: vtkRenderScreen.getRenderWindow().getInteractor(),
-});
-orientationWidget.setEnabled(true);
-orientationWidget.setViewportCorner(
-    vtk.Interaction.Widgets.vtkOrientationMarkerWidget.Corners.BOTTOM_RIGHT
-);
-orientationWidget.setViewportSize(0.15);
-orientationWidget.setMinPixelSize(100);
-orientationWidget.setMaxPixelSize(300);
+var actor = vtk.Rendering.Core.vtkActor.newInstance();
+var mapper = vtk.Rendering.Core.vtkMapper.newInstance();
+var cone = vtk.Filters.Sources.vtkConeSource.newInstance();
 
 actor.setMapper(mapper);
 mapper.setInputConnection(cone.getOutputPort());
-vtkRenderScreen.getRenderer().addActor(actor);
-vtkRenderScreen.getRenderer().resetCamera();
 
-//Start rendering
-vtkRenderScreen.getRenderWindow().render();
+var renderer = fullScreenRenderer.getRenderer();
+renderer.addActor(actor);
+renderer.resetCamera();
+
+var renderWindow = fullScreenRenderer.getRenderWindow();
+renderWindow.render();
+
+var slider = document.querySelector('#cone_slider');
+slider.addEventListener('input', function (e) {
+  var resolution = Number(e.target.value);
+  cone.setResolution(resolution);
+  renderWindow.render();
+});

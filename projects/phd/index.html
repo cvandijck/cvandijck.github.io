@@ -213,8 +213,8 @@
             </div>
             <div class="prose max-w-none pt-8">
               <h2>{{post_subtitle}}</h2>
-              <div id="cone" class="max-h-128">             
-                <script type="text/javascript" src="cone.js"> </script>
+              <input type="range" min="3" max="50" value="6" id="cone_slider" class="relative" label=""/>          
+              <div id="cone_container" class="max-h-128">  
               </div>
               
               <p>{{post_first_paragraph}}</p>
@@ -314,7 +314,7 @@
     </div>
 
     <script src="/assets/js/main.js"></script>
-
+    <script type="text/javascript" src="cone.js"> </script>
 
 </body>
 
