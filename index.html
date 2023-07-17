@@ -99,7 +99,7 @@
                 <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
               </li>
 
-              <li class="group hidden pl-6">
+              <li class="group pl-6">
                 <span @click="triggerNavItem('#projects')"
                   class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Projects</span>
 
@@ -151,7 +151,7 @@
                 class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Education</span>
             </li>
 
-            <li class="hidden py-2">
+            <li class="py-2">
               <span @click="triggerMobileNavItem('#projects')"
                 class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Projects</span>
             </li>
@@ -350,7 +350,7 @@
             Here's what I did up till now
           </h3>
 
-          <div class="relative px-4 mt-12 flex w-full flex-col lg:w-2/3">
+          <div class="relative px-4 mt-12 flex w-full flex-col lg:w-2/3 lg:mx-auto">
             <!-- Materialise -->
             <span class="absolute inset-y-0 left-2/5 ml-10 hidden w-0.5 bg-grey-40 md:block"></span>
             <div class="mt-8 flex flex-col text-center md:flex-row md:text-left">
@@ -475,18 +475,18 @@
         </div>
 
         <!-- projects -->
-        <div class="bg-grey-50 hidden" id="projects">
+        <div class="bg-grey-50" id="projects">
           <div class="container py-16 md:py-20">
             <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-              My Passion
+              My Projects
             </h2>
             <h4 class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-              Check out my latest projects!
+              Check out some of my passion projects!
             </h4>
 
             <div class="mx-auto grid w-full grid-cols-1 gap-6 pt-12 sm:w-3/4 lg:w-full lg:grid-cols-3 xl:gap-10">
               <!-- cookiecutter for python -->
-              <a href="/posts/cookiecutter" class="shadow">
+              <!-- <a href="/posts/cookiecutter" class="shadow">
                 <div style="background-image: url(/assets/img/cookiecutter.png)"
                   class="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72">
                   <span
@@ -502,8 +502,9 @@
                     python projects, package them and share them with others!
                   </span>
                 </div>
-              </a>      
-              <a href="/posts/vtk" class="shadow">
+              </a>       -->
+
+              <a href="/projects/phd/" class="shadow">
                 <div style="background-image: url(/assets/img/doctoraat.jpg)"
                   class="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72">
                   <span
@@ -514,10 +515,13 @@
                 </div>
                 <div class="bg-white py-6 px-5 xl:py-8">
                   <span class="block font-body text-lg font-semibold text-black">Fitting 250 pages in one blog post</span>
-                  <span class="block pt-2 font-body text-grey-20">
-                    TL;DR<br>
-                    Do not worry, here you get the summary of my PhD in a short
-                    (and interactive!) blog post.
+                  <span class="block pt-2 font-body text-grey-20 text-justify">
+                    <p>After my PhD, I wrote a small little book on my research on
+                    the use of statistical shape modelling to predict shape
+                    information to enable mass personalization for total knee
+                    arthroplasty.</p>
+                    <br/>
+                    <p>Do not worry, here you get the TL;DR in a (hopefully interactive) blog post.</p>
                   </span>
                 </div>
               </a>
