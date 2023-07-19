@@ -1,250 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
 
-<head>
-  <meta charset="utf-8" />
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
 
-  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+    <meta
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      name="viewport"
+    />
 
-  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <title>Page Not Found | Christophe Van Dijck</title>
 
-  <title>Page Not Found | Christophe Van Dijck</title>
+    <meta property="og:title" content="Page Not Found | Christophe Van Dijck" />
 
-  <meta property="og:title" content="Page Not Found | Christophe Van Dijck" />
+    <meta property="og:locale" content="en_US" />
 
-  <meta property="og:locale" content="en_US" />
+    <link rel="canonical" href="//post" />
 
-  <link rel="canonical" href="//post" />
+    <meta property="og:url" content="//post" />
 
-  <meta property="og:url" content="//post" />
+    <meta name="description" content="404 - Page Not Found" />
 
-  <meta name="description" content="404 - Page Not Found" />
+    <link rel="icon" type="image/png" href="/assets/img/icon.png" />
 
-  <link rel="icon" type="image/png" href="/assets/img/icon.png" />
+    <meta name="theme-color" content="#5540af" />
 
-  <meta name="theme-color" content="#5540af" />
+    <meta property="og:site_name" content="Christophe Van Dijck" />
 
-  <meta property="og:site_name" content="Christophe Van Dijck" />
+    <meta property="og:image" content="//assets/img/social.jpg" />
 
-  <meta property="og:image" content="//assets/img/social.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
 
-  <meta name="twitter:card" content="summary_large_image" />
+    <link
+      crossorigin="crossorigin"
+      href="https://fonts.gstatic.com"
+      rel="preconnect"
+    />
 
-  <link crossorigin="crossorigin" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
+      rel="preload"
+    />
 
-  <link as="style"
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
-    rel="preload" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
-    rel="stylesheet" />
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
 
-  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <link
+      crossorigin="anonymous"
+      href="/assets/styles/main.min.css"
+      media="screen"
+      rel="stylesheet"
+    />
 
-  <link crossorigin="anonymous" href="/assets/styles/main.min.css" media="screen" rel="stylesheet" />
+    <script
+      defer
+      src="https://unpkg.com/@alpine-collective/toolkit@1.0.0/dist/cdn.min.js"
+    ></script>
 
-  <script defer src="https://unpkg.com/@alpine-collective/toolkit@1.0.0/dist/cdn.min.js"></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
 
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/atom-one-dark.min.css"
+    />
 
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
 
+    <script>
+      hljs.highlightAll();
+    </script>
+  </head>
 
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/atom-one-dark.min.css" />
+  <body
+    :class="{ 'overflow-hidden max-h-screen': mobileMenu }"
+    class="relative"
+    x-data="{ mobileMenu: false }"
+  >
+    <div id="main" class="relative">
+      <div
+        x-data="{ triggerNavItem(id) { $scroll(id) }, triggerMobileNavItem(id)
+    { mobileMenu = false; this.triggerNavItem(id) } }"
+      >
+        <div class="top-0 z-50 w-full bg-primary py-3 sm:py-5">
+          <div class="container flex items-center justify-between">
+            <div>
+              <a href="/">
+                <img
+                  src="/assets/img/logo_white.svg"
+                  class="w-24 lg:w-48"
+                  alt="logo image"
+                />
+              </a>
+            </div>
+            <div class="hidden lg:block">
+              <ul class="flex items-center">
+                <li class="group pl-6">
+                  <a
+                    href="/#about"
+                    class="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white"
+                    >About</a
+                  >
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+                  <span
+                    class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
+                  ></span>
+                </li>
 
-  <script>
-    hljs.highlightAll();
-  </script>
+                <li class="group pl-6">
+                  <a
+                    href="/#skills"
+                    class="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white"
+                    >Skills</a
+                  >
 
-</head>
+                  <span
+                    class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
+                  ></span>
+                </li>
 
+                <li class="group pl-6">
+                  <a
+                    href="/#work"
+                    class="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white"
+                    >Work</a
+                  >
 
-<body :class="{ 'overflow-hidden max-h-screen': mobileMenu }" class="relative" x-data="{ mobileMenu: false }">
+                  <span
+                    class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
+                  ></span>
+                </li>
 
-  <div id="main" class="relative">
-    <div x-data="{
-    triggerNavItem(id) {
-        $scroll(id)
-    },
-    triggerMobileNavItem(id) {
-        mobileMenu = false;
-        this.triggerNavItem(id)
-    }
-}">
-      <div class="w-full z-50 top-0 py-3 sm:py-5  bg-primary ">
-        <div class="container flex items-center justify-between">
-          <div>
-            <!-- <a href="/">
-              <img src="/assets/img/logo_white.svg" class="w-24 lg:w-48" alt="logo image" />
-            </a> -->
+                <li class="group pl-6">
+                  <a
+                    href="/#education"
+                    class="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white"
+                    >Education</a
+                  >
+
+                  <span
+                    class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
+                  ></span>
+                </li>
+
+                <li class="group pl-6">
+                  <a
+                    href="/#projects"
+                    class="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white"
+                    >Projects</a
+                  >
+
+                  <span
+                    class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
+                  ></span>
+                </li>
+
+                <li class="group pl-6">
+                  <a
+                    href="/#contact"
+                    class="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white"
+                    >Contact</a
+                  >
+
+                  <span
+                    class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
+                  ></span>
+                </li>
+              </ul>
+            </div>
+            <div class="block lg:hidden">
+              <button @click="mobileMenu = true">
+                <i class="bx bx-menu text-4xl text-white"></i>
+              </button>
+            </div>
           </div>
-          <div class="hidden lg:block">
-            <ul class="flex items-center">
+        </div>
 
-              <li class="group pl-6">
+        <div
+          class="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden"
+          :class="{ 'opacity-100 pointer-events-auto': mobileMenu }"
+        >
+          <div
+            class="absolute right-0 min-h-screen w-2/3 bg-primary px-8 py-4 shadow md:w-1/3"
+          >
+            <button
+              class="absolute right-0 top-0 mr-4 mt-4"
+              @click="mobileMenu = false"
+            >
+              <img
+                src="/assets/img/icon-close.svg"
+                class="h-10 w-auto"
+                alt=""
+              />
+            </button>
 
-                <a href="/#about" class="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white">About</a>
-
-                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+            <ul class="mt-8 flex flex-col">
+              <li class="py-2">
+                <a
+                  href="/#about"
+                  class="pt-0.5 font-header font-semibold uppercase text-white"
+                  >About</a
+                >
               </li>
 
-              <li class="group pl-6">
-
-                <a href="/#skills"
-                  class="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white">Skills</a>
-
-                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+              <li class="py-2">
+                <a
+                  href="/#skills"
+                  class="pt-0.5 font-header font-semibold uppercase text-white"
+                  >Skills</a
+                >
               </li>
 
-              <li class="group pl-6">
-
-                <a href="/#work" class="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white">Work</a>
-
-                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+              <li class="py-2">
+                <a
+                  href="/#work"
+                  class="pt-0.5 font-header font-semibold uppercase text-white"
+                  >Work</a
+                >
               </li>
 
-              <li class="group pl-6">
-
-                <a href="/#education"
-                  class="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white">Education</a>
-
-                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+              <li class="py-2">
+                <a
+                  href="/#education"
+                  class="pt-0.5 font-header font-semibold uppercase text-white"
+                  >Education</a
+                >
               </li>
 
-              <li class="group pl-6">
-
-                <a href="/#projects"
-                  class="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white">Projects</a>
-
-                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+              <li class="py-2">
+                <a
+                  href="/#projects"
+                  class="pt-0.5 font-header font-semibold uppercase text-white"
+                  >Projects</a
+                >
               </li>
 
-              <li class="group pl-6">
-
-                <a href="/#contact"
-                  class="cursor-pointe pt-0.5 font-header font-semibold uppercase text-white">Contact</a>
-
-                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+              <li class="py-2">
+                <a
+                  href="/#contact"
+                  class="pt-0.5 font-header font-semibold uppercase text-white"
+                  >Contact</a
+                >
               </li>
-
             </ul>
           </div>
-          <div class="block lg:hidden">
-            <button @click="mobileMenu = true">
-              <i class="bx bx-menu text-4xl text-white"></i>
-            </button>
-          </div>
         </div>
-      </div>
 
-      <div
-        class="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden"
-        :class="{ 'opacity-100 pointer-events-auto': mobileMenu }">
-        <div class="absolute right-0 min-h-screen w-2/3 bg-primary py-4 px-8 shadow md:w-1/3">
-          <button class="absolute top-0 right-0 mt-4 mr-4" @click="mobileMenu = false">
-            <img src="/assets/img/icon-close.svg" class="h-10 w-auto" alt="" />
-          </button>
-
-          <ul class="mt-8 flex flex-col">
-
-            <li class="py-2">
-
-              <a href="/#about" class="pt-0.5 font-header font-semibold uppercase text-white">About</a>
-
-            </li>
-
-            <li class="py-2">
-
-              <a href="/#skills" class="pt-0.5 font-header font-semibold uppercase text-white">Skills</a>
-
-            </li>
-
-            <li class="py-2">
-
-              <a href="/#work" class="pt-0.5 font-header font-semibold uppercase text-white">Work</a>
-
-            </li>
-
-            <li class="py-2">
-
-              <a href="/#education" class="pt-0.5 font-header font-semibold uppercase text-white">Education</a>
-
-            </li>
-
-            <li class="py-2">
-
-              <a href="/#projects" class="pt-0.5 font-header font-semibold uppercase text-white">Projects</a>
-
-            </li>
-
-            <li class="py-2">
-
-              <a href="/#contact" class="pt-0.5 font-header font-semibold uppercase text-white">Contact</a>
-
-            </li>
-
-          </ul>
-        </div>
-      </div>
-
-
-      <div class="lg:px-24 lg:py-24 md:py-20 md:px-44 px-4 py-24 items-center flex justify-center flex-col-reverse lg:flex-row md:gap-28 gap-16">
-        <div class="xl:pt-24 w-full xl:w-1/2 relative pb-12 lg:pb-0">
+        <div
+          class="flex flex-col-reverse items-center justify-center gap-16 px-4 py-24 md:gap-28 md:px-44 md:py-20 lg:flex-row lg:px-24 lg:py-24"
+        >
+          <div class="relative w-full pb-12 lg:pb-0 xl:w-1/2 xl:pt-24">
             <div class="relative">
-                <div class="absolute">
-                    <div class="">
-                        <h1 class="my-2 text-gray-800 font-bold text-2xl">
-                            Looks like you've found the
-                            doorway to the great nothing
-                        </h1>
-                        <p class="my-2 text-gray-800">Sorry about that! Please visit our hompage to get where you need to go.</p>
-                        <a href="/">
-                          <button class="sm:w-full lg:w-auto my-2 border rounded md py-4 px-8 text-center bg-primary text-white hover:bg-grey-20">Take me there!</button>
-                        </a>
-                      </div>
+              <div class="absolute">
+                <div class="">
+                  <h1 class="text-gray-800 my-2 text-2xl font-bold">
+                    Looks like you've found the doorway to the great nothing
+                  </h1>
+                  <p class="text-gray-800 my-2">
+                    Sorry about that! Please visit our hompage to get where you
+                    need to go.
+                  </p>
+                  <a href="/">
+                    <button
+                      class="md my-2 rounded border bg-primary px-8 py-4 text-center text-white hover:bg-grey-20 sm:w-full lg:w-auto"
+                    >
+                      Take me there!
+                    </button>
+                  </a>
                 </div>
-                <div>
-                    <img src="assets/img/404.png" />
-                </div>
+              </div>
+              <div>
+                <img src="assets/img/404.png" />
+              </div>
             </div>
+          </div>
+          <div class="w-full xl:w-1/2">
+            <img src="assets/img/unplugged2.png" />
+          </div>
         </div>
-        <div class="w-full xl:w-1/2">
-            <img src="assets/img/unplugged2.png"/>
-        </div>
-    </div>
-      <div class="bg-primary">
-        <div class="container flex flex-col justify-between py-6 sm:flex-row">
-          <p class="text-center font-body text-sm text-white md:text-left">
-            © Copyright 2023. All right reserved, Christophe Van Dijck.
-            <br />
-            <a href="https://storyset.com/idea">Illustrations by Storyset</a>,
-            Webdesign by ATOM.
-          </p>
-          <div class="flex items-center justify-center pt-5 sm:justify-start sm:pt-0">
-            <a href="mailto:christophe.vdijck@gmail.com?SUBJECT=I want to connect">
-              <i class="bx bxs-envelope text-2xl text-white hover:text-yellow"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/cvandijck/" class="pl-4">
-              <i class="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i>
-            </a>
-            <a href="https://github.com/cvandijck" class="pl-4">
-              <i class="bx bxl-github text-2xl text-white hover:text-yellow"></i>
-            </a>
-            <a href="https://wa.me/+32485403370" class="pl-4">
-              <i class="bx bxl-whatsapp text-2xl text-white hover:text-yellow"></i>
-            </a>
+        <div class="bg-primary">
+          <div class="container flex flex-col justify-between py-6 sm:flex-row">
+            <p class="text-center font-body text-sm text-white md:text-left">
+              © Copyright 2023. All right reserved, Christophe Van Dijck.
+              <br />
+              <a href="https://storyset.com/idea">Illustrations by Storyset</a>,
+              Webdesign by ATOM.
+            </p>
+            <div
+              class="flex items-center justify-center pt-5 sm:justify-start sm:pt-0"
+            >
+              <a
+                href="mailto:christophe.vdijck@gmail.com?SUBJECT=I want to connect"
+              >
+                <i
+                  class="bx bxs-envelope text-2xl text-white hover:text-yellow"
+                ></i>
+              </a>
+              <a href="https://www.linkedin.com/in/cvandijck/" class="pl-4">
+                <i
+                  class="bx bxl-linkedin text-2xl text-white hover:text-yellow"
+                ></i>
+              </a>
+              <a href="https://github.com/cvandijck" class="pl-4">
+                <i
+                  class="bx bxl-github text-2xl text-white hover:text-yellow"
+                ></i>
+              </a>
+              <a href="https://wa.me/+32485403370" class="pl-4">
+                <i
+                  class="bx bxl-whatsapp text-2xl text-white hover:text-yellow"
+                ></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-
     </div>
-
     <script src="/assets/js/main.js"></script>
-
-
-</body>
-
+  </body>
 </html>
