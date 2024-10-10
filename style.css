@@ -1,0 +1,196 @@
+/* General Styling */
+body,
+h1,
+h2,
+p {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Hero Section Styling */
+.hero-section {
+    position: relative;
+    background-image: url('main-house.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.info-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.info-box h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.info-box .price,
+.info-box .attractions {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.cta-button {
+    background-color: #f04e31;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #d83d24;
+}
+
+/* Sections Styling */
+section {
+    padding: 50px;
+    text-align: center;
+}
+
+section h2 {
+    margin-bottom: 30px;
+}
+
+section p {
+    margin-bottom: 20px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+/* Photo Grid Styling */
+.photo-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.photo-grid img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.photo-grid img:hover {
+    transform: scale(1.1);
+}
+
+/* Specifications Table Section */
+.specifications-section {
+    background-color: #f9f9f9;
+}
+
+table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid #ddd;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #f04e31;
+    color: white;
+}
+
+/* Map Section */
+.map-section {
+    padding: 50px;
+    text-align: center;
+}
+
+#map {
+    width: 80%;
+    height: 400px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.map-section ul {
+    list-style: none;
+}
+
+.map-section ul li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* Downloads Section */
+.downloads-section ul {
+    list-style: none;
+}
+
+.downloads-section li {
+    margin: 10px 0;
+}
+
+.downloads-section a {
+    color: #f04e31;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.downloads-section a:hover {
+    color: #d83d24;
+}
+
+/* Footer Section */
+footer {
+    padding: 30px;
+    text-align: center;
+    background-color: #333;
+    color: white;
+}
+
+footer p {
+    margin-top: 15px;
+    font-size: 0.9em;
+}

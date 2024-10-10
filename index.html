@@ -1,718 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 
 <head>
-  <meta charset="utf-8" />
-
-  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-
-  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
-
-  <title>Homepage | Christophe Van Dijck</title>
-
-  <meta property="og:title" content="Homepage | Christophe Van Dijck" />
-
-  <meta property="og:locale" content="en_US" />
-
-  <link rel="canonical" href="//" />
-
-  <meta property="og:url" content="//" />
-
-  <meta name="description" content="Hi, I'm Christophe. Nice to meet you" />
-
-  <link rel="icon" type="image/png" href="/assets/img/icon.png" />
-
-  <meta name="theme-color" content="#5540af" />
-
-  <meta property="og:site_name" content="Christophe Van Dijck" />
-
-  <meta property="og:image" content="//assets/img/social.jpg" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <meta name="twitter:site" content="@tailwindmade" />
-
-  <link crossorigin="crossorigin" href="https://fonts.gstatic.com" rel="preconnect" />
-
-  <link as="style"
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
-    rel="preload" />
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
-    rel="stylesheet" />
-
-  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
-
-  <link crossorigin="anonymous" href="/assets/styles/main.min.css" media="screen" rel="stylesheet" />
-
-  <script defer src="https://unpkg.com/@alpine-collective/toolkit@1.0.0/dist/cdn.min.js"></script>
-
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prachtig Huis Te Koop</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- You can use a map embedding service like Google Maps for the map insert -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" defer></script>
 </head>
 
-<body :class="{ 'overflow-hidden max-h-screen': mobileMenu }" class="relative" x-data="{ mobileMenu: false }">
-  <div id="main" class="relative">
-    <div
-      x-data="{ triggerNavItem(id) { $scroll(id) }, triggerMobileNavItem(id) { mobileMenu = false; this.triggerNavItem(id) } }">
-      <div class="absolute top-0 z-50 w-full py-3 sm:py-5">
-        <div class="container flex items-center justify-between">
-          <div>
-            <a href="/">
-              <img src="/assets/img/logo_white.svg" class="h-12 lg:h-16" alt="logo image" />
-            </a>
-          </div>
-          <div class="hidden lg:block">
-            <ul class="flex items-center">
-              <li class="group pl-6">
-                <span @click="triggerNavItem('#about')"
-                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">About</span>
+<body>
 
-                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-              </li>
-
-              <li class="group pl-6">
-                <span @click="triggerNavItem('#skills')"
-                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Skills</span>
-
-                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-              </li>
-
-              <li class="group pl-6">
-                <span @click="triggerNavItem('#work')"
-                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Work</span>
-
-                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-              </li>
-
-              <li class="group pl-6">
-                <span @click="triggerNavItem('#education')"
-                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Education</span>
-
-                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-              </li>
-
-              <li class="group pl-6">
-                <span @click="triggerNavItem('#projects')"
-                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Projects</span>
-
-                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-              </li>
-
-              <li class="group pl-6">
-                <span @click="triggerNavItem('#contact')"
-                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Contact</span>
-
-                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-              </li>
-            </ul>
-          </div>
-          <div class="block lg:hidden">
-            <button @click="mobileMenu = true">
-              <i class="bx bx-menu text-4xl text-white"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden"
-        :class="{ 'opacity-100 pointer-events-auto': mobileMenu }">
-        <div class="absolute right-0 min-h-screen w-2/3 bg-primary px-8 py-4 shadow md:w-1/3">
-          <button class="absolute right-0 top-0 mr-4 mt-4" @click="mobileMenu = false">
-            <img src="/assets/img/icon-close.svg" class="h-10 w-auto" alt="" />
-          </button>
-
-          <ul class="mt-8 flex flex-col">
-            <li class="py-2">
-              <span @click="triggerMobileNavItem('#about')"
-                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">About</span>
-            </li>
-
-            <li class="py-2">
-              <span @click="triggerMobileNavItem('#skills')"
-                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Skills</span>
-            </li>
-
-            <li class="py-2">
-              <span @click="triggerMobileNavItem('#work')"
-                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Work</span>
-            </li>
-
-            <li class="py-2">
-              <span @click="triggerMobileNavItem('#education')"
-                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Education</span>
-            </li>
-
-            <li class="py-2">
-              <span @click="triggerMobileNavItem('#projects')"
-                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Projects</span>
-            </li>
-
-            <li class="py-2">
-              <span @click="triggerMobileNavItem('#contact')"
-                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Contact</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div>
-        <!-- hi -->
-        <div class="relative bg-cover bg-center bg-no-repeat py-16"
-          style="background-image: url(/assets/img/bg-presenting_gray.jpg)">
-          <div
-            class="absolute inset-0 z-20 bg-gradient-to-r from-hero-gradient-from to-hero-gradient-to bg-cover bg-center bg-no-repeat">
-          </div>
-
-          <div class="container relative z-30 pb-12 pt-20 sm:pb-48 sm:pt-56 lg:pb-48 lg:pt-64">
-            <div class="flex flex-col items-center justify-center lg:flex-row">
-              <div class="rounded-full border-8 border-white shadow-xl">
-                <img src="/assets/img/profile_crop.jpeg" class="h-48 rounded-full sm:h-56" alt="author" />
-              </div>
-              <div class="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">
-                <h1 class="text-center font-header text-4xl text-white sm:text-left sm:text-5xl md:text-6xl">
-                  Hello, I'm Christophe!
-                </h1>
-                <div class="flex flex-col justify-center pt-3 sm:flex-row sm:pt-5 lg:justify-start">
-                  <div class="flex items-center justify-center pl-0 sm:justify-start md:pl-1">
-                    <p class="font-body text-lg uppercase text-white">
-                      Let's connect
-                    </p>
-                    <div class="hidden sm:block">
-                      <i class="bx bx-chevron-right text-3xl text-yellow"></i>
-                    </div>
-                  </div>
-                  <div class="flex items-center justify-center pl-2 pt-5 sm:justify-start sm:pt-0">
-                    <a href="mailto:christophe.vdijck@gmail.com?SUBJECT=I want to connect" class="pl-0">
-                      <i class="bx bxs-envelope text-2xl text-white hover:text-yellow"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/cvandijck/" class="pl-4">
-                      <i class="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i>
-                    </a>
-
-                    <a href="https://github.com/cvandijck" class="pl-4">
-                      <i class="bx bxl-github text-2xl text-white hover:text-yellow"></i>
-                    </a>
-                    <a href="https://wa.me/+32485403370" class="pl-4">
-                      <i class="bx bxl-whatsapp text-2xl text-white hover:text-yellow"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- about -->
-        <div class="bg-secondary" id="about">
-          <div class="container flex flex-col justify-center py-20 lg:w-full lg:flex-row lg:px-8">
-            <div class="w-full text-center lg:basis-2/3 lg:text-left">
-              <h2 class="font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-                Who am I?
-              </h2>
-              <h4 class="pt-6 font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-                I'm Christophe Van Dijck, an engineer with a passion for
-                innovation and technology.
-              </h4>
-              <p class="pt-6 text-justify font-body leading-relaxed text-grey-20">
-                I am passionate about finding meaningful innovation in a
-                complex reality. Driven by continuous self-development, I keep
-                myself up to date with the latest technological advancements.
-                Trying to understand the needs of end-users and being able to
-                solve their complex problems with the creativity of a group of
-                smart, passionate people is something I enjoy profoundly.
-                Technology is my passion, and with my innate critical and
-                result-oriented mindset I am able to manage the innovation
-                process in an agile way.
-              </p>
-            </div>
-            <div class="mx-12 mt-12 lg:my-auto lg:ml-24 lg:basis-1/3">
-              <a href="https://github.com/cvandijck/Resume/releases/latest/download/resume.pdf">
-                <button
-                  class="flex h-20 w-full items-center justify-center space-x-4 rounded bg-primary px-8 font-header text-lg font-bold uppercase text-white hover:bg-grey-20">
-                  <i class="bx bx-download text-3xl"></i>
-                  <p>Download Resume</p>
-                </button>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- skills -->
-        <div class="container py-16 md:py-20" id="skills">
-          <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-            What I'm good at
-          </h2>
-          <h3 class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-            The skills I have to offer
-          </h3>
-
-          <div class="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 xl:grid-cols-4 xl:gap-10 xl:pt-12">
-            <!-- Prototyping -->
-            <div class="group rounded px-8 py-12 shadow hover:bg-primary">
-              <div class="mx-auto px-auto h-52 w-52 text-center object-center xl:h-56 xl:w-56">
-                <div class="hidden group-hover:block">
-                  <img src="/assets/img/prototype_accent.svg" alt="prototyping" />
-                </div>
-                <div class="block group-hover:hidden">
-                  <img src="/assets/img/prototype_primary.svg" alt="prototyping" />
-                </div>
-              </div>
-              <div class="text-center">
-                <h3 class="text-green pt-8 text-lg font-semibold uppercase group-hover:text-yellow lg:text-xl">
-                  Rapid<br />Prototyping
-                </h3>
-                <p class="text-grey invisible pt-4 text-sm group-hover:visible group-hover:text-white md:text-base">
-                  Fail fast, learn faster. I use my broad skill-set to quickly
-                  build prototypes to explore new technologies or to validate
-                  ideas.
-                </p>
-              </div>
-            </div>
-
-            <!-- Problem solver -->
-            <div class="group rounded px-8 py-12 shadow hover:bg-primary">
-              <div class="mx-auto h-52 w-52 text-center xl:h-56 xl:w-56">
-                <div class="hidden group-hover:block">
-                  <img src="/assets/img/problem_accent.svg" alt="problem solving" />
-                </div>
-                <div class="block group-hover:hidden">
-                  <img src="/assets/img/problem_primary.svg" alt="problem solving" />
-                </div>
-              </div>
-              <div class="text-center">
-                <h3 class="text-green pt-8 text-lg font-semibold uppercase group-hover:text-yellow lg:text-xl">
-                  Result-oriented<br />problem solver
-                </h3>
-                <p class="text-grey invisible pt-4 text-sm group-hover:visible group-hover:text-white md:text-base">
-                  Innovation can be a rabbit hole. By employing agile
-                  principles, I make sure we stay focused on addressing the
-                  needs of the end-user.
-                </p>
-              </div>
-            </div>
-
-            <!-- team leader -->
-            <div class="group rounded px-8 py-12 shadow hover:bg-primary">
-              <div class="mx-auto h-52 w-52 text-center xl:h-56 xl:w-56">
-                <div class="hidden group-hover:block">
-                  <img src="/assets/img/team_accent.svg" alt="leadership" />
-                </div>
-                <div class="block group-hover:hidden">
-                  <img src="/assets/img/team_primary.svg" alt="leadership" />
-                </div>
-              </div>
-              <div class="text-center">
-                <h3 class="text-green pt-8 text-lg font-semibold uppercase group-hover:text-yellow lg:text-xl">
-                  Trust-based<br />Leadership
-                </h3>
-                <p class="text-grey invisible pt-4 text-sm group-hover:visible group-hover:text-white md:text-base">
-                  With trust and transparency, I cultivate an environment
-                  where everyone is encouraged to contribute and take
-                  ownership.
-                </p>
-              </div>
-            </div>
-
-            <!-- continuous self development -->
-            <div class="group rounded px-8 py-12 shadow hover:bg-primary">
-              <div class="mx-auto my-auto h-52 w-52 text-center xl:h-56 xl:w-56">
-                <div class="hidden group-hover:block">
-                  <img src="/assets/img/development2_accent.svg" alt="development" />
-                </div>
-                <div class="block group-hover:hidden">
-                  <img src="/assets/img/development2_primary.svg" alt="development" />
-                </div>
-              </div>
-              <div class="text-center">
-                <h3 class="text-green pt-8 text-lg font-semibold uppercase group-hover:text-yellow lg:text-xl">
-                  Continuous<br />Self-Development
-                </h3>
-                <p class="text-grey invisible pt-4 text-sm group-hover:visible group-hover:text-white md:text-base">
-                  Innovation is a moving target. I keep track of the
-                  state-of-the-art to be able to address complex problems
-                  together with experts in the field.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- work experience -->
-        <div class="bg-grey-50 py-16 md:py-20" id="work">
-          <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-            My work experience
-          </h2>
-          <h3 class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-            Here's what I did up till now
-          </h3>
-
-          <div class="relative mt-12 flex w-full flex-col px-4 lg:mx-auto lg:w-2/3">
-            <span class="absolute inset-y-0 left-1/3 ml-11 hidden w-0.5 bg-grey-40 md:block"></span>
-
-            <!-- Sopra -->
-            <div class="mt-8 flex flex-col text-center md:flex-row md:text-left">
-              <div class="pt-6 pb-8 md:w-2/6">
-                <div class="flex justify-center md:justify-start">
-                  <span class="shrink-0">
-                    <img src="/assets/img/logo_sopra_grey.svg" class="h-auto w-32" alt="company logo" />
-                  </span>
-                  <div class="relative ml-3 hidden w-full md:block">
-                    <span class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"></span>
-                  </div>
-                </div>
-              </div>
-              <div class="pt-5 md:w-4/6">
-                <!-- AI Arch -->
-                <div class="relative flex md:pl-18">
-                  <span
-                    class="absolute left-8 mt-1 hidden h-4 w-4 rounded-full border-2 border-grey-40 bg-white md:block"></span>
-                  <div class="mt-1 flex">
-                    <i class="bx bxs-right-arrow hidden text-primary md:block"></i>
-                    <div class="md:-mt-1 md:pl-8">
-                      <span class="block font-body font-bold text-grey-40">Jun 2024 - <i>current</i></span>
-                      <span class="block pt-2 font-header text-xl font-bold uppercase text-primary">AI Architect</span>
-                      <span class="small-caps block pt-2 font-body text-base font-bold text-primary">Smart Search &
-                        Assistance</span>
-                      <div class="pb-8 pt-2">
-                        <span class="block font-body text-sm text-black">
-                          Consultancy in Computer Vision and Natural Language Processing in public and private sector;
-                          definition, management and execution of AI-driven development projects
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- CCL -->
-                <div class="relative flex md:pl-18">
-                  <span
-                    class="absolute left-8 mt-1 hidden h-4 w-4 rounded-full border-2 border-grey-40 bg-white md:block"></span>
-                  <div class="mt-1 flex">
-                    <i class="bx bxs-right-arrow hidden text-primary md:block"></i>
-                    <div class="md:-mt-1 md:pl-8">
-                      <span class="block font-body font-bold text-grey-40">Dec 2023 - Jun 2024</span>
-                      <span class="block pt-2 font-header text-xl font-bold uppercase text-primary">Competence Center
-                        Lead</span>
-                      <span class="small-caps block pt-2 font-body text-base font-bold text-primary">Computer
-                        Vision</span>
-                      <div class="pb-8 pt-2">
-                        <span class="block font-body text-sm text-black">
-                          Consultancy in Computer Vision, Natural Language Processing and Data Science; dissemination of
-                          technical expertise within the OptimAI Practice and the creation and management of Solution Assets
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Materialise -->
-            <div class="mt-8 flex flex-col text-center md:flex-row md:text-left">
-              <div class="pb-8 md:w-2/6">
-                <div class="flex justify-center md:justify-start">
-                  <span class="shrink-0">
-                    <img src="/assets/img/logo_materialise_grey.svg" class="h-auto w-32" alt="company logo" />
-                  </span>
-                  <div class="relative ml-3 hidden w-full md:block">
-                    <span class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"></span>
-                  </div>
-                </div>
-              </div>
-              <div class="pt-5 md:w-4/6">
-                <!-- Research coordinator -->
-                <div class="relative flex md:pl-18">
-                  <span
-                    class="absolute left-8 mt-1 hidden h-4 w-4 rounded-full border-2 border-grey-40 bg-white md:block"></span>
-                  <div class="mt-1 flex">
-                    <i class="bx bxs-right-arrow hidden text-primary md:block"></i>
-                    <div class="md:-mt-1 md:pl-8">
-                      <span class="block font-body font-bold text-grey-40">Jan 2020 - Dec 2023</span>
-                      <span class="block pt-2 font-header text-xl font-bold uppercase text-primary">Research
-                        Coordinator &amp; Team Leader</span>
-                      <span
-                        class="small-caps block pt-2 font-body text-base font-bold text-primary">Cranio-Maxillofacial
-                        Surgery</span>
-                      <div class="pb-8 pt-2">
-                        <span class="block font-body text-sm text-black">
-                          Owner of software innovation roadmap of CMF
-                          portfolio: lead team of senior researchers; define
-                          (funded) research proposals; manage collaboration
-                          projects with external partners</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Research team lead -->
-                <div class="relative flex md:pl-18">
-                  <span
-                    class="absolute left-8 top-1 hidden h-4 w-4 rounded-full border-2 border-grey-40 bg-white md:block"></span>
-                  <div class="mt-1 flex">
-                    <i class="bx bxs-right-arrow hidden text-primary md:block"></i>
-                    <div class="md:-mt-1 md:pl-8">
-                      <span class="block font-body font-bold text-grey-40">Nov 2018 - Feb 2021</span>
-                      <span class="block pt-2 font-header text-xl font-bold uppercase text-primary">Research Team
-                        Leader</span>
-                      <span class="small-caps block pt-2 font-body text-base font-bold text-primary">Data-driven and
-                        Algorithmic Research</span>
-                      <div class="pb-8 pt-2">
-                        <span class="block font-body text-sm text-black">
-                          People management of junior and senior researchers
-                          specialized in machine/deep learning, computational
-                          geometry, shape modeling and augmented reality</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Research engineer -->
-                <div class="relative flex md:pl-18">
-                  <span
-                    class="absolute left-8 top-1 hidden h-4 w-4 rounded-full border-2 border-grey-40 bg-white md:block"></span>
-                  <div class="mt-1 flex">
-                    <i class="bx bxs-right-arrow hidden text-primary md:block"></i>
-                    <div class="md:-mt-1 md:pl-8">
-                      <span class="block font-body font-bold text-grey-40">Jul 2013 - Nov 2018</span>
-                      <span class="block pt-2 font-header text-xl font-bold uppercase text-primary">Research
-                        Engineer</span>
-                      <div class="pb-8 pt-2">
-                        <span class="block font-body text-sm text-black">
-                          Software research in medical image processing and
-                          computational geometry to support Materialise’s
-                          preoperative planning solutions</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- education -->
-        <div class="container py-16 md:py-20" id="education">
-          <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-            My Education
-          </h2>
-          <h3 class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-            My training as biomedical engineer
-          </h3>
-
-          <div class="grid grid-cols-1 gap-6 pt-10 md:grid-cols-2 md:gap-10 md:pt-12">
-            <!-- Msc -->
-            <div class="group flex flex-col px-8 py-12">
-              <img class="h-32" src="/assets/img/ugent_vub.svg" alt="ugent-vub" />
-              <div class="text-center">
-                <h3 class="text-green pt-8 text-lg font-semibold uppercase lg:text-xl">
-                  MSc in Biomedical Engineering
-                </h3>
-                <p class="text-grey pt-4 text-sm md:text-base">
-                  Focus on medical imaging, medical image processing and
-                  computational modelling.
-                </p>
-              </div>
-            </div>
-
-            <!-- Phd -->
-            <div class="group flex flex-col px-8 py-12">
-              <img class="h-32" src="/assets/img/kuleuven.svg" alt="kuleuven" />
-              <div class="text-center">
-                <h3 class="text-green pt-8 text-lg font-semibold uppercase lg:text-xl">
-                  PhD in Biomedical Engineering
-                </h3>
-                <p class="text-grey pt-4 text-sm md:text-base">
-                  Mass Personalisation of Preoperative Planning for TKA<br />Evaluation
-                  of Statistical Models to Predict Patient-Specific Shape
-                  Information
-                  <a href="https://lirias.kuleuven.be/retrieve/632232">
-                    <i class="bx bx-download text-grey"></i>
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- projects -->
-        <div class="bg-grey-50" id="projects">
-          <div class="container py-16 md:py-20">
-            <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-              My Projects
-            </h2>
-            <h4 class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-              Check out some of my passion projects!
-            </h4>
-
-            <div class="mx-auto grid w-full grid-cols-1 gap-6 pt-12 sm:w-3/4 lg:w-full lg:grid-cols-3 xl:gap-10">
-              <!-- cookiecutter for python -->
-              <a href="https://github.com/cvandijck/cookiecutter-python" class="shadow">
-                <div style="background-image: url(/assets/img/cookiecutter.png)"
-                  class="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72">
-                  <span
-                    class="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"></span>
-                  <span
-                    class="absolute right-0 bottom-0 mr-4 mb-4 block rounded-full border-2 border-white px-6 py-2 text-center font-body text-sm font-bold uppercase text-white md:text-base">Read
-                    More</span>
-                </div>
-                <div class="bg-white py-6 px-5 xl:py-8">
-                  <span class="block font-body text-lg font-semibold text-black">Get your projects out there</span>
-                  <span class="block pt-2 font-body text-grey-20">
-                    I developed a cookiecutter template to quickly setup, package and share your
-                    python projects with the world!
-                  </span>
-                </div>
-              </a>
-
-              <!-- phd -->
-              <!-- <a href="/projects/phd/" class="shadow">
-                  <div
-                    style="background-image: url(/assets/img/doctoraat.jpg)"
-                    class="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72"
-                  >
-                    <span
-                      class="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"
-                    ></span>
-                    <span
-                      class="absolute bottom-0 right-0 mb-4 mr-4 block rounded-full border-2 border-white px-6 py-2 text-center font-body text-sm font-bold uppercase text-white md:text-base"
-                      >Read More</span
-                    >
-                  </div>
-                  <div class="bg-white px-5 py-6 xl:py-8">
-                    <span
-                      class="block font-body text-lg font-semibold text-black"
-                      >Fitting 250 pages in one blog post</span
-                    >
-                    <span
-                      class="block pt-2 text-justify font-body text-grey-20"
-                    >
-                      <p>
-                        After my PhD, I wrote a small little book on my research
-                        on the use of statistical shape modelling to predict
-                        shape information to enable mass personalization for
-                        total knee arthroplasty.
-                      </p>
-                      <br />
-                      <p>
-                        Do not worry, here you get the TL;DR in a (hopefully
-                        interactive) blog post.
-                      </p>
-                    </span>
-                  </div>
-                </a> -->
-
-              <!-- under construction -->
-              <a href="https://github.com/cvandijck/" class="shadow">
-                <div style="background-image: url(/assets/img/under-construction.svg)"
-                  class="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72">
-                  <span
-                    class="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"></span>
-                  <span
-                    class="absolute right-0 bottom-0 mr-4 mb-4 block rounded-full border-2 border-white px-6 py-2 text-center font-body text-sm font-bold uppercase text-white md:text-base">Read
-                    More</span>
-                </div>
-                <div class="bg-white py-6 px-5 xl:py-8">
-                  <span class="block font-body text-lg font-semibold text-black">Under construction</span>
-                  <span class="block pt-2 font-body text-grey-20">
-                    This webpage is still under construction. Tune in later for more blog posts or link to my
-                    favourite
-                    projects.
-                  </span>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- contact -->
-        <div class="container py-16 md:py-20" id="contact">
-          <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-            Get in touch!
-          </h2>
-          <h4 class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-            Have Any Questions? <br />
-            Ideas For Collaboration?
-          </h4>
-          <div class="mx-auto w-full pt-5 text-center sm:w-2/3 lg:pt-6">
-            <p class="font-body text-grey-10">
-              <!-- Add when they can hire me -->
-            </p>
-          </div>
-          <div class="flex flex-col pt-16 lg:flex-row">
-            <div class="w-full border-b-2 border-l-2 border-r-2 border-t-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3">
-              <div class="flex items-center">
-                <i class="bx bx-phone text-2xl text-grey-40"></i>
-                <p class="pl-2 font-body font-bold uppercase text-grey-40 lg:text-lg">
-                  My Phone
-                </p>
-              </div>
-              <p class="pt-2 text-left font-body font-bold text-primary lg:text-lg">
-                <a href="https://wa.me/+32485403370"> (+32) 485 40 33 70 </a>
-              </p>
-            </div>
-            <div
-              class="w-full border-b-2 border-l-2 border-r-2 border-t-0 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3 lg:border-l-0 lg:border-t-2">
-              <div class="flex items-center">
-                <i class="bx bx-envelope text-2xl text-grey-40"></i>
-                <p class="pl-2 font-body font-bold uppercase text-grey-40 lg:text-lg">
-                  My Email
-                </p>
-              </div>
-              <p class="pt-2 text-left font-body font-bold text-primary lg:text-lg">
-                <a href="mailto:christophe.vdijck@gmail.com?SUBJECT=I want to connect">
-                  christophe.vdijck@gmail.com
-                </a>
-              </p>
-            </div>
-            <div
-              class="w-full border-b-2 border-l-2 border-r-2 border-t-0 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3 lg:border-l-0 lg:border-t-2">
-              <div class="flex items-center">
-                <i class="bx bx-map text-2xl text-grey-40"></i>
-                <p class="pl-2 font-body font-bold uppercase text-grey-40 lg:text-lg">
-                  My Location
-                </p>
-              </div>
-              <p class="pt-2 text-left font-body font-bold text-primary lg:text-lg">
-                <a href="https://goo.gl/maps/vEcPzfZWoT6kvUv16">
-                  9000 Gent
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- ends main content -->
-
-      <!-- Footer -->
-      <div class="bg-primary">
-        <div class="container flex flex-col justify-between py-6 sm:flex-row">
-          <p class="text-center font-body text-sm text-white md:text-left">
-            © Copyright 2023. <br class="md:hidden" />
-            All right reserved, Christophe Van Dijck.
-            <br />
-            <a href="https://storyset.com/idea">Illustrations by Storyset</a>,
-            Webdesign by ATOM.
-          </p>
-          <div class="flex items-center justify-center pt-5 sm:justify-start sm:pt-0">
-            <a href="mailto:christophe.vdijck@gmail.com?SUBJECT=I want to connect">
-              <i class="bx bxs-envelope text-2xl text-white hover:text-yellow"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/cvandijck/" class="pl-4">
-              <i class="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i>
-            </a>
-            <a href="https://github.com/cvandijck" class="pl-4">
-              <i class="bx bxl-github text-2xl text-white hover:text-yellow"></i>
-            </a>
-            <a href="https://wa.me/+32485403370" class="pl-4">
-              <i class="bx bxl-whatsapp text-2xl text-white hover:text-yellow"></i>
-            </a>
-          </div>
-        </div>
+  <!-- Hero Section with Visual Box for Price and Main Attractions -->
+  <header class="hero-section">
+    <div class="overlay">
+      <div class="info-box">
+        <h1>Prachtig Huis Te Koop</h1>
+        <p class="price">Prijs: €500.000</p>
+        <p class="attractions">4 Slaapkamers • 3 Badkamers • 2500 m² • Grote tuin</p>
+        <a href="mailto:agent@example.com?subject=Verzoek voor huisbezoek" class="cta-button">Plan een Bezoek</a>
       </div>
     </div>
-  </div>
-  <script src="/assets/js/main.js"></script>
+  </header>
+
+  <!-- General Impression Section -->
+  <section class="impression-section">
+    <h2>Algemene Indruk</h2>
+    <p>Dit prachtige huis biedt een warme en gastvrije sfeer. Het is perfect voor gezinnen die op zoek zijn naar comfort
+      en elegantie, met ruime kamers en moderne afwerkingen.</p>
+    <div class="photo-grid">
+      <img src="general1.jpg" alt="Algemene indruk foto 1">
+      <img src="general2.jpg" alt="Algemene indruk foto 2">
+    </div>
+  </section>
+
+  <!-- Practical Interior Structure Section -->
+  <section class="interior-section">
+    <h2>Praktische Indeling Binnen</h2>
+    <p>De indeling van het huis is zeer functioneel met een grote woonkamer, moderne keuken en voldoende opbergruimte.
+      Alle kamers zijn zorgvuldig ontworpen met oog voor detail.</p>
+    <div class="photo-grid">
+      <img src="interior1.jpg" alt="Binnenstructuur foto 1">
+      <img src="interior2.jpg" alt="Binnenstructuur foto 2">
+    </div>
+  </section>
+
+  <!-- Outside Space Section -->
+  <section class="outside-section">
+    <h2>Buitenruimte</h2>
+    <p>De grote tuin en het terras zijn ideaal voor ontspanning en het ontvangen van gasten. De buitenruimte biedt zowel
+      privacy als een prachtig uitzicht op de omgeving.</p>
+    <div class="photo-grid">
+      <img src="outside1.jpg" alt="Buitenruimte foto 1">
+      <img src="outside2.jpg" alt="Buitenruimte foto 2">
+    </div>
+  </section>
+
+  <!-- Specifications Table Section -->
+  <section class="specifications-section">
+    <h2>Huis Specificaties</h2>
+    <table>
+      <tr>
+        <th>Type Woning</th>
+        <td>Vrijstaand Huis</td>
+      </tr>
+      <tr>
+        <th>Locatie</th>
+        <td>1234 Eikenlaan, Stad, Nederland</td>
+      </tr>
+      <tr>
+        <th>Prijs</th>
+        <td>€500.000</td>
+      </tr>
+      <tr>
+        <th>Slaapkamers</th>
+        <td>4</td>
+      </tr>
+      <tr>
+        <th>Badkamers</th>
+        <td>3</td>
+      </tr>
+      <tr>
+        <th>Woonoppervlakte</th>
+        <td>2500 m²</td>
+      </tr>
+      <tr>
+        <th>Perceelgrootte</th>
+        <td>10.000 m²</td>
+      </tr>
+      <tr>
+        <th>Bouwjaar</th>
+        <td>2015</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- Map and Location Section -->
+  <section class="map-section">
+    <h2>Geweldige Locatie</h2>
+    <p>Dit huis is ideaal gelegen, met gemakkelijke toegang tot alle belangrijke voorzieningen. De dichtstbijzijnde
+      trein- en busstations zijn slechts een paar minuten verwijderd, samen met winkelcentra, scholen en parken.</p>
+
+    <!-- Embedded Map -->
+    <div id="map"></div>
+
+    <p>Highlights van de locatie:</p>
+    <ul>
+      <li>5 minuten lopen naar het treinstation</li>
+      <li>10 minuten rijden naar het stadscentrum</li>
+      <li>Nabijgelegen scholen en winkelcentra</li>
+    </ul>
+  </section>
+
+  <!-- Downloads Section -->
+  <section class="downloads-section">
+    <h2>Download Lijst Documenten</h2>
+    <ul>
+      <li><a href="floor-plan.pdf" download>Plattegrond</a></li>
+      <li><a href="inspection-report.pdf" download>Inspectierapport</a></li>
+      <li><a href="property-brochure.pdf" download>Brochure van de Woning</a></li>
+    </ul>
+  </section>
+
+  <!-- Footer Section with Call to Action -->
+  <footer>
+    <a href="mailto:agent@example.com?subject=Verzoek voor huisbezoek" class="cta-button">Plan een Bezoek</a>
+    <p>&copy; 2024 Prachtig Huis Te Koop. Alle rechten voorbehouden.</p>
+  </footer>
+
+  <!-- JavaScript to Initialize Map (Google Maps or any other service) -->
+  <script>
+    function initMap() {
+      var houseLocation = { lat: 52.3676, lng: 4.9041 }; // Example coordinates for Amsterdam
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        center: houseLocation
+      });
+
+      // Marker for the house location
+      var houseMarker = new google.maps.Marker({
+        position: houseLocation,
+        map: map,
+        title: 'Huis Locatie'
+      });
+
+      // Add more landmarks, e.g., train station
+      var stationMarker = new google.maps.Marker({
+        position: { lat: 52.3791, lng: 4.8994 }, // Example for train station
+        map: map,
+        title: 'Treinstation'
+      });
+    }
+  </script>
 </body>
 
 </html>
