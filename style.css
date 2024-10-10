@@ -33,38 +33,50 @@ a {
 .overlay {
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
 }
 
-.info-box {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
+/* Label (Stamped Look) Styling */
+.label {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Slight transparency */
+    padding: 30px 50px;
+    border: 4px solid #f04e31;
+    /* Red border for emphasis */
     border-radius: 10px;
     text-align: center;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    /* Depth with shadow */
+    transform: rotate(-5deg);
+    /* Slight rotation for dynamic effect */
+    max-width: 400px;
+    z-index: 10;
 }
 
-.info-box h1 {
+.label h1 {
     font-size: 2.5em;
+    color: #333;
     margin-bottom: 10px;
 }
 
-.info-box .price,
-.info-box .attractions {
+.label .price,
+.label .attractions {
     font-size: 1.2em;
     margin-bottom: 10px;
+    color: #333;
 }
 
 .cta-button {
+    display: inline-block;
     background-color: #f04e31;
     color: white;
-    padding: 15px 30px;
-    border: none;
+    padding: 10px 20px;
     border-radius: 5px;
-    font-size: 1.2em;
-    cursor: pointer;
+    font-size: 1em;
     transition: background-color 0.3s ease;
 }
 
