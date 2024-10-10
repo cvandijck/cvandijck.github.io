@@ -6,8 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prachtig Huis Te Koop</title>
   <link rel="stylesheet" href="style.css">
-  <!-- You can use a map embedding service like Google Maps for the map insert -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" defer></script>
 </head>
 
 <body>
@@ -57,6 +55,24 @@
       <img src="outside2.jpg" alt="Buitenruimte foto 2">
     </div>
   </section>
+  <!-- Map and Location Section -->
+  <section class="map-section">
+    <h2>Geweldige Locatie</h2>
+    <p>Dit huis is ideaal gelegen, met gemakkelijke toegang tot alle belangrijke voorzieningen. De dichtstbijzijnde
+      trein- en busstations zijn slechts een paar minuten verwijderd, samen met winkelcentra, scholen en parken.</p>
+    <ul>
+      <li><b>5 minuten lopen naar het treinstation</b></li>
+      <li><b>10 minuten rijden naar het stadscentrum</b></li>
+      <li><b>Nabijgelegen scholen en winkelcentra</b></li>
+    </ul>
+    <!-- Embedded Map -->
+    <!-- <div id="map"></div> -->
+    <div style="width: 100%">
+      <iframe width="80%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Vlierstraat%2026,%209000%20Gent+(Vlierstraat%2026)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+      </iframe>
+    </div>
+  </section>
 
   <!-- Specifications Table Section -->
   <section class="specifications-section">
@@ -97,23 +113,6 @@
     </table>
   </section>
 
-  <!-- Map and Location Section -->
-  <section class="map-section">
-    <h2>Geweldige Locatie</h2>
-    <p>Dit huis is ideaal gelegen, met gemakkelijke toegang tot alle belangrijke voorzieningen. De dichtstbijzijnde
-      trein- en busstations zijn slechts een paar minuten verwijderd, samen met winkelcentra, scholen en parken.</p>
-
-    <!-- Embedded Map -->
-    <div id="map"></div>
-
-    <p>Highlights van de locatie:</p>
-    <ul>
-      <li>5 minuten lopen naar het treinstation</li>
-      <li>10 minuten rijden naar het stadscentrum</li>
-      <li>Nabijgelegen scholen en winkelcentra</li>
-    </ul>
-  </section>
-
   <!-- Downloads Section -->
   <section class="downloads-section">
     <h2>Download Lijst Documenten</h2>
@@ -130,30 +129,6 @@
     <p>&copy; 2024 Prachtig Huis Te Koop. Alle rechten voorbehouden.</p>
   </footer>
 
-  <!-- JavaScript to Initialize Map (Google Maps or any other service) -->
-  <script>
-    function initMap() {
-      var houseLocation = { lat: 52.3676, lng: 4.9041 }; // Example coordinates for Amsterdam
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 12,
-        center: houseLocation
-      });
-
-      // Marker for the house location
-      var houseMarker = new google.maps.Marker({
-        position: houseLocation,
-        map: map,
-        title: 'Huis Locatie'
-      });
-
-      // Add more landmarks, e.g., train station
-      var stationMarker = new google.maps.Marker({
-        position: { lat: 52.3791, lng: 4.8994 }, // Example for train station
-        map: map,
-        title: 'Treinstation'
-      });
-    }
-  </script>
 </body>
 
 </html>
