@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Te koop: Prachtig Familiehuis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Add smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Enable scroll snap */
+        body {
+            scroll-snap-type: y mandatory;
+        }
+
+        section {
+            scroll-snap-align: start;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Hero Landing Page -->
+    <section class="relative bg-cover bg-center h-screen"
+        style="background-image: url('https://example.com/house-image.jpg')">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative flex justify-center items-center h-full text-white">
+            <div class="text-center">
+                <h1 class="text-5xl font-bold mb-6">Te koop: Prachtig familiehuis in Amsterdam</h1>
+                <p class="text-xl mb-4">Prijs: €750.000</p>
+                <p class="text-xl mb-6">Oppervlakte: 180 m² | Aantal Kamers: 5</p>
+                <a href="#contact" class="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-700 transition">Plan
+                    een bezichtiging</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section: Living Room -->
+    <section class="py-16 bg-gray-100 h-screen flex items-center">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <img src="https://example.com/living-room.jpg" alt="Woonkamer" class="rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-1/2 md:pl-10">
+                    <h2 class="text-3xl font-bold mb-4">Woonkamer</h2>
+                    <p class="text-lg mb-6">Een ruime, lichte woonkamer met veel natuurlijke lichtinval. Perfect voor
+                        gezellige avonden met het gezin.</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://example.com/living-room-detail1.jpg" alt="Detail 1" class="rounded-lg shadow">
+                        <img src="https://example.com/living-room-detail2.jpg" alt="Detail 2" class="rounded-lg shadow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section: Kitchen -->
+    <section class="py-16 bg-gray-100 h-screen flex items-center">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row-reverse items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <img src="https://example.com/kitchen.jpg" alt="Keuken" class="rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-1/2 md:pr-10">
+                    <h2 class="text-3xl font-bold mb-4">Keuken</h2>
+                    <p class="text-lg mb-6">Moderne, volledig uitgeruste keuken met hoogwaardige apparaten en veel
+                        kastruimte.</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://example.com/kitchen-detail1.jpg" alt="Detail 1" class="rounded-lg shadow">
+                        <img src="https://example.com/kitchen-detail2.jpg" alt="Detail 2" class="rounded-lg shadow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section: Garden -->
+    <section class="py-16 bg-gray-100 h-screen flex items-center">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <img src="https://example.com/garden.jpg" alt="Tuin" class="rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-1/2 md:pl-10">
+                    <h2 class="text-3xl font-bold mb-4">Tuin</h2>
+                    <p class="text-lg mb-6">Grote tuin met voldoende ruimte voor buitenactiviteiten, omgeven door groen
+                        voor privacy en ontspanning.</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://example.com/garden-detail1.jpg" alt="Detail 1" class="rounded-lg shadow">
+                        <img src="https://example.com/garden-detail2.jpg" alt="Detail 2" class="rounded-lg shadow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specifications Section -->
+    <section class="py-16 bg-white h-screen flex items-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-6">Belangrijke specificaties van het huis</h2>
+            <table class="w-full text-left table-auto border-collapse">
+                <thead>
+                    <tr>
+                        <th class="border-b-2 py-4">Specificatie</th>
+                        <th class="border-b-2 py-4">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="py-4 border-b">Prijs</td>
+                        <td class="py-4 border-b">€750.000</td>
+                    </tr>
+                    <tr>
+                        <td class="py-4 border-b">Locatie</td>
+                        <td class="py-4 border-b">Prinsengracht 123, Amsterdam</td>
+                    </tr>
+                    <tr>
+                        <td class="py-4 border-b">Oppervlakte</td>
+                        <td class="py-4 border-b">180 m²</td>
+                    </tr>
+                    <tr>
+                        <td class="py-4 border-b">Aantal kamers</td>
+                        <td class="py-4 border-b">5</td>
+                    </tr>
+                    <tr>
+                        <td class="py-4 border-b">Jaar van bouw</td>
+                        <td class="py-4 border-b">2010</td>
+                    </tr>
+                    <tr>
+                        <td class="py-4 border-b">Aantal verdiepingen</td>
+                        <td class="py-4 border-b">3</td>
+                    </tr>
+                    <tr>
+                        <td class="py-4 border-b">Tuinoppervlakte</td>
+                        <td class="py-4 border-b">100 m²</td>
+                    </tr>
+                    <tr>
+                        <td class="py-4 border-b">Energieklasse</td>
+                        <td class="py-4 border-b">A</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="mt-8">
+                <a href="#" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-700 transition">Download
+                    Plattegrond (PDF)</a>
+                <a href="#"
+                    class="px-4 py-2 bg-green-500 text-white rounded-lg ml-4 hover:bg-green-700 transition">Download
+                    Eigendomspapieren (PDF)</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-gray-800 text-white text-center">
+        <p>Neem contact op met ons via: <span class="font-bold">06-12345678</span> | Email: <span
+                class="font-bold">makelaar@example.com</span></p>
+        <p class="mt-4">&copy; 2024 Makelaardij Amsterdam</p>
+    </footer>
+
+</body>
+
+</html>
