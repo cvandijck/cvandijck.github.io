@@ -69,19 +69,25 @@
                     <img src="images/image_23.png" alt="Tuin 1" class="h-full w-auto rounded-lg shadow-lg hero-image">
                 </div>
                 <div class="md:w-1/2 md:pl-10 mx-8 p-8">
-                    <h2 class="text-3xl font-bold mb-4">Stadstuin</h2>
-                    <p class="text-lg mb-6">Een ruime, zonovergoten stadstuin. Elke zomer geniet je van appels en
-                        peren van eigen kweek!</p>
+                    <h2 class="text-3xl font-bold mb-4">Aangelegde stadstuin</h2>
+                    <p class="text-lg mb-6">Een zonovergoten stadstuin met ruim tuinhuis voor opslag van tuin- en
+                        klusmateriaal. Geniet ook elke zomer van appels en peren van eigen kweek!</p>
+                    <p class="text-lg mb-12"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis
+                        reprehenderit inventore ut
+                        obcaecati minima amet sed, praesentium dolore odit, temporibus quaerat et illo natus! In ullam
+                        est a non aspernatur?</p>
 
                     <!-- Carousel for additional images -->
-                    <div class="relative">
+                    <div class="relative h-80">
                         <div class="carousel flex overflow-hidden">
-                            <div class="carousel-item w-full flex-shrink-0">
-                                <img src="images/image_20.png" alt="Detail 1" class="rounded-lg shadow cursor-pointer"
+                            <div class="carousel_tuin carousel-item w-full flex-shrink-0">
+                                <img src="images/image_20.png" alt="Detail 1"
+                                    class="h-80 mx-auto rounded-lg shadow cursor-pointer"
                                     onclick="openLightbox('images/image_20.png')">
                             </div>
-                            <div class="carousel-item w-full flex-shrink-0">
-                                <img src="images/image_21.png" alt="Detail 2" class="rounded-lg shadow cursor-pointer"
+                            <div class="carousel_tuin carousel-item w-full flex-shrink-0">
+                                <img src="images/image_21.png" alt="Detail 2"
+                                    class="h-80 mx-auto rounded-lg shadow cursor-pointer"
                                     onclick="openLightbox('images/image_21.png')">
                             </div>
                         </div>
@@ -89,10 +95,10 @@
                         <!-- Arrows for navigation -->
                         <button
                             class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-2 py-1 rounded"
-                            onclick="prevSlide()">&#9665;</button>
+                            onclick="prevSlide('carousel_tuin')">&#9665;</button>
                         <button
                             class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-2 py-1 rounded"
-                            onclick="nextSlide()">&#9655;</button>
+                            onclick="nextSlide('carousel_tuin')">&#9655;</button>
                     </div>
                 </div>
             </div>
@@ -103,9 +109,9 @@
     <!-- Kitchen, Garden, and Specifications as before -->
 
     <!-- Features Section: Location -->
-    <section class="py-8 bg-stone-50 h-screen flex items-center section-feature">
+    <section class="bg-stone-50 h-screen flex items-center section-feature">
         <div class="container mx-auto px-4 h-full">
-            <div class="flex flex-col md:flex-row items-center h-full">
+            <div class="flex flex-col md:flex-row-reverse items-center h-full">
                 <div class="flex md:w-1/2 items-center justify-center h-full">
                     <iframe width="90%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
                         src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=Vlierstraat%2026,%209000%20Gent+(Vlierstraat%2026)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
@@ -128,52 +134,76 @@
     </section>
 
     <!-- Specifications Section -->
-    <section class="py-16 bg-white h-screen flex items-center section-feature">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-6">Belangrijke specificaties van het huis</h2>
+    <section class="bg-white items-center section-feature ">
+        <div class="container mx-auto px-4 w-4/5 ">
+            <h2 class="text-3xl font-bold mb-6 pt-6">Overige gegevens</h2>
             <table class="w-full text-left table-auto border-collapse">
-                <thead>
-                    <tr>
-                        <th class="border-b-2 py-4">Specificatie</th>
-                        <th class="border-b-2 py-4">Detail</th>
-                    </tr>
-                </thead>
                 <tbody>
+                    <th class="py-4">ALGEMEEN</th>
                     <tr>
-                        <td class="py-4 border-b">Prijs</td>
-                        <td class="py-4 border-b">€750.000</td>
+                        <td class="py-2 border-b">Prijs</td>
+                        <td class="py-2 border-b">€465.000</td>
                     </tr>
                     <tr>
-                        <td class="py-4 border-b">Locatie</td>
-                        <td class="py-4 border-b">Prinsengracht 123, Amsterdam</td>
+                        <td class="py-2 border-b">Locatie</td>
+                        <td class="py-2 border-b">Vlierstraat 26, 9000 Gent</td>
                     </tr>
                     <tr>
-                        <td class="py-4 border-b">Oppervlakte</td>
-                        <td class="py-4 border-b">180 m²</td>
+                        <td class="py-2 border-b">Bewoonbaar oppervlakte</td>
+                        <td class="py-2 border-b">117 m²</td>
                     </tr>
                     <tr>
-                        <td class="py-4 border-b">Aantal kamers</td>
-                        <td class="py-4 border-b">5</td>
+                        <td class="py-2 border-b">Grond oppervlakte</td>
+                        <td class="py-2 border-b">115 m²</td>
                     </tr>
                     <tr>
-                        <td class="py-4 border-b">Jaar van bouw</td>
-                        <td class="py-4 border-b">2010</td>
+                        <td class="py-2 border-b">Volledige renovatie</td>
+                        <td class="py-2 border-b">2016</td>
                     </tr>
                     <tr>
-                        <td class="py-4 border-b">Aantal verdiepingen</td>
-                        <td class="py-4 border-b">3</td>
+                        <td class="py-2 border-b">Staat</td>
+                        <td class="py-2 border-b">Goed</td>
+                    </tr>
+                    <th class="py-4">INTERIEUR</th>
+                    <tr>
+                        <td class="py-2 border-b">Aantal slaapkamers</td>
+                        <td class="py-2 border-b">3</td>
                     </tr>
                     <tr>
-                        <td class="py-4 border-b">Tuinoppervlakte</td>
-                        <td class="py-4 border-b">100 m²</td>
+                        <td class="py-2 border-b">Aantal badkamers</td>
+                        <td class="py-2 border-b">1</td>
                     </tr>
                     <tr>
-                        <td class="py-4 border-b">Energieklasse</td>
-                        <td class="py-4 border-b">A</td>
+                        <td class="py-2 border-b">Aantal verdiepingen</td>
+                        <td class="py-2 border-b">2</td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 border-b">Oppervlakte leefgedeelten</td>
+                        <td class="py-2 border-b">
+                            Woonkamer: XX m²<br>
+                            Keuken: XX m²
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 border-b">Oppervlakte slaapkamers</td>
+                        <td class="py-2 border-b">
+                            Slaapkamer 1: XX m²<br>
+                            Slaapkamer 2: XX m²<br>
+                            Slaapkamer 3: XX m²
+                        </td>
+                    </tr>
+                    <th class="py-4">ENERGIE & FINANCIEEL</th>
+                    <tr>
+                        <td class="py-2 border-b">Energieklasse</td>
+                        <td class="py-2 border-b">C (226)</td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 border-b">Kadastraal inkomen</td>
+                        <td class="py-2 border-b">€597</td>
                     </tr>
                 </tbody>
             </table>
-            <div class="mt-8">
+            <div class="py-8">
                 <a href="#" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-700 transition">Download
                     Plattegrond (PDF)</a>
                 <a href="#"
@@ -198,20 +228,27 @@
 
     <!-- JavaScript for Carousel and Lightbox -->
     <script>
-        let currentSlide = 0;
-
-        function nextSlide() {
-            const carouselItems = document.querySelectorAll('.carousel-item');
+        let currentSlides = {
+            "carousel_tuin": 0
+        };
+        function nextSlide(label) {
+            let currentSlide = currentSlides[label]
+            const currentCarouselClass = '.'.concat(label)
+            const carouselItems = document.querySelectorAll(currentCarouselClass);
             carouselItems[currentSlide].classList.add('hidden');
             currentSlide = (currentSlide + 1) % carouselItems.length;
             carouselItems[currentSlide].classList.remove('hidden');
+            currentSlides[label] = currentSlide
         }
 
-        function prevSlide() {
-            const carouselItems = document.querySelectorAll('.carousel-item');
+        function prevSlide(label) {
+            let currentSlide = currentSlides[label]
+            const currentCarouselClass = '.'.concat(label)
+            const carouselItems = document.querySelectorAll(currentCarouselClass);
             carouselItems[currentSlide].classList.add('hidden');
             currentSlide = (currentSlide - 1 + carouselItems.length) % carouselItems.length;
             carouselItems[currentSlide].classList.remove('hidden');
+            currentSlides[label] = currentSlide
         }
 
         function openLightbox(imageUrl) {
