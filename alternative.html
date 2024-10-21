@@ -22,6 +22,8 @@
             scroll-snap-align: start;
         }
 
+
+
         /* Lightbox styling */
         #lightbox {
             position: fixed;
@@ -46,54 +48,51 @@
 <body class="bg-gray-100 text-gray-800">
 
     <!-- Hero Landing Page -->
-    <section class="relative bg-cover bg-center h-screen"
-        style="background-image: url('https://example.com/house-image.jpg')">
+    <section class="relative bg-cover bg-center h-screen" style="background-image: url('images/image_22.png')">
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <div class="relative flex justify-center items-center h-full text-white">
             <div class="text-center">
-                <h1 class="text-5xl font-bold mb-6">Te koop: Prachtig familiehuis in Amsterdam</h1>
-                <p class="text-xl mb-4">Prijs: €750.000</p>
-                <p class="text-xl mb-6">Oppervlakte: 180 m² | Aantal Kamers: 5</p>
-                <a href="#contact" class="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-700 transition">Plan
-                    een bezichtiging</a>
+                <h1 class="text-5xl font-bold mb-6">TE KOOP <br> Prachtige gezinswoning in Gent</h1>
+                <p class="text-xl mb-4">Prijs: €465.000</p>
+                <p class="text-xl mb-12">3 slaapkamers | Zonnige stadstuin | Centrale locatie</p>
+                <a href="#contact" class="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-700 transition">
+                    Plan een bezichtiging</a>
             </div>
         </div>
     </section>
 
-    <!-- Features Section: Living Room -->
-    <section class="py-16 bg-gray-100 h-screen flex items-center">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-8 md:mb-0">
-                    <img src="https://example.com/living-room.jpg" alt="Woonkamer" class="rounded-lg shadow-lg">
+    <!-- Features Section: Tuin -->
+    <section class="py-8 bg-gray-100 h-screen flex items-center section-feature">
+        <div class="container mx-auto px-4 h-full">
+            <div class="flex flex-col md:flex-row items-center h-full">
+                <div class="flex md:w-1/2 items-center justify-center h-full">
+                    <img src="images/image_23.png" alt="Tuin 1" class="h-full w-auto rounded-lg shadow-lg hero-image">
                 </div>
-                <div class="md:w-1/2 md:pl-10">
-                    <h2 class="text-3xl font-bold mb-4">Woonkamer</h2>
-                    <p class="text-lg mb-6">Een ruime, lichte woonkamer met veel natuurlijke lichtinval. Perfect voor
-                        gezellige avonden met het gezin.</p>
+                <div class="md:w-1/2 md:pl-10 mx-8 p-8">
+                    <h2 class="text-3xl font-bold mb-4">Stadstuin</h2>
+                    <p class="text-lg mb-6">Een ruime, zonovergoten stadstuin. Elke zomer geniet je van appels en
+                        peren van eigen kweek!</p>
 
                     <!-- Carousel for additional images -->
                     <div class="relative">
                         <div class="carousel flex overflow-hidden">
                             <div class="carousel-item w-full flex-shrink-0">
-                                <img src="https://example.com/living-room-detail1.jpg" alt="Detail 1"
-                                    class="rounded-lg shadow cursor-pointer"
-                                    onclick="openLightbox('https://example.com/living-room-detail1.jpg')">
+                                <img src="images/image_20.png" alt="Detail 1" class="rounded-lg shadow cursor-pointer"
+                                    onclick="openLightbox('images/image_20.png')">
                             </div>
                             <div class="carousel-item w-full flex-shrink-0">
-                                <img src="https://example.com/living-room-detail2.jpg" alt="Detail 2"
-                                    class="rounded-lg shadow cursor-pointer"
-                                    onclick="openLightbox('https://example.com/living-room-detail2.jpg')">
+                                <img src="images/image_21.png" alt="Detail 2" class="rounded-lg shadow cursor-pointer"
+                                    onclick="openLightbox('images/image_21.png')">
                             </div>
                         </div>
 
                         <!-- Arrows for navigation -->
                         <button
                             class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-2 py-1 rounded"
-                            onclick="prevSlide()">&#9664;</button>
+                            onclick="prevSlide()">&#9665;</button>
                         <button
                             class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-2 py-1 rounded"
-                            onclick="nextSlide()">&#9654;</button>
+                            onclick="nextSlide()">&#9655;</button>
                     </div>
                 </div>
             </div>
@@ -104,7 +103,7 @@
     <!-- Kitchen, Garden, and Specifications as before -->
 
     <!-- Specifications Section -->
-    <section class="py-16 bg-white h-screen flex items-center">
+    <section class="py-16 bg-white h-screen flex items-center section-feature">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold mb-6">Belangrijke specificaties van het huis</h2>
             <table class="w-full text-left table-auto border-collapse">
@@ -198,6 +197,23 @@
         function closeLightbox() {
             document.getElementById('lightbox').style.display = 'none';
         }
+
+        // Detect when section comes into view for zoom effect
+        const sections = document.querySelectorAll('.section-feature');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                } else {
+                    entry.target.classList.remove('in-view');
+                }
+            });
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
     </script>
 </body>
 
