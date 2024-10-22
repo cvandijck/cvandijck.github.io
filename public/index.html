@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Te koop: Prachtig Familiehuis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="build/style.css" />
     <style>
       /* Add smooth scrolling */
@@ -49,10 +50,12 @@
       style="background-image: url(&quot;images/image_22.png&quot;)"
     >
       <div class="absolute inset-0 bg-black opacity-50"></div>
-      <div class="relative flex h-full items-center justify-center text-white">
+      <div
+        class="relative mx-4 flex h-full items-center justify-center text-white"
+      >
         <div class="text-center">
           <h1 class="mb-6 text-3xl font-bold md:text-5xl">TE KOOP</h1>
-          <h2 class="mb-6 text-4xl font-bold">
+          <h2 class="mb-6 text-2xl font-bold md:text-4xl">
             Prachtige gezinswoning in Gent
           </h2>
           <p class="mb-4 text-xl">Prijs: €465.000</p>
@@ -71,15 +74,17 @@
 
     <!-- Features Section: Tuin -->
     <section
-      class="section-feature flex h-screen items-center bg-stone-100 py-8"
+      class="section-feature flex items-center bg-stone-100 py-8 md:h-screen"
     >
       <div class="container mx-auto h-full px-4">
         <div class="flex h-full flex-col items-center md:flex-row">
-          <div class="flex h-full items-center justify-center md:w-1/2">
+          <div
+            class="flex h-96 w-auto items-center justify-center md:h-full md:w-auto"
+          >
             <img
               src="images/image_23.png"
               alt="Tuin 1"
-              class="hero-image h-full w-auto rounded-lg shadow-lg"
+              class="hero-image h-full rounded-lg shadow-lg md:h-auto"
             />
           </div>
           <div class="mx-8 p-8 md:w-1/2 md:pl-10">
@@ -140,10 +145,12 @@
     <!-- Kitchen, Garden, and Specifications as before -->
 
     <!-- Features Section: Location -->
-    <section class="section-feature flex h-screen items-center bg-stone-50">
+    <section
+      class="section-feature flex items-center bg-stone-50 py-8 md:h-screen"
+    >
       <div class="container mx-auto h-full px-4">
         <div class="flex h-full flex-col items-center md:flex-row-reverse">
-          <div class="flex h-full items-center justify-center md:w-1/2">
+          <div class="flex h-full w-4/5 items-center justify-center md:w-1/2">
             <iframe
               width="90%"
               height="400"
@@ -180,7 +187,7 @@
     <!-- Specifications Section -->
     <section class="section-feature items-center bg-white">
       <div class="container mx-auto w-4/5 px-4">
-        <h2 class="mb-6 pt-6 text-3xl font-bold">Overige gegevens</h2>
+        <h2 class="mb-6 pt-12 text-3xl font-bold">Overige gegevens</h2>
         <table class="w-full table-auto border-collapse text-left">
           <tbody>
             <th class="py-4">ALGEMEEN</th>
@@ -247,7 +254,9 @@
             </tr>
           </tbody>
         </table>
-        <div class="py-8">
+        <div
+          class="flex flex-col items-center justify-center space-y-4 py-8 md:flex-row md:space-x-4 md:space-y-0"
+        >
           <a
             href="#"
             class="rounded-lg bg-blue-500 px-4 py-2 text-white transition hover:bg-blue-700"
@@ -255,7 +264,7 @@
           >
           <a
             href="#"
-            class="ml-4 rounded-lg bg-green-500 px-4 py-2 text-white transition hover:bg-green-700"
+            class="rounded-lg bg-green-500 px-4 py-2 text-white transition hover:bg-green-700"
             >Download Eigendomspapieren (PDF)</a
           >
         </div>
