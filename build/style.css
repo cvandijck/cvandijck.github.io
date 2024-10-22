@@ -552,6 +552,10 @@ video {
 .top-4 {
   top: 1rem;
 }
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
 .mx-8 {
   margin-left: 2rem;
   margin-right: 2rem;
@@ -569,9 +573,6 @@ video {
 .mb-6 {
   margin-bottom: 1.5rem;
 }
-.ml-4 {
-  margin-left: 1rem;
-}
 .mt-4 {
   margin-top: 1rem;
 }
@@ -586,6 +587,9 @@ video {
 }
 .h-80 {
   height: 20rem;
+}
+.h-96 {
+  height: 24rem;
 }
 .h-full {
   height: 100%;
@@ -629,6 +633,11 @@ video {
 }
 .justify-center {
   justify-content: center;
+}
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 .overflow-hidden {
   overflow: hidden;
@@ -718,8 +727,8 @@ video {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
-.pt-6 {
-  padding-top: 1.5rem;
+.pt-12 {
+  padding-top: 3rem;
 }
 .text-left {
   text-align: left;
@@ -780,30 +789,58 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(21 128 61 / var(--tw-bg-opacity));
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
 
-  .md\:w-1\/2 {
+  .lg\:h-auto {
+    height: auto;
+  }
+
+  .lg\:h-full {
+    height: 100%;
+  }
+
+  .lg\:h-screen {
+    height: 100vh;
+  }
+
+  .lg\:w-1\/2 {
     width: 50%;
   }
 
-  .md\:flex-row {
+  .lg\:w-auto {
+    width: auto;
+  }
+
+  .lg\:flex-row {
     flex-direction: row;
   }
 
-  .md\:flex-row-reverse {
+  .lg\:flex-row-reverse {
     flex-direction: row-reverse;
   }
 
-  .md\:pl-10 {
+  .lg\:space-x-4 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(1rem * var(--tw-space-x-reverse));
+    margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  .lg\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0px * var(--tw-space-y-reverse));
+  }
+
+  .lg\:pl-10 {
     padding-left: 2.5rem;
   }
 
-  .md\:text-4xl {
+  .lg\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
   }
 
-  .md\:text-5xl {
+  .lg\:text-5xl {
     font-size: 3rem;
     line-height: 1;
   }
