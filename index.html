@@ -8,20 +8,6 @@
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <link rel="stylesheet" href="build/style.css" />
     <style>
-      /* Add smooth scrolling */
-      html {
-        scroll-behavior: smooth;
-      }
-
-      /* Enable scroll snap */
-      body {
-        scroll-snap-type: y mandatory;
-      }
-
-      section {
-        scroll-snap-align: start;
-      }
-
       /* Lightbox styling */
       #lightbox {
         position: fixed;
@@ -79,15 +65,15 @@
       <div class="container mx-auto h-full px-4">
         <div class="flex h-full flex-col items-center lg:flex-row">
           <div
-            class="flex h-96 w-auto items-center justify-center lg:h-full lg:w-auto"
+            class="mx-8 flex h-96 w-auto items-center justify-center object-scale-down p-8 lg:h-full lg:w-auto"
           >
             <img
               src="https://i.ibb.co/jbGc0GN/image-23.png"
-              alt="Tuin 1"
-              class="hero-image h-full rounded-lg shadow-lg lg:h-auto"
+              alt="Tuin"
+              class="hero-image max-h-full rounded-lg shadow-lg"
             />
           </div>
-          <div class="mx-8 p-8 lg:w-1/2 lg:pl-10">
+          <div class="mx-8 p-8 text-justify lg:w-1/2 lg:pl-10">
             <h2 class="mb-4 text-3xl font-bold">Aangelegde stadstuin</h2>
             <p class="mb-6 text-lg">
               Een zonovergoten stadstuin met ruim tuinhuis voor opslag van tuin-
@@ -102,22 +88,14 @@
             </p>
 
             <!-- Carousel for additional images -->
-            <div class="relative h-80">
-              <div class="carousel flex overflow-hidden">
+            <div class="relative">
+              <div class="carousel flex max-h-80 overflow-hidden">
                 <div class="carousel_tuin carousel-item w-full flex-shrink-0">
                   <img
                     src="https://i.ibb.co/1ZnWNs7/image-20.png"
-                    alt="Detail 1"
-                    class="mx-auto h-80 cursor-pointer rounded-lg shadow"
+                    alt="Tuin 1"
+                    class="mx-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
                     onclick="openLightbox('https://i.ibb.co/1ZnWNs7/image-20.png')"
-                  />
-                </div>
-                <div class="carousel_tuin carousel-item w-full flex-shrink-0">
-                  <img
-                    src="https://i.ibb.co/Mc0LBR2/image-21.png"
-                    alt="Detail 2"
-                    class="mx-auto h-80 cursor-pointer rounded-lg shadow"
-                    onclick="openLightbox('https://i.ibb.co/Mc0LBR2/image-21.png')"
                   />
                 </div>
               </div>
@@ -210,10 +188,6 @@
             <tr>
               <td class="border-b py-2">Volledige renovatie</td>
               <td class="border-b py-2">2016</td>
-            </tr>
-            <tr>
-              <td class="border-b py-2">Staat</td>
-              <td class="border-b py-2">Goed</td>
             </tr>
             <th class="py-4">INTERIEUR</th>
             <tr>
