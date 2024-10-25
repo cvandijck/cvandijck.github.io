@@ -1,4 +1,10 @@
 {
-    "colorize.languages": ["typescript", "javascript", "css", "scss"]
+    "colorize.languages": [
+        "typescript",
+        "javascript",
+        "css",
+        "scss"
+    ],
+    "taipyStudio.gUI.elementsFilePaths": []
 
 }
