@@ -20,7 +20,7 @@ class SectionContent:
 
 @dataclass
 class IndexContent:
-    garden: SectionContent
+    sections: list[SectionContent]
 
 
 def main():
@@ -34,15 +34,16 @@ def main():
         hero_image='https://i.ibb.co/jbGc0GN/image-23.png',
         detail_images=[
             'https://i.ibb.co/1ZnWNs7/image-20.png',
+            'https://i.ibb.co/Mc0LBR2/image-21.png',
         ],
     )
 
     content = IndexContent(
-        garden=garden_section,
+        sections=[garden_section],
     )
 
     template_loader = jinja2.FileSystemLoader(searchpath=TEMPLATES_DIR)
-    template_env = jinja2.Environment(loader=template_loader)
+    template_env = jinja2.Environment(loader=template_loader, autoescape=True)
     template = template_env.get_template(INDEX_TEMPLATE_FILENAME)
     index_output = template.render(content=content)  # this is where to put args to the template renderer
 
