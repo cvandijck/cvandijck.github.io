@@ -552,13 +552,13 @@ video {
 .top-4 {
   top: 1rem;
 }
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
-}
-.mx-8 {
-  margin-left: 2rem;
-  margin-right: 2rem;
 }
 .mx-auto {
   margin-left: auto;
@@ -584,6 +584,9 @@ video {
 }
 .hidden {
   display: none;
+}
+.h-80 {
+  height: 20rem;
 }
 .h-96 {
   height: 24rem;
@@ -797,6 +800,19 @@ video {
   background-color: rgb(21 128 61 / var(--tw-bg-opacity));
 }
 @media (min-width: 1024px) {
+
+  .lg\:mx-8 {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .lg\:flex {
+    display: flex;
+  }
+
+  .lg\:hidden {
+    display: none;
+  }
 
   .lg\:h-full {
     height: 100%;

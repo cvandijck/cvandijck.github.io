@@ -63,10 +63,10 @@
       <section
         class="section-feature flex items-center bg-stone-100 py-8 lg:h-screen"
       >
-        <div class="container mx-auto h-full px-4">
+        <div class="container mx-auto h-full">
           <div class="flex h-full flex-col items-center lg:flex-row">
             <div
-              class="mx-8 flex h-96 w-auto items-center justify-center object-scale-down p-8 lg:h-full lg:w-auto"
+              class="mx-2 lg:mx-8 flex h-96 w-auto items-center justify-center object-scale-down p-8 lg:h-full lg:w-auto"
             >
               <img
                 src="{{ section.hero_image }}"
@@ -74,7 +74,7 @@
                 class="hero-image max-h-full rounded-lg shadow-lg"
               />
             </div>
-            <div class="mx-8 p-8 text-justify lg:w-1/2 lg:pl-10">
+            <div class="mx-2 lg:mx-8 p-8 text-justify lg:w-1/2 lg:pl-10">
               <h2 class="mb-4 text-3xl font-bold">{{ section.title }}</h2>
               {% for sectioncontent in section.content %}
                 {% if loop.last %}
@@ -85,10 +85,10 @@
               {% endfor %}
               <!-- Carousel for additional images -->
               <div class="relative">
-                <div class="carousel flex max-h-80 overflow-hidden">
+                <div class="carousel flex max-h-80 overflow-hidden" id="carousel-{{ section.id }}">
                   {% for detail_image in section.detail_images %}
                     <div
-                      class="{{ section.id }} carousel-item w-full flex-shrink-0"
+                      class="carousel-image-{{ section.id }} carousel-item w-full flex-shrink-0"
                     >
                       <img
                         src="{{ detail_image }}"
@@ -103,13 +103,13 @@
                 <!-- Arrows for navigation -->
                 <button
                   class="absolute left-0 top-1/2 -translate-y-1/2 transform rounded bg-black bg-opacity-50 px-2 py-1 text-white"
-                  onclick="prevSlide('{{ section.id }}')"
+                  onclick="prevSlide('carousel-image-{{ section.id }}')"
                 >
                   &#9665;
                 </button>
                 <button
                   class="absolute right-0 top-1/2 -translate-y-1/2 transform rounded bg-black bg-opacity-50 px-2 py-1 text-white"
-                  onclick="nextSlide('{{ section.id }}')"
+                  onclick="nextSlide('carousel-image-{{ section.id }}')"
                 >
                   &#9655;
                 </button>
@@ -127,12 +127,29 @@
     <section
       class="section-feature flex items-center bg-stone-50 py-8 lg:h-screen"
     >
-      <div class="container mx-auto h-full px-4">
+      <div class="container mx-auto h-full">
         <div class="flex h-full flex-col items-center lg:flex-row-reverse">
-          <div class="flex h-full w-4/5 items-center justify-center lg:w-1/2">
+          <!-- map on small screens (zoomed out) -->
+          <div
+            class="flex h-80 w-4/5 items-center justify-center py-4 lg:hidden lg:h-full lg:w-1/2"
+          >
             <iframe
               width="90%"
-              height="400"
+              height="90%"
+              frameborder="0"
+              scrolling="no"
+              marginheight="0"
+              marginwidth="0"
+              src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=Vlierstraat%2026,%209000%20Gent+(Vlierstraat%2026)&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+            >
+            </iframe>
+          </div>
+          <div
+            class="hidden h-80 w-4/5 items-center justify-center py-4 lg:flex lg:h-full lg:w-1/2"
+          >
+            <iframe
+              width="90%"
+              height="90%"
               frameborder="0"
               scrolling="no"
               marginheight="0"
@@ -141,7 +158,7 @@
             >
             </iframe>
           </div>
-          <div class="mx-8 p-8 lg:w-1/2 lg:pl-10">
+          <div class="mx-2 p-8 text-justify lg:mx-8 lg:w-1/2 lg:pl-10">
             <h2 class="mb-4 text-3xl font-bold">Centrale locatie</h2>
             <p class="mb-6 text-lg">
               Deze woning is gelegen in de populaire stropbuurt. Op een
@@ -269,31 +286,69 @@
 
     <!-- JavaScript for Carousel and Lightbox -->
     <script>
-      let currentSlides = {
-        {% for section in content.sections %}
-            tuin: 0,
-        {% endfor %}
-      };
-      function nextSlide(id) {
-        let currentSlide = currentSlides[id];
-        const currentCarouselClass = ".".concat(id);
-        const carouselItems = document.querySelectorAll(currentCarouselClass);
-        carouselItems[currentSlide].classList.add("hidden");
-        currentSlide = (currentSlide + 1) % carouselItems.length;
-        carouselItems[currentSlide].classList.remove("hidden");
-        currentSlides[id] = currentSlide;
+      function addSwipeEvents(carouselContainerId, carouselImageClass) {
+        let startX = 0;
+        let endX = 0;
+
+        const carouselContainer = document.getElementById(carouselContainerId);
+
+        carouselContainer.addEventListener("touchstart", (e) => {
+          startX = e.touches[0].clientX;
+        });
+
+        carouselContainer.addEventListener("touchmove", (e) => {
+          endX = e.touches[0].clientX;
+        });
+
+        carouselContainer.addEventListener("touchend", () => {
+          const threshold = 50; // Minimum distance for a swipe
+          if (startX - endX > threshold) {
+            nextSlide(carouselImageClass); // Swipe left to go to the next slide
+          } else if (endX - startX > threshold) {
+            prevSlide(carouselImageClass); // Swipe right to go to the previous slide
+          }
+        });
       }
 
-      function prevSlide(id) {
-        let currentSlide = currentSlides[id];
-        const currentCarouselClass = ".".concat(id);
+      // Initialize swipe events for each carousel
+      {% for section in content.sections %}
+        addSwipeEvents("carousel-{{ section.id }}", "carousel-image-{{ section.id }}");
+      {% endfor %}
+
+      let currentSlides = {
+        {% for section in content.sections %}
+            carousel_image_{{ section.id }}: 0,
+        {% endfor %}
+      };
+
+      function nextSlide(imageClass) {
+        const currentCarouselClass = ".".concat(imageClass);
         const carouselItems = document.querySelectorAll(currentCarouselClass);
+        const slideKey = imageClass.replaceAll("-", "_");
+
+        let numItems = carouselItems.length;
+        let currentSlide = currentSlides[slideKey];
+        let newSlide = (currentSlide + 1) % numItems;
+
         carouselItems[currentSlide].classList.add("hidden");
-        currentSlide =
-          (currentSlide - 1 + carouselItems.length) % carouselItems.length;
-        carouselItems[currentSlide].classList.remove("hidden");
-        currentSlides[id] = currentSlide;
+        carouselItems[newSlide].classList.remove("hidden");
+        currentSlides[slideKey] = newSlide;
       }
+
+      function prevSlide(imageClass) {
+        const currentCarouselClass = ".".concat(imageClass);
+        const carouselItems = document.querySelectorAll(currentCarouselClass);
+        const slideKey = imageClass.replaceAll("-", "_");
+
+        let numItems = carouselItems.length;
+        let currentSlide = currentSlides[slideKey];
+        let newSlide = (currentSlide - 1 + numItems) % numItems;
+
+        carouselItems[currentSlide].classList.add("hidden");
+        carouselItems[newSlide].classList.remove("hidden");
+        currentSlides[slideKey] = newSlide;
+      }
+
 
       function openLightbox(imageUrl) {
         document.getElementById("lightbox-img").src = imageUrl;
