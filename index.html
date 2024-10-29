@@ -97,7 +97,7 @@
                 id="carousel-tuin"
               >
                 <div
-                  class="carousel-item carousel-image-tuin w-full flex-shrink-0"
+                  class="carousel-image-tuin carousel-item w-full flex-shrink-0"
                 >
                   <img
                     src="https://i.ibb.co/1ZnWNs7/image-20.png"
@@ -108,7 +108,7 @@
                 </div>
 
                 <div
-                  class="carousel-item carousel-image-tuin w-full flex-shrink-0"
+                  class="carousel-image-tuin carousel-item w-full flex-shrink-0"
                 >
                   <img
                     src="https://i.ibb.co/Mc0LBR2/image-21.png"
@@ -145,12 +145,29 @@
     <section
       class="section-feature flex items-center bg-stone-50 py-8 lg:h-screen"
     >
-      <div class="container mx-auto h-full px-4">
+      <div class="container mx-auto h-full">
         <div class="flex h-full flex-col items-center lg:flex-row-reverse">
-          <div class="flex h-full w-4/5 items-center justify-center lg:w-1/2">
+          <!-- map on small screens (zoomed out) -->
+          <div
+            class="flex h-80 w-4/5 items-center justify-center py-4 lg:hidden lg:h-full lg:w-1/2"
+          >
             <iframe
               width="90%"
-              height="400"
+              height="90%"
+              frameborder="0"
+              scrolling="no"
+              marginheight="0"
+              marginwidth="0"
+              src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=Vlierstraat%2026,%209000%20Gent+(Vlierstraat%2026)&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+            >
+            </iframe>
+          </div>
+          <div
+            class="hidden h-80 w-4/5 items-center justify-center py-4 lg:flex lg:h-full lg:w-1/2"
+          >
+            <iframe
+              width="90%"
+              height="90%"
               frameborder="0"
               scrolling="no"
               marginheight="0"
@@ -159,7 +176,7 @@
             >
             </iframe>
           </div>
-          <div class="mx-8 p-8 lg:w-1/2 lg:pl-10">
+          <div class="mx-2 p-8 text-justify lg:mx-8 lg:w-1/2 lg:pl-10">
             <h2 class="mb-4 text-3xl font-bold">Centrale locatie</h2>
             <p class="mb-6 text-lg">
               Deze woning is gelegen in de populaire stropbuurt. Op een
@@ -312,6 +329,7 @@
       }
 
       // Initialize swipe events for each carousel
+
       addSwipeEvents("carousel-tuin", "carousel-image-tuin");
 
       let currentSlides = {
