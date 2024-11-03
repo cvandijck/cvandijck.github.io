@@ -24,9 +24,24 @@ class IndexContent:
 
 
 def main():
+    room_section = SectionContent(
+        id='kamers',
+        title='Uiterst functionele ruimtes',
+        content=[
+            'drie volwaardige kamers, aparte ruime wasplaats. Overal kabel en ethernet aansluiting',
+            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis reprehenderit inventore ut obcaecati minima amet sed, praesentium dolore odit, temporibus quaerat et illo natus! In ullam est a non aspernatur?',
+        ],
+        hero_image='https://i.ibb.co/W2Sbf84/PXL-20241102-153658351.jpg',
+        detail_images=[
+            'https://i.ibb.co/W2Sbf84/PXL-20241102-153658351.jpg',
+            'https://i.ibb.co/9Y3X0BF/PXL-20241102-153755720.jpg',
+            'https://i.ibb.co/hgBWFNR/PXL-20241102-152808454-MP.jpg',
+            'https://i.ibb.co/KXw6fck/PXL-20241102-144944796-MP.jpg',
+        ],
+    )
     garden_section = SectionContent(
         id='tuin',
-        title='Aangelegde stadstuin',
+        title='Zonovergoten stadstuin',
         content=[
             'Een zonovergoten stadstuin met ruim tuinhuis voor opslag van tuin- en klusmateriaal. Geniet ook elke zomer van appels en peren van eigen kweek!',
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis reprehenderit inventore ut obcaecati minima amet sed, praesentium dolore odit, temporibus quaerat et illo natus! In ullam est a non aspernatur?',
@@ -39,7 +54,7 @@ def main():
     )
 
     content = IndexContent(
-        sections=[garden_section],
+        sections=[room_section, garden_section],
     )
 
     template_loader = jinja2.FileSystemLoader(searchpath=TEMPLATES_DIR)

@@ -44,7 +44,7 @@
           <h2 class="mb-6 text-2xl font-bold lg:text-4xl">
             Prachtige gezinswoning in Gent
           </h2>
-          <p class="mb-4 text-xl">Prijs: €465.000</p>
+          <p class="mb-4 text-xl">Prijs: €456.000</p>
           <p class="mb-12 text-xl">
             3 slaapkamers | Zonnige stadstuin | Centrale locatie
           </p>
@@ -61,21 +61,128 @@
     <!-- Features Sections -->
 
     <section
+      class="section-feature flex items-center bg-stone-50 py-8 lg:h-screen"
+    >
+      <div class="container mx-auto h-full">
+        <div class="flex h-full flex-col lg:flex-row">
+          <div
+            class="mx-2 flex items-center justify-center object-scale-down p-8 lg:mx-8 lg:h-full lg:w-1/2"
+          >
+            <img
+              src="https://i.ibb.co/W2Sbf84/PXL-20241102-153658351.jpg"
+              alt="kamers"
+              class="hero-image h-4/5 max-h-full max-w-full rounded-lg shadow-lg"
+            />
+          </div>
+
+          <!-- section text  -->
+          <div class="mx-2 p-8 text-justify lg:mx-8 lg:w-1/2">
+            <h2 class="mb-4 text-left text-3xl font-bold">
+              Uiterst functionele ruimtes
+            </h2>
+
+            <p class="mb-6 text-lg">
+              drie volwaardige kamers, aparte ruime wasplaats. Overal kabel en
+              ethernet aansluiting
+            </p>
+
+            <p class="mb-12 text-lg">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis
+              reprehenderit inventore ut obcaecati minima amet sed, praesentium
+              dolore odit, temporibus quaerat et illo natus! In ullam est a non
+              aspernatur?
+            </p>
+
+            <!-- Carousel for additional images -->
+            <div class="relative">
+              <div
+                class="carousel my-auto flex h-80 overflow-hidden"
+                id="carousel-kamers"
+              >
+                <div
+                  class="carousel-image-kamers carousel-item my-auto w-full flex-shrink-0"
+                >
+                  <img
+                    src="https://i.ibb.co/W2Sbf84/PXL-20241102-153658351.jpg"
+                    alt="Tuin 1"
+                    class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
+                    onclick="openLightbox('https://i.ibb.co/W2Sbf84/PXL-20241102-153658351.jpg')"
+                  />
+                </div>
+
+                <div
+                  class="carousel-image-kamers carousel-item my-auto w-full flex-shrink-0"
+                >
+                  <img
+                    src="https://i.ibb.co/9Y3X0BF/PXL-20241102-153755720.jpg"
+                    alt="Tuin 1"
+                    class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
+                    onclick="openLightbox('https://i.ibb.co/9Y3X0BF/PXL-20241102-153755720.jpg')"
+                  />
+                </div>
+
+                <div
+                  class="carousel-image-kamers carousel-item my-auto w-full flex-shrink-0"
+                >
+                  <img
+                    src="https://i.ibb.co/hgBWFNR/PXL-20241102-152808454-MP.jpg"
+                    alt="Tuin 1"
+                    class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
+                    onclick="openLightbox('https://i.ibb.co/hgBWFNR/PXL-20241102-152808454-MP.jpg')"
+                  />
+                </div>
+
+                <div
+                  class="carousel-image-kamers carousel-item my-auto w-full flex-shrink-0"
+                >
+                  <img
+                    src="https://i.ibb.co/KXw6fck/PXL-20241102-144944796-MP.jpg"
+                    alt="Tuin 1"
+                    class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
+                    onclick="openLightbox('https://i.ibb.co/KXw6fck/PXL-20241102-144944796-MP.jpg')"
+                  />
+                </div>
+              </div>
+
+              <!-- Arrows for navigation -->
+              <button
+                class="absolute left-0 top-1/2 -translate-y-1/2 transform rounded bg-black bg-opacity-50 px-2 py-1 text-white"
+                onclick="prevSlide('carousel-image-kamers')"
+              >
+                &#9665;
+              </button>
+              <button
+                class="absolute right-0 top-1/2 -translate-y-1/2 transform rounded bg-black bg-opacity-50 px-2 py-1 text-white"
+                onclick="nextSlide('carousel-image-kamers')"
+              >
+                &#9655;
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
       class="section-feature flex items-center bg-stone-100 py-8 lg:h-screen"
     >
       <div class="container mx-auto h-full">
-        <div class="flex h-full flex-col items-center lg:flex-row">
+        <div class="flex h-full flex-col lg:flex-row-reverse">
           <div
-            class="mx-2 flex h-96 w-auto items-center justify-center object-scale-down p-8 lg:mx-8 lg:h-full lg:w-auto"
+            class="mx-2 flex items-center justify-center object-scale-down p-8 lg:mx-8 lg:h-full lg:w-1/2"
           >
             <img
               src="https://i.ibb.co/jbGc0GN/image-23.png"
-              alt="Tuin"
-              class="hero-image max-h-full rounded-lg shadow-lg"
+              alt="tuin"
+              class="hero-image h-4/5 max-h-full max-w-full rounded-lg shadow-lg"
             />
           </div>
-          <div class="mx-2 p-8 text-justify lg:mx-8 lg:w-1/2 lg:pl-10">
-            <h2 class="mb-4 text-3xl font-bold">Aangelegde stadstuin</h2>
+
+          <!-- section text  -->
+          <div class="mx-2 p-8 text-justify lg:mx-8 lg:w-1/2">
+            <h2 class="mb-4 text-left text-3xl font-bold">
+              Zonovergoten stadstuin
+            </h2>
 
             <p class="mb-6 text-lg">
               Een zonovergoten stadstuin met ruim tuinhuis voor opslag van tuin-
@@ -93,27 +200,27 @@
             <!-- Carousel for additional images -->
             <div class="relative">
               <div
-                class="carousel flex max-h-80 overflow-hidden"
+                class="carousel my-auto flex h-80 overflow-hidden"
                 id="carousel-tuin"
               >
                 <div
-                  class="carousel-image-tuin carousel-item w-full flex-shrink-0"
+                  class="carousel-image-tuin carousel-item my-auto w-full flex-shrink-0"
                 >
                   <img
                     src="https://i.ibb.co/1ZnWNs7/image-20.png"
                     alt="Tuin 1"
-                    class="mx-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
+                    class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
                     onclick="openLightbox('https://i.ibb.co/1ZnWNs7/image-20.png')"
                   />
                 </div>
 
                 <div
-                  class="carousel-image-tuin carousel-item w-full flex-shrink-0"
+                  class="carousel-image-tuin carousel-item my-auto w-full flex-shrink-0"
                 >
                   <img
                     src="https://i.ibb.co/Mc0LBR2/image-21.png"
                     alt="Tuin 1"
-                    class="mx-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
+                    class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
                     onclick="openLightbox('https://i.ibb.co/Mc0LBR2/image-21.png')"
                   />
                 </div>
@@ -142,18 +249,19 @@
     <!-- Kitchen, Garden, and Specifications as before -->
 
     <!-- Features Section: Location -->
+
     <section
       class="section-feature flex items-center bg-stone-50 py-8 lg:h-screen"
     >
       <div class="container mx-auto h-full">
-        <div class="flex h-full flex-col items-center lg:flex-row-reverse">
+        <div class="flex h-full flex-col items-center lg:flex-row">
           <!-- map on small screens (zoomed out) -->
           <div
             class="flex h-80 w-4/5 items-center justify-center py-4 lg:hidden lg:h-full lg:w-1/2"
           >
             <iframe
-              width="90%"
-              height="90%"
+              width="80%"
+              height="80%"
               frameborder="0"
               scrolling="no"
               marginheight="0"
@@ -166,8 +274,8 @@
             class="hidden h-80 w-4/5 items-center justify-center py-4 lg:flex lg:h-full lg:w-1/2"
           >
             <iframe
-              width="90%"
-              height="90%"
+              width="80%"
+              height="80%"
               frameborder="0"
               scrolling="no"
               marginheight="0"
@@ -190,8 +298,17 @@
               beschikking!
             </p>
             <p class="mb-6 text-lg">
-              Mogelijkheid tot het overnemen van huur afgesloten en overdekte
-              auto- en fietsstapplaats aan de overkant van de straat
+              De Vlierstaat en omgeving wordt binnenkort heraangelegd tot
+              autoluwe woonerf waarbij er ruimte wordt gemaakt voor de zwakke
+              weggebruiker met o.a. groenzones en zitbanken. Meer informatie kan
+              u terugvinden op de
+              <a
+                class="font-medium text-blue-100 hover:underline dark:text-blue-500"
+                href="https://stad.gent/nl/plannen-en-projecten/project-vlierstraat-en-omgeving"
+                target="_blank"
+                >webpagina</a
+              >
+              van Stad Gent.
             </p>
           </div>
         </div>
@@ -207,7 +324,7 @@
             <th class="py-4">ALGEMEEN</th>
             <tr>
               <td class="border-b py-2">Prijs</td>
-              <td class="border-b py-2">€465.000</td>
+              <td class="border-b py-2">€456.000</td>
             </tr>
             <tr>
               <td class="border-b py-2">Locatie</td>
@@ -222,8 +339,16 @@
               <td class="border-b py-2">115 m²</td>
             </tr>
             <tr>
+              <td class="border-b py-2">Tuin oppervlakte</td>
+              <td class="border-b py-2">60 m²</td>
+            </tr>
+            <tr>
+              <td class="border-b py-2">Oriëntatie</td>
+              <td class="border-b py-2">ZW</td>
+            </tr>
+            <tr>
               <td class="border-b py-2">Volledige renovatie</td>
-              <td class="border-b py-2">2016</td>
+              <td class="border-b py-2">2014</td>
             </tr>
             <th class="py-4">INTERIEUR</th>
             <tr>
@@ -241,22 +366,28 @@
             <tr>
               <td class="border-b py-2">Oppervlakte leefgedeelten</td>
               <td class="border-b py-2">
-                Woonkamer: XX m²<br />
-                Keuken: XX m²
+                Woonkamer: 21 m²<br />
+                Keuken: 18 m²
               </td>
             </tr>
             <tr>
               <td class="border-b py-2">Oppervlakte slaapkamers</td>
               <td class="border-b py-2">
-                Slaapkamer 1: XX m²<br />
-                Slaapkamer 2: XX m²<br />
-                Slaapkamer 3: XX m²
+                Slaapkamer 1: 17 m²<br />
+                Slaapkamer 2: 17 m²<br />
+                Slaapkamer 3: 12 m²
               </td>
             </tr>
             <th class="py-4">ENERGIE & FINANCIEEL</th>
             <tr>
               <td class="border-b py-2">Energieklasse</td>
               <td class="border-b py-2">C (226)</td>
+            </tr>
+            <tr>
+              <td class="border-b py-2">Verwarming</td>
+              <td class="border-b py-2">
+                Aardgas<br />Hoogrendement condensatieketel
+              </td>
             </tr>
             <tr>
               <td class="border-b py-2">Kadastraal inkomen</td>
@@ -330,9 +461,13 @@
 
       // Initialize swipe events for each carousel
 
+      addSwipeEvents("carousel-kamers", "carousel-image-kamers");
+
       addSwipeEvents("carousel-tuin", "carousel-image-tuin");
 
       let currentSlides = {
+        carousel_image_kamers: 0,
+
         carousel_image_tuin: 0,
       };
 
