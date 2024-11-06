@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Te koop: Prachtig Familiehuis</title>
+    <title>Te koop: Prachtig Gezinswoning in Gentse Stropbuurt</title>
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <link rel="stylesheet" href="build/style.css" />
     <style>
@@ -42,12 +42,12 @@
         <div class="text-center">
           <h1 class="mb-6 text-3xl font-bold lg:text-5xl">TE KOOP</h1>
           <h2 class="mb-6 text-2xl font-bold lg:text-4xl">
-            Prachtige gezinswoning in Gent
+            Prachtige Gezinswoning in Gentse Stropbuurt
           </h2>
-          <p class="mb-4 text-xl">Prijs: €456.000</p>
-          <p class="mb-12 text-xl">
-            3 slaapkamers | Zonnige stadstuin | Centrale locatie
+          <p class="mb-4 font-bold text-xl">
+            Energiezuinig | 3 volwaardige slaapkamers | Zonnige stadstuin | Centrale locatie
           </p>
+          <p class="mb-12 text-xl">Prijs: {{ content.price }}</p>
           <a
             href="#contact"
             class="rounded-lg bg-blue-500 px-6 py-3 text-white transition hover:bg-blue-700"
@@ -209,7 +209,7 @@
             <th class="py-4">ALGEMEEN</th>
             <tr>
               <td class="border-b py-2">Prijs</td>
-              <td class="border-b py-2">€456.000</td>
+              <td class="border-b py-2">{{ content.price }}</td>
             </tr>
             <tr>
               <td class="border-b py-2">Locatie</td>
@@ -266,7 +266,7 @@
             <th class="py-4">ENERGIE & FINANCIEEL</th>
             <tr>
               <td class="border-b py-2">Energieklasse</td>
-              <td class="border-b py-2">C (226)</td>
+              <td class="border-b py-2">B (153)</td>
             </tr>
             <tr>
               <td class="border-b py-2">Verwarming</td>
@@ -281,17 +281,16 @@
         <div
           class="flex flex-col items-center justify-center space-y-4 py-8 lg:flex-row lg:space-x-4 lg:space-y-0"
         >
-          <a
-            href="#"
+          {% for file in content.files %}
+            <a
+            href="{{ file.path }}"
             class="rounded-lg bg-blue-500 px-4 py-2 text-white transition hover:bg-blue-700"
-            >Download Plattegrond (PDF)</a
+            target="_blank"
+            >Download {{ file.label }}</a
           >
-          <a
-            href="#"
-            class="rounded-lg bg-green-500 px-4 py-2 text-white transition hover:bg-green-700"
-            >Download Eigendomspapieren (PDF)</a
-          >
-        </div>
+          {% endfor %}
+
+       </div>
       </div>
     </section>
 
@@ -308,12 +307,6 @@
 
     <!-- Footer -->
     <footer class="bg-gray-800 py-8 text-center text-white">
-      <p>
-        Neem contact op met ons via:
-        <span class="font-bold">06-12345678</span> | Email:
-        <span class="font-bold">makelaar@example.com</span>
-      </p>
-      <p class="mt-4">&copy; 2024 Makelaardij Amsterdam</p>
     </footer>
 
     <!-- JavaScript for Carousel and Lightbox -->

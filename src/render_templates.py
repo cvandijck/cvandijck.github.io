@@ -10,6 +10,12 @@ INDEX_FILEPATH = ROOT_DIR / 'index.html'
 
 
 @dataclass
+class File:
+    label: str
+    path: str
+
+
+@dataclass
 class SectionContent:
     id: str
     title: str
@@ -19,8 +25,10 @@ class SectionContent:
 
 
 @dataclass
-class IndexContent:
+class PageContent:
+    price: str
     sections: list[SectionContent]
+    files: list[File]
 
 
 def main():
@@ -34,7 +42,7 @@ def main():
         hero_image='https://i.ibb.co/W2Sbf84/PXL-20241102-153658351.jpg',
         detail_images=[
             'https://i.ibb.co/W2Sbf84/PXL-20241102-153658351.jpg',
-            'https://i.ibb.co/9Y3X0BF/PXL-20241102-153755720.jpg',
+            'https://i.ibb.co/p0PPJwL/PXL-20241102-153802237-MP.jpg',
             'https://i.ibb.co/hgBWFNR/PXL-20241102-152808454-MP.jpg',
             'https://i.ibb.co/KXw6fck/PXL-20241102-144944796-MP.jpg',
         ],
@@ -46,15 +54,23 @@ def main():
             'Een zonovergoten stadstuin met ruim tuinhuis voor opslag van tuin- en klusmateriaal. Geniet ook elke zomer van appels en peren van eigen kweek!',
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis reprehenderit inventore ut obcaecati minima amet sed, praesentium dolore odit, temporibus quaerat et illo natus! In ullam est a non aspernatur?',
         ],
-        hero_image='https://i.ibb.co/jbGc0GN/image-23.png',
+        hero_image='https://i.ibb.co/1Rj408Y/image-23.png',
         detail_images=[
-            'https://i.ibb.co/1ZnWNs7/image-20.png',
-            'https://i.ibb.co/Mc0LBR2/image-21.png',
+            'https://i.ibb.co/0XqqxpT/IMG-20241016-153154.jpg',
+            'https://i.ibb.co/WcV8ZZ3/IMG-20241016-125507-Bokeh.jpg',
         ],
     )
 
-    content = IndexContent(
-        sections=[room_section, garden_section],
+    content = PageContent(
+        price='€456.000',
+        sections=[
+            room_section,
+            garden_section,
+        ],
+        files=[
+            File('EPC Certificaat', 'files/epc_certificaat.pdf'),
+            File('Asbest Attest', 'files/asbest_attest.pdf'),
+        ],
     )
 
     template_loader = jinja2.FileSystemLoader(searchpath=TEMPLATES_DIR)
