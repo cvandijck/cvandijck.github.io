@@ -46,6 +46,10 @@ pre-commit:
 	$(info MAKE: Pre-commit hooks check over all files...)
 	$(RUN_MODULE) pre_commit run --all-files
 
+process-images:
+	$(info MAKE: render templates and build css)
+	$(PYTHON) ./src/process_images.py
+
 build:
 	$(info MAKE: render templates and build css)
 	$(PYTHON) ./src/render_templates.py

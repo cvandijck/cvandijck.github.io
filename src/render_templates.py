@@ -8,6 +8,66 @@ TEMPLATES_DIR = ROOT_DIR / 'templates'
 INDEX_TEMPLATE_FILENAME = 'index.html.jinja'
 INDEX_FILEPATH = ROOT_DIR / 'index.html'
 
+LOREM_IPSUM = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis reprehenderit inventore ut obcaecati minima amet sed, praesentium dolore odit, temporibus quaerat et illo natus! In ullam est a non aspernatur?'
+
+IMAGE_PATH = Path(__file__).parents[1] / 'images'
+
+BANNER = 'https://i.ibb.co/mHKCmw5/banner-hero.jpg'
+LIGGING_HERO = 'https://i.ibb.co/gMLnfG3/ligging-hero.jpg'
+GARDEN_DETAIL = [
+    'https://i.ibb.co/bb93LSB/tuin-00.jpg',
+    'https://i.ibb.co/nBPKnHy/tuin-01.jpg',
+    'https://i.ibb.co/Qjxy2mK/tuin-02.jpg',
+]
+
+GARDEN_HERO = 'https://i.ibb.co/KmvGtF8/tuin-hero.jpg'
+
+WASH_DETAIL = [
+    'https://i.ibb.co/5jYydyx/badkamer-wasplaats-00.jpg',
+    'https://i.ibb.co/sqDVv1s/badkamer-wasplaats-01.jpg',
+    'https://i.ibb.co/2YVTy48/badkamer-wasplaats-02.jpg',
+]
+
+WASH_HERO = 'https://i.ibb.co/b19BKLZ/badkamer-wasplaats-hero.jpg'
+
+ROOMS_DETAIL = [
+    'https://i.ibb.co/q1Z4fcr/kamers-00.jpg',
+    'https://i.ibb.co/BTY5rXx/kamers-01.jpg',
+    'https://i.ibb.co/1rMwjQP/kamers-02.jpg',
+    'https://i.ibb.co/vD4TZwm/kamers-03.jpg',
+    'https://i.ibb.co/MMLY0XX/kamers-04.jpg',
+    'https://i.ibb.co/qrxszP8/kamers-05.jpg',
+]
+ROOMS_HERO = 'https://i.ibb.co/Gnpd5bF/kamers-hero.jpg'
+
+LIVING_DETAIL = [
+    'https://i.ibb.co/YZBT1xG/leefruimte-00.jpg',
+    'https://i.ibb.co/vxz4vpf/leefruimte-01.jpg',
+    'https://i.ibb.co/dsNM2Ps/leefruimte-02.jpg',
+    'https://i.ibb.co/938cL2n/leefruimte-03.jpg',
+    'https://i.ibb.co/NW0STGL/leefruimte-04.jpg',
+    'https://i.ibb.co/0q5NRj6/leefruimte-05.jpg',
+    'https://i.ibb.co/HDhJsBS/leefruimte-06.jpg',
+]
+LIVING_HERO = 'https://i.ibb.co/6R6Ftg1/leefruimte-hero.jpg'
+
+# ibb reuses the links to already existing images
+INTRO_HERO = 'https://i.ibb.co/Qjxy2mK/tuin-02.jpg'
+INTRO_DETAIL = [
+    'https://i.ibb.co/YZBT1xG/leefruimte-00.jpg',
+    'https://i.ibb.co/dMS6M7H/intro-00.jpg',
+    'https://i.ibb.co/bb93LSB/tuin-00.jpg',
+    'https://i.ibb.co/sqDVv1s/badkamer-wasplaats-01.jpg',
+    'https://i.ibb.co/BTY5rXx/kamers-01.jpg',
+]
+
+
+@dataclass
+class MailTo:
+    receiver: str
+    subject: str
+    body: str
+
 
 @dataclass
 class File:
@@ -27,26 +87,62 @@ class SectionContent:
 @dataclass
 class PageContent:
     price: str
+    mailto: MailTo
+    banner: str
     sections: list[SectionContent]
     files: list[File]
 
 
+def _generate_image_links(section: str) -> tuple[str, tuple[str, ...]]:
+    image_folder = IMAGE_PATH / section
+    images = [f.relative_to(ROOT_DIR) for f in image_folder.glob('*')]
+
+    detail_images = [f.as_posix() for f in images[:-1]]
+    hero_image = images[-1].as_posix()
+    return hero_image, detail_images
+
+
 def main():
+    # intro_hero, intro_detail = _generate_image_links('0_intro')
+    intro_section = SectionContent(
+        id='intro',
+        title='Maak kennis met deze gezellige gezinswoning',
+        content=[LOREM_IPSUM, LOREM_IPSUM],
+        hero_image=INTRO_HERO,
+        detail_images=INTRO_DETAIL,
+    )
+
+    # living_hero, living_detail = _generate_image_links('1_leefruimte')
+    living_section = SectionContent(
+        id='leefruimte',
+        title='Gezellige leefruimte',
+        content=[LOREM_IPSUM, LOREM_IPSUM],
+        hero_image=LIVING_HERO,
+        detail_images=LIVING_DETAIL,
+    )
+
+    # room_hero, room_detail = _generate_image_links('2_kamers')
     room_section = SectionContent(
         id='kamers',
         title='Uiterst functionele ruimtes',
         content=[
             'drie volwaardige kamers, aparte ruime wasplaats. Overal kabel en ethernet aansluiting',
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis reprehenderit inventore ut obcaecati minima amet sed, praesentium dolore odit, temporibus quaerat et illo natus! In ullam est a non aspernatur?',
+            LOREM_IPSUM,
         ],
-        hero_image='https://i.ibb.co/W2Sbf84/PXL-20241102-153658351.jpg',
-        detail_images=[
-            'https://i.ibb.co/W2Sbf84/PXL-20241102-153658351.jpg',
-            'https://i.ibb.co/p0PPJwL/PXL-20241102-153802237-MP.jpg',
-            'https://i.ibb.co/hgBWFNR/PXL-20241102-152808454-MP.jpg',
-            'https://i.ibb.co/KXw6fck/PXL-20241102-144944796-MP.jpg',
-        ],
+        hero_image=ROOMS_HERO,
+        detail_images=ROOMS_DETAIL,
     )
+
+    # wash_hero, wash_detail = _generate_image_links('3_badkamer_wasplaats')
+    wash_section = SectionContent(
+        id='was',
+        title='Uitgeruste badkamer en aparte wasplaats',
+        content=[LOREM_IPSUM, LOREM_IPSUM],
+        hero_image=WASH_HERO,
+        detail_images=WASH_DETAIL,
+    )
+
+    garden_hero, garden_detail = _generate_image_links('4_tuin')
     garden_section = SectionContent(
         id='tuin',
         title='Zonovergoten stadstuin',
@@ -54,17 +150,27 @@ def main():
             'Een zonovergoten stadstuin met ruim tuinhuis voor opslag van tuin- en klusmateriaal. Geniet ook elke zomer van appels en peren van eigen kweek!',
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis reprehenderit inventore ut obcaecati minima amet sed, praesentium dolore odit, temporibus quaerat et illo natus! In ullam est a non aspernatur?',
         ],
-        hero_image='https://i.ibb.co/1Rj408Y/image-23.png',
-        detail_images=[
-            'https://i.ibb.co/0XqqxpT/IMG-20241016-153154.jpg',
-            'https://i.ibb.co/WcV8ZZ3/IMG-20241016-125507-Bokeh.jpg',
-        ],
+        hero_image=GARDEN_HERO,
+        detail_images=GARDEN_DETAIL,
     )
 
+    mailto = MailTo(
+        receiver='vlierstraat26@outlook.com',
+        subject='Afspraak%20bezichtinging%20Vlierstraat%2026%20op%20zaterdag%2030%20november',
+        body='test',
+    )
+    # banner_image = IMAGE_PATH / 'x_banner' / 'banner_hero.jpg'
+    # banner_image = banner_image.relative_to(ROOT_DIR).as_posix()
+    banner = BANNER
     content = PageContent(
-        price='€456.000',
+        price='€475.000',
+        mailto=mailto,
+        banner=banner,
         sections=[
+            intro_section,
+            living_section,
             room_section,
+            wash_section,
             garden_section,
         ],
         files=[

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Te koop: Prachtig Gezinswoning in Stropbuurt</title>
+    <title>Te koop: Prachtig Gezinswoning in Gentse Stropbuurt</title>
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <link rel="stylesheet" href="build/style.css" />
     <style>
@@ -33,7 +33,9 @@
     <!-- Hero Landing Page -->
     <section
       class="relative h-screen bg-cover bg-center"
-      style="background-image: url(https://i.ibb.co/7Q3M6z5/image-22.png)"
+      style="
+        background-image: url(&quot;https://i.ibb.co/mHKCmw5/banner-hero.jpg&quot;);
+      "
     >
       <div class="absolute inset-0 bg-black opacity-50"></div>
       <div
@@ -48,12 +50,12 @@
             Energiezuinig | 3 volwaardige slaapkamers | Zonnige stadstuin |
             Centrale locatie
           </p>
-          <p class="mb-12 text-xl">Prijs: €456.000</p>
+          <p class="mb-24 text-xl">Prijs: €475.000</p>
           <a
-            href="#contact"
+            href="mailto:vlierstraat26@outlook.com?subject=Afspraak%20bezichtinging%20Vlierstraat%2026%20op%20zaterdag%2030%20november&body=test"
             class="rounded-lg bg-blue-500 px-6 py-3 text-white transition hover:bg-blue-700"
           >
-            Plan een bezichtiging</a
+            Plan een bezichtiging op 30 november</a
           >
         </div>
       </div>
@@ -67,27 +69,281 @@
       <div class="container mx-auto h-full">
         <div class="flex h-full flex-col lg:flex-row">
           <div
-            class="mx-2 flex items-center justify-center object-scale-down p-8 lg:mx-8 lg:h-full lg:w-1/2"
+            class="mx-2 flex items-center justify-center object-scale-down lg:mx-4 lg:h-full lg:w-2/5"
           >
             <img
-              src="https://i.ibb.co/W2Sbf84/PXL-20241102-153658351.jpg"
+              src="https://i.ibb.co/Qjxy2mK/tuin-02.jpg"
+              alt="intro"
+              class="hero-image h-4/5 max-h-full max-w-full rounded-lg shadow-lg"
+            />
+          </div>
+
+          <!-- section text  -->
+          <div class="mx-2 p-8 text-justify lg:mx-8 lg:w-3/5">
+            <h2 class="mb-4 text-left text-3xl font-bold">
+              Maak kennis met deze gezellige gezinswoning
+            </h2>
+
+            <p class="mb-8 text-lg">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis
+              reprehenderit inventore ut obcaecati minima amet sed, praesentium
+              dolore odit, temporibus quaerat et illo natus! In ullam est a non
+              aspernatur?
+            </p>
+
+            <p class="mb-4 text-lg">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis
+              reprehenderit inventore ut obcaecati minima amet sed, praesentium
+              dolore odit, temporibus quaerat et illo natus! In ullam est a non
+              aspernatur?
+            </p>
+
+            <!-- Carousel for additional images -->
+            <div class="relative">
+              <div
+                class="carousel my-auto flex h-80 overflow-hidden"
+                id="carousel-intro"
+              >
+                <div
+                  class="carousel-image-intro carousel-item my-auto w-full flex-shrink-0"
+                >
+                  <img
+                    src="https://i.ibb.co/YZBT1xG/leefruimte-00.jpg"
+                    alt="intro detail"
+                    class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
+                    onclick="openLightbox('https://i.ibb.co/YZBT1xG/leefruimte-00.jpg')"
+                  />
+                </div>
+
+                <div
+                  class="carousel-image-intro carousel-item my-auto w-full flex-shrink-0"
+                >
+                  <img
+                    src="https://i.ibb.co/dMS6M7H/intro-00.jpg"
+                    alt="intro detail"
+                    class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
+                    onclick="openLightbox('https://i.ibb.co/dMS6M7H/intro-00.jpg')"
+                  />
+                </div>
+
+                <div
+                  class="carousel-image-intro carousel-item my-auto w-full flex-shrink-0"
+                >
+                  <img
+                    src="https://i.ibb.co/bb93LSB/tuin-00.jpg"
+                    alt="intro detail"
+                    class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
+                    onclick="openLightbox('https://i.ibb.co/bb93LSB/tuin-00.jpg')"
+                  />
+                </div>
+
+                <div
+                  class="carousel-image-intro carousel-item my-auto w-full flex-shrink-0"
+                >
+                  <img
+                    src="https://i.ibb.co/sqDVv1s/badkamer-wasplaats-01.jpg"
+                    alt="intro detail"
+                    class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
+                    onclick="openLightbox('https://i.ibb.co/sqDVv1s/badkamer-wasplaats-01.jpg')"
+                  />
+                </div>
+
+                <div
+                  class="carousel-image-intro carousel-item my-auto w-full flex-shrink-0"
+                >
+                  <img
+                    src="https://i.ibb.co/BTY5rXx/kamers-01.jpg"
+                    alt="intro detail"
+                    class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
+                    onclick="openLightbox('https://i.ibb.co/BTY5rXx/kamers-01.jpg')"
+                  />
+                </div>
+              </div>
+
+              <!-- Arrows for navigation -->
+              <button
+                class="absolute left-0 top-1/2 -translate-y-1/2 transform rounded bg-black bg-opacity-50 px-2 py-1 text-white"
+                onclick="prevSlide('carousel-image-intro')"
+              >
+                &#9665;
+              </button>
+              <button
+                class="absolute right-0 top-1/2 -translate-y-1/2 transform rounded bg-black bg-opacity-50 px-2 py-1 text-white"
+                onclick="nextSlide('carousel-image-intro')"
+              >
+                &#9655;
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="section-feature flex items-center bg-stone-100 py-8 lg:h-screen"
+    >
+      <div class="container mx-auto h-full">
+        <div class="flex h-full flex-col lg:flex-row-reverse">
+          <div
+            class="mx-2 flex items-center justify-center object-scale-down lg:mx-4 lg:h-full lg:w-2/5"
+          >
+            <img
+              src="https://i.ibb.co/6R6Ftg1/leefruimte-hero.jpg"
+              alt="leefruimte"
+              class="hero-image h-4/5 max-h-full max-w-full rounded-lg shadow-lg"
+            />
+          </div>
+
+          <!-- section text  -->
+          <div class="mx-2 p-8 text-justify lg:mx-8 lg:w-3/5">
+            <h2 class="mb-4 text-left text-3xl font-bold">
+              Gezellige leefruimte
+            </h2>
+
+            <p class="mb-8 text-lg">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis
+              reprehenderit inventore ut obcaecati minima amet sed, praesentium
+              dolore odit, temporibus quaerat et illo natus! In ullam est a non
+              aspernatur?
+            </p>
+
+            <p class="mb-4 text-lg">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis
+              reprehenderit inventore ut obcaecati minima amet sed, praesentium
+              dolore odit, temporibus quaerat et illo natus! In ullam est a non
+              aspernatur?
+            </p>
+
+            <!-- Carousel for additional images -->
+            <div class="relative">
+              <div
+                class="carousel my-auto flex h-80 overflow-hidden"
+                id="carousel-leefruimte"
+              >
+                <div
+                  class="carousel-image-leefruimte carousel-item my-auto w-full flex-shrink-0"
+                >
+                  <img
+                    src="https://i.ibb.co/YZBT1xG/leefruimte-00.jpg"
+                    alt="leefruimte detail"
+                    class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
+                    onclick="openLightbox('https://i.ibb.co/YZBT1xG/leefruimte-00.jpg')"
+                  />
+                </div>
+
+                <div
+                  class="carousel-image-leefruimte carousel-item my-auto w-full flex-shrink-0"
+                >
+                  <img
+                    src="https://i.ibb.co/vxz4vpf/leefruimte-01.jpg"
+                    alt="leefruimte detail"
+                    class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
+                    onclick="openLightbox('https://i.ibb.co/vxz4vpf/leefruimte-01.jpg')"
+                  />
+                </div>
+
+                <div
+                  class="carousel-image-leefruimte carousel-item my-auto w-full flex-shrink-0"
+                >
+                  <img
+                    src="https://i.ibb.co/dsNM2Ps/leefruimte-02.jpg"
+                    alt="leefruimte detail"
+                    class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
+                    onclick="openLightbox('https://i.ibb.co/dsNM2Ps/leefruimte-02.jpg')"
+                  />
+                </div>
+
+                <div
+                  class="carousel-image-leefruimte carousel-item my-auto w-full flex-shrink-0"
+                >
+                  <img
+                    src="https://i.ibb.co/938cL2n/leefruimte-03.jpg"
+                    alt="leefruimte detail"
+                    class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
+                    onclick="openLightbox('https://i.ibb.co/938cL2n/leefruimte-03.jpg')"
+                  />
+                </div>
+
+                <div
+                  class="carousel-image-leefruimte carousel-item my-auto w-full flex-shrink-0"
+                >
+                  <img
+                    src="https://i.ibb.co/NW0STGL/leefruimte-04.jpg"
+                    alt="leefruimte detail"
+                    class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
+                    onclick="openLightbox('https://i.ibb.co/NW0STGL/leefruimte-04.jpg')"
+                  />
+                </div>
+
+                <div
+                  class="carousel-image-leefruimte carousel-item my-auto w-full flex-shrink-0"
+                >
+                  <img
+                    src="https://i.ibb.co/0q5NRj6/leefruimte-05.jpg"
+                    alt="leefruimte detail"
+                    class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
+                    onclick="openLightbox('https://i.ibb.co/0q5NRj6/leefruimte-05.jpg')"
+                  />
+                </div>
+
+                <div
+                  class="carousel-image-leefruimte carousel-item my-auto w-full flex-shrink-0"
+                >
+                  <img
+                    src="https://i.ibb.co/HDhJsBS/leefruimte-06.jpg"
+                    alt="leefruimte detail"
+                    class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
+                    onclick="openLightbox('https://i.ibb.co/HDhJsBS/leefruimte-06.jpg')"
+                  />
+                </div>
+              </div>
+
+              <!-- Arrows for navigation -->
+              <button
+                class="absolute left-0 top-1/2 -translate-y-1/2 transform rounded bg-black bg-opacity-50 px-2 py-1 text-white"
+                onclick="prevSlide('carousel-image-leefruimte')"
+              >
+                &#9665;
+              </button>
+              <button
+                class="absolute right-0 top-1/2 -translate-y-1/2 transform rounded bg-black bg-opacity-50 px-2 py-1 text-white"
+                onclick="nextSlide('carousel-image-leefruimte')"
+              >
+                &#9655;
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="section-feature flex items-center bg-stone-50 py-8 lg:h-screen"
+    >
+      <div class="container mx-auto h-full">
+        <div class="flex h-full flex-col lg:flex-row">
+          <div
+            class="mx-2 flex items-center justify-center object-scale-down lg:mx-4 lg:h-full lg:w-2/5"
+          >
+            <img
+              src="https://i.ibb.co/Gnpd5bF/kamers-hero.jpg"
               alt="kamers"
               class="hero-image h-4/5 max-h-full max-w-full rounded-lg shadow-lg"
             />
           </div>
 
           <!-- section text  -->
-          <div class="mx-2 p-8 text-justify lg:mx-8 lg:w-1/2">
+          <div class="mx-2 p-8 text-justify lg:mx-8 lg:w-3/5">
             <h2 class="mb-4 text-left text-3xl font-bold">
               Uiterst functionele ruimtes
             </h2>
 
-            <p class="mb-6 text-lg">
+            <p class="mb-8 text-lg">
               drie volwaardige kamers, aparte ruime wasplaats. Overal kabel en
               ethernet aansluiting
             </p>
 
-            <p class="mb-12 text-lg">
+            <p class="mb-4 text-lg">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis
               reprehenderit inventore ut obcaecati minima amet sed, praesentium
               dolore odit, temporibus quaerat et illo natus! In ullam est a non
@@ -104,10 +360,10 @@
                   class="carousel-image-kamers carousel-item my-auto w-full flex-shrink-0"
                 >
                   <img
-                    src="https://i.ibb.co/W2Sbf84/PXL-20241102-153658351.jpg"
-                    alt="Tuin 1"
+                    src="https://i.ibb.co/q1Z4fcr/kamers-00.jpg"
+                    alt="kamers detail"
                     class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
-                    onclick="openLightbox('https://i.ibb.co/W2Sbf84/PXL-20241102-153658351.jpg')"
+                    onclick="openLightbox('https://i.ibb.co/q1Z4fcr/kamers-00.jpg')"
                   />
                 </div>
 
@@ -115,10 +371,10 @@
                   class="carousel-image-kamers carousel-item my-auto w-full flex-shrink-0"
                 >
                   <img
-                    src="https://i.ibb.co/p0PPJwL/PXL-20241102-153802237-MP.jpg"
-                    alt="Tuin 1"
+                    src="https://i.ibb.co/BTY5rXx/kamers-01.jpg"
+                    alt="kamers detail"
                     class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
-                    onclick="openLightbox('https://i.ibb.co/p0PPJwL/PXL-20241102-153802237-MP.jpg')"
+                    onclick="openLightbox('https://i.ibb.co/BTY5rXx/kamers-01.jpg')"
                   />
                 </div>
 
@@ -126,10 +382,10 @@
                   class="carousel-image-kamers carousel-item my-auto w-full flex-shrink-0"
                 >
                   <img
-                    src="https://i.ibb.co/hgBWFNR/PXL-20241102-152808454-MP.jpg"
-                    alt="Tuin 1"
+                    src="https://i.ibb.co/1rMwjQP/kamers-02.jpg"
+                    alt="kamers detail"
                     class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
-                    onclick="openLightbox('https://i.ibb.co/hgBWFNR/PXL-20241102-152808454-MP.jpg')"
+                    onclick="openLightbox('https://i.ibb.co/1rMwjQP/kamers-02.jpg')"
                   />
                 </div>
 
@@ -137,10 +393,32 @@
                   class="carousel-image-kamers carousel-item my-auto w-full flex-shrink-0"
                 >
                   <img
-                    src="https://i.ibb.co/KXw6fck/PXL-20241102-144944796-MP.jpg"
-                    alt="Tuin 1"
+                    src="https://i.ibb.co/vD4TZwm/kamers-03.jpg"
+                    alt="kamers detail"
                     class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
-                    onclick="openLightbox('https://i.ibb.co/KXw6fck/PXL-20241102-144944796-MP.jpg')"
+                    onclick="openLightbox('https://i.ibb.co/vD4TZwm/kamers-03.jpg')"
+                  />
+                </div>
+
+                <div
+                  class="carousel-image-kamers carousel-item my-auto w-full flex-shrink-0"
+                >
+                  <img
+                    src="https://i.ibb.co/MMLY0XX/kamers-04.jpg"
+                    alt="kamers detail"
+                    class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
+                    onclick="openLightbox('https://i.ibb.co/MMLY0XX/kamers-04.jpg')"
+                  />
+                </div>
+
+                <div
+                  class="carousel-image-kamers carousel-item my-auto w-full flex-shrink-0"
+                >
+                  <img
+                    src="https://i.ibb.co/qrxszP8/kamers-05.jpg"
+                    alt="kamers detail"
+                    class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
+                    onclick="openLightbox('https://i.ibb.co/qrxszP8/kamers-05.jpg')"
                   />
                 </div>
               </div>
@@ -170,28 +448,122 @@
       <div class="container mx-auto h-full">
         <div class="flex h-full flex-col lg:flex-row-reverse">
           <div
-            class="mx-2 flex items-center justify-center object-scale-down p-8 lg:mx-8 lg:h-full lg:w-1/2"
+            class="mx-2 flex items-center justify-center object-scale-down lg:mx-4 lg:h-full lg:w-2/5"
           >
             <img
-              src="https://i.ibb.co/1Rj408Y/image-23.png"
+              src="https://i.ibb.co/b19BKLZ/badkamer-wasplaats-hero.jpg"
+              alt="was"
+              class="hero-image h-4/5 max-h-full max-w-full rounded-lg shadow-lg"
+            />
+          </div>
+
+          <!-- section text  -->
+          <div class="mx-2 p-8 text-justify lg:mx-8 lg:w-3/5">
+            <h2 class="mb-4 text-left text-3xl font-bold">
+              Uitgeruste badkamer en aparte wasplaats
+            </h2>
+
+            <p class="mb-8 text-lg">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis
+              reprehenderit inventore ut obcaecati minima amet sed, praesentium
+              dolore odit, temporibus quaerat et illo natus! In ullam est a non
+              aspernatur?
+            </p>
+
+            <p class="mb-4 text-lg">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis
+              reprehenderit inventore ut obcaecati minima amet sed, praesentium
+              dolore odit, temporibus quaerat et illo natus! In ullam est a non
+              aspernatur?
+            </p>
+
+            <!-- Carousel for additional images -->
+            <div class="relative">
+              <div
+                class="carousel my-auto flex h-80 overflow-hidden"
+                id="carousel-was"
+              >
+                <div
+                  class="carousel-image-was carousel-item my-auto w-full flex-shrink-0"
+                >
+                  <img
+                    src="https://i.ibb.co/5jYydyx/badkamer-wasplaats-00.jpg"
+                    alt="was detail"
+                    class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
+                    onclick="openLightbox('https://i.ibb.co/5jYydyx/badkamer-wasplaats-00.jpg')"
+                  />
+                </div>
+
+                <div
+                  class="carousel-image-was carousel-item my-auto w-full flex-shrink-0"
+                >
+                  <img
+                    src="https://i.ibb.co/sqDVv1s/badkamer-wasplaats-01.jpg"
+                    alt="was detail"
+                    class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
+                    onclick="openLightbox('https://i.ibb.co/sqDVv1s/badkamer-wasplaats-01.jpg')"
+                  />
+                </div>
+
+                <div
+                  class="carousel-image-was carousel-item my-auto w-full flex-shrink-0"
+                >
+                  <img
+                    src="https://i.ibb.co/2YVTy48/badkamer-wasplaats-02.jpg"
+                    alt="was detail"
+                    class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
+                    onclick="openLightbox('https://i.ibb.co/2YVTy48/badkamer-wasplaats-02.jpg')"
+                  />
+                </div>
+              </div>
+
+              <!-- Arrows for navigation -->
+              <button
+                class="absolute left-0 top-1/2 -translate-y-1/2 transform rounded bg-black bg-opacity-50 px-2 py-1 text-white"
+                onclick="prevSlide('carousel-image-was')"
+              >
+                &#9665;
+              </button>
+              <button
+                class="absolute right-0 top-1/2 -translate-y-1/2 transform rounded bg-black bg-opacity-50 px-2 py-1 text-white"
+                onclick="nextSlide('carousel-image-was')"
+              >
+                &#9655;
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="section-feature flex items-center bg-stone-50 py-8 lg:h-screen"
+    >
+      <div class="container mx-auto h-full">
+        <div class="flex h-full flex-col lg:flex-row">
+          <div
+            class="mx-2 flex items-center justify-center object-scale-down lg:mx-4 lg:h-full lg:w-2/5"
+          >
+            <img
+              src="https://i.ibb.co/KmvGtF8/tuin-hero.jpg"
               alt="tuin"
               class="hero-image h-4/5 max-h-full max-w-full rounded-lg shadow-lg"
             />
           </div>
 
           <!-- section text  -->
-          <div class="mx-2 p-8 text-justify lg:mx-8 lg:w-1/2">
+          <div class="mx-2 p-8 text-justify lg:mx-8 lg:w-3/5">
             <h2 class="mb-4 text-left text-3xl font-bold">
               Zonovergoten stadstuin
             </h2>
 
-            <p class="mb-6 text-lg">
+            <p class="mb-8 text-lg">
               Een zonovergoten stadstuin met ruim tuinhuis voor opslag van tuin-
               en klusmateriaal. Geniet ook elke zomer van appels en peren van
               eigen kweek!
             </p>
 
-            <p class="mb-12 text-lg">
+            <p class="mb-4 text-lg">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis
               reprehenderit inventore ut obcaecati minima amet sed, praesentium
               dolore odit, temporibus quaerat et illo natus! In ullam est a non
@@ -208,10 +580,10 @@
                   class="carousel-image-tuin carousel-item my-auto w-full flex-shrink-0"
                 >
                   <img
-                    src="https://i.ibb.co/0XqqxpT/IMG-20241016-153154.jpg"
-                    alt="Tuin 1"
+                    src="https://i.ibb.co/bb93LSB/tuin-00.jpg"
+                    alt="tuin detail"
                     class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
-                    onclick="openLightbox('https://i.ibb.co/0XqqxpT/IMG-20241016-153154.jpg')"
+                    onclick="openLightbox('https://i.ibb.co/bb93LSB/tuin-00.jpg')"
                   />
                 </div>
 
@@ -219,10 +591,21 @@
                   class="carousel-image-tuin carousel-item my-auto w-full flex-shrink-0"
                 >
                   <img
-                    src="https://i.ibb.co/WcV8ZZ3/IMG-20241016-125507-Bokeh.jpg"
-                    alt="Tuin 1"
+                    src="https://i.ibb.co/nBPKnHy/tuin-01.jpg"
+                    alt="tuin detail"
                     class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
-                    onclick="openLightbox('https://i.ibb.co/WcV8ZZ3/IMG-20241016-125507-Bokeh.jpg')"
+                    onclick="openLightbox('https://i.ibb.co/nBPKnHy/tuin-01.jpg')"
+                  />
+                </div>
+
+                <div
+                  class="carousel-image-tuin carousel-item my-auto w-full flex-shrink-0"
+                >
+                  <img
+                    src="https://i.ibb.co/Qjxy2mK/tuin-02.jpg"
+                    alt="tuin detail"
+                    class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
+                    onclick="openLightbox('https://i.ibb.co/Qjxy2mK/tuin-02.jpg')"
                   />
                 </div>
               </div>
@@ -250,7 +633,6 @@
     <!-- Kitchen, Garden, and Specifications as before -->
 
     <!-- Features Section: Location -->
-
     <section
       class="section-feature flex items-center bg-stone-50 py-8 lg:h-screen"
     >
@@ -325,64 +707,28 @@
             <th class="py-4">ALGEMEEN</th>
             <tr>
               <td class="border-b py-2">Prijs</td>
-              <td class="border-b py-2">€456.000</td>
+              <td class="border-b py-2">€475.000</td>
             </tr>
             <tr>
               <td class="border-b py-2">Locatie</td>
               <td class="border-b py-2">Vlierstraat 26, 9000 Gent</td>
             </tr>
             <tr>
-              <td class="border-b py-2">Bewoonbaar oppervlakte</td>
-              <td class="border-b py-2">117 m²</td>
-            </tr>
-            <tr>
-              <td class="border-b py-2">Grond oppervlakte</td>
-              <td class="border-b py-2">115 m²</td>
-            </tr>
-            <tr>
-              <td class="border-b py-2">Tuin oppervlakte</td>
-              <td class="border-b py-2">60 m²</td>
-            </tr>
-            <tr>
-              <td class="border-b py-2">Oriëntatie</td>
+              <td class="border-b py-2">Oriëntatie tuin</td>
               <td class="border-b py-2">ZW</td>
             </tr>
             <tr>
-              <td class="border-b py-2">Volledige renovatie</td>
-              <td class="border-b py-2">2014</td>
-            </tr>
-            <th class="py-4">INTERIEUR</th>
-            <tr>
-              <td class="border-b py-2">Aantal slaapkamers</td>
-              <td class="border-b py-2">3</td>
-            </tr>
-            <tr>
-              <td class="border-b py-2">Aantal badkamers</td>
-              <td class="border-b py-2">1</td>
-            </tr>
-            <tr>
-              <td class="border-b py-2">Aantal verdiepingen</td>
-              <td class="border-b py-2">2</td>
-            </tr>
-            <tr>
-              <td class="border-b py-2">Oppervlakte leefgedeelten</td>
-              <td class="border-b py-2">
-                Woonkamer: 21 m²<br />
-                Keuken: 18 m²
-              </td>
-            </tr>
-            <tr>
-              <td class="border-b py-2">Oppervlakte slaapkamers</td>
-              <td class="border-b py-2">
-                Slaapkamer 1: 17 m²<br />
-                Slaapkamer 2: 17 m²<br />
-                Slaapkamer 3: 12 m²
-              </td>
+              <td class="border-b py-2">Mobiscore</td>
+              <td class="border-b py-2">9.5</td>
             </tr>
             <th class="py-4">ENERGIE & FINANCIEEL</th>
             <tr>
               <td class="border-b py-2">Energieklasse</td>
               <td class="border-b py-2">B (153)</td>
+            </tr>
+            <tr>
+              <td class="border-b py-2">Asbest</td>
+              <td class="border-b py-2">Asbestveilig</td>
             </tr>
             <tr>
               <td class="border-b py-2">Verwarming</td>
@@ -393,6 +739,43 @@
             <tr>
               <td class="border-b py-2">Kadastraal inkomen</td>
               <td class="border-b py-2">€597</td>
+            </tr>
+            <th class="py-4">INTERIEUR</th>
+            <tr>
+              <td class="border-b py-2">Slaapkamers</td>
+              <td class="border-b py-2">3</td>
+            </tr>
+            <tr>
+              <td class="border-b py-2">Badkamers</td>
+              <td class="border-b py-2">1</td>
+            </tr>
+            <tr>
+              <td class="border-b py-2">Verdiepingen</td>
+              <td class="border-b py-2">2</td>
+            </tr>
+            <th class="py-4">OPPERVLAKTES</th>
+            <tr>
+              <td class="border-b py-2">Bewoonbaar oppervlakte</td>
+              <td class="border-b py-2">117 m²</td>
+            </tr>
+            <tr>
+              <td class="border-b py-2">Grond oppervlakte</td>
+              <td class="border-b py-2">115 m²</td>
+            </tr>
+            <tr>
+              <td class="border-b py-2">Leefgedeelte oppervlakte</td>
+              <td class="border-b py-2">
+                Woonkamer: 21 m²<br />
+                Keuken: 18 m²
+              </td>
+            </tr>
+            <tr>
+              <td class="border-b py-2">Slaapkamers oppervlakte</td>
+              <td class="border-b py-2">
+                Slaapkamer 1: 13 m²<br />
+                Slaapkamer 2: 13 m²<br />
+                Slaapkamer 3: 12 m²
+              </td>
             </tr>
           </tbody>
         </table>
@@ -458,12 +841,24 @@
 
       // Initialize swipe events for each carousel
 
+      addSwipeEvents("carousel-intro", "carousel-image-intro");
+
+      addSwipeEvents("carousel-leefruimte", "carousel-image-leefruimte");
+
       addSwipeEvents("carousel-kamers", "carousel-image-kamers");
+
+      addSwipeEvents("carousel-was", "carousel-image-was");
 
       addSwipeEvents("carousel-tuin", "carousel-image-tuin");
 
       let currentSlides = {
+        carousel_image_intro: 0,
+
+        carousel_image_leefruimte: 0,
+
         carousel_image_kamers: 0,
+
+        carousel_image_was: 0,
 
         carousel_image_tuin: 0,
       };

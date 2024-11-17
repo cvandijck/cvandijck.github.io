@@ -33,7 +33,7 @@
     <!-- Hero Landing Page -->
     <section
       class="relative h-screen bg-cover bg-center"
-      style="background-image: url(https://i.ibb.co/7Q3M6z5/image-22.png)"
+      style="background-image: url( '{{ content.banner }}' )"
     >
       <div class="absolute inset-0 bg-black opacity-50"></div>
       <div
@@ -47,12 +47,12 @@
           <p class="mb-4 font-bold text-xl">
             Energiezuinig | 3 volwaardige slaapkamers | Zonnige stadstuin | Centrale locatie
           </p>
-          <p class="mb-12 text-xl">Prijs: {{ content.price }}</p>
+          <p class="mb-24 text-xl">Prijs: {{ content.price }}</p>
           <a
-            href="#contact"
+            href="mailto:{{ content.mailto.receiver }}?subject={{ content.mailto.subject }}&body={{ content.mailto.body }}"
             class="rounded-lg bg-blue-500 px-6 py-3 text-white transition hover:bg-blue-700"
           >
-            Plan een bezichtiging</a
+            Plan een bezichtiging op 30 november</a
           >
         </div>
       </div>
@@ -74,7 +74,7 @@
             <div class="flex flex-col h-full lg:flex-row-reverse">
       {% endif %}
             <div
-              class="mx-2 flex items-center justify-center object-scale-down p-8 lg:mx-8 lg:h-full lg:w-1/2"
+              class="mx-2 flex items-center justify-center object-scale-down lg:mx-4 lg:h-full lg:w-2/5"
             >
               <img
                 src="{{ section.hero_image }}"
@@ -84,13 +84,13 @@
             </div>
 
             <!-- section text  -->
-            <div class="mx-2 lg:mx-8 p-8 text-justify lg:w-1/2">
+            <div class="mx-2 lg:mx-8 p-8 text-justify lg:w-3/5">
               <h2 class="mb-4 text-3xl font-bold text-left">{{ section.title }}</h2>
               {% for sectioncontent in section.content %}
                 {% if loop.last %}
-                  <p class="mb-12 text-lg">{{ sectioncontent }}</p>
+                  <p class="mb-4 text-lg">{{ sectioncontent }}</p>
                 {% else %}
-                  <p class="mb-6 text-lg">{{ sectioncontent }}</p>
+                  <p class="mb-8 text-lg">{{ sectioncontent }}</p>
                 {% endif %}
               {% endfor %}
 
@@ -103,7 +103,7 @@
                     >
                       <img
                         src="{{ detail_image }}"
-                        alt="Tuin 1"
+                        alt="{{ section.id }} detail"
                         class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
                         onclick="openLightbox('{{ detail_image }}')"
                       />
@@ -135,19 +135,11 @@
     <!-- Kitchen, Garden, and Specifications as before -->
 
     <!-- Features Section: Location -->
-    {% if content.sections | length % 2 == 0 %}
     <section
       class="section-feature flex items-center bg-stone-50 py-8 lg:h-screen"
     >
       <div class="container mx-auto h-full">
-          <div class="flex h-full flex-col items-center lg:flex-row">
-    {% else %}
-    <section
-      class="section-feature flex items-center bg-stone-100 py-8 lg:h-screen"
-    >
-      <div class="container mx-auto h-full">
-          <div class="flex h-full flex-col items-center lg:flex-row-reversed">
-    {% endif %}
+        <div class="flex h-full flex-col items-center lg:flex-row">
           <!-- map on small screens (zoomed out) -->
           <div
             class="flex h-80 w-4/5 items-center justify-center py-4 lg:hidden lg:h-full lg:w-1/2"
@@ -216,57 +208,21 @@
               <td class="border-b py-2">Vlierstraat 26, 9000 Gent</td>
             </tr>
             <tr>
-              <td class="border-b py-2">Bewoonbaar oppervlakte</td>
-              <td class="border-b py-2">117 m²</td>
-            </tr>
-            <tr>
-              <td class="border-b py-2">Grond oppervlakte</td>
-              <td class="border-b py-2">115 m²</td>
-            </tr>
-            <tr>
-              <td class="border-b py-2">Tuin oppervlakte</td>
-              <td class="border-b py-2">60 m²</td>
-            </tr>
-            <tr>
-              <td class="border-b py-2">Oriëntatie</td>
+              <td class="border-b py-2">Oriëntatie tuin</td>
               <td class="border-b py-2">ZW</td>
             </tr>
             <tr>
-              <td class="border-b py-2">Volledige renovatie</td>
-              <td class="border-b py-2">2014</td>
-            </tr>
-            <th class="py-4">INTERIEUR</th>
-            <tr>
-              <td class="border-b py-2">Aantal slaapkamers</td>
-              <td class="border-b py-2">3</td>
-            </tr>
-            <tr>
-              <td class="border-b py-2">Aantal badkamers</td>
-              <td class="border-b py-2">1</td>
-            </tr>
-            <tr>
-              <td class="border-b py-2">Aantal verdiepingen</td>
-              <td class="border-b py-2">2</td>
-            </tr>
-            <tr>
-              <td class="border-b py-2">Oppervlakte leefgedeelten</td>
-              <td class="border-b py-2">
-                Woonkamer: 21 m²<br />
-                Keuken: 18 m²
-              </td>
-            </tr>
-            <tr>
-              <td class="border-b py-2">Oppervlakte slaapkamers</td>
-              <td class="border-b py-2">
-                Slaapkamer 1: 17 m²<br />
-                Slaapkamer 2: 17 m²<br />
-                Slaapkamer 3: 12 m²
-              </td>
+              <td class="border-b py-2">Mobiscore</td>
+              <td class="border-b py-2">9.5</td>
             </tr>
             <th class="py-4">ENERGIE & FINANCIEEL</th>
             <tr>
               <td class="border-b py-2">Energieklasse</td>
               <td class="border-b py-2">B (153)</td>
+            </tr>
+            <tr>
+              <td class="border-b py-2">Asbest</td>
+              <td class="border-b py-2">Asbestveilig</td>
             </tr>
             <tr>
               <td class="border-b py-2">Verwarming</td>
@@ -275,6 +231,43 @@
             <tr>
               <td class="border-b py-2">Kadastraal inkomen</td>
               <td class="border-b py-2">€597</td>
+            </tr>
+            <th class="py-4">INTERIEUR</th>
+            <tr>
+              <td class="border-b py-2">Slaapkamers</td>
+              <td class="border-b py-2">3</td>
+            </tr>
+            <tr>
+              <td class="border-b py-2">Badkamers</td>
+              <td class="border-b py-2">1</td>
+            </tr>
+            <tr>
+              <td class="border-b py-2">Verdiepingen</td>
+              <td class="border-b py-2">2</td>
+            </tr>
+            <th class="py-4">OPPERVLAKTES</th>
+            <tr>
+              <td class="border-b py-2">Bewoonbaar oppervlakte</td>
+              <td class="border-b py-2">117 m²</td>
+            </tr>
+            <tr>
+              <td class="border-b py-2">Grond oppervlakte</td>
+              <td class="border-b py-2">115 m²</td>
+            </tr>
+            <tr>
+              <td class="border-b py-2">Leefgedeelte oppervlakte</td>
+              <td class="border-b py-2">
+                Woonkamer: 21 m²<br />
+                Keuken: 18 m²
+              </td>
+            </tr>
+            <tr>
+              <td class="border-b py-2">Slaapkamers oppervlakte</td>
+              <td class="border-b py-2">
+                Slaapkamer 1: 13 m²<br />
+                Slaapkamer 2: 13 m²<br />
+                Slaapkamer 3: 12 m²
+              </td>
             </tr>
           </tbody>
         </table>

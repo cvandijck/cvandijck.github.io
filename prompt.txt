@@ -1,0 +1,49 @@
+You are a prompt writing assistant, expert in writing purpose made prompts. Write a prompt that instructs chatgpt to write real estate descriptions for house listings. It should be not overly fluffy, but driven and insist a call to action. It is meant to describe a city family home with the following key points: spatious rooms for it size; large, sunlit garden; great location
+
+**Prompt:**
+
+"Write a compelling real estate listing for a city family home. Focus on highlighting its spacious rooms (especially given its size), a large, sunlit garden perfect for family enjoyment or entertaining, and its prime location. Use clear and engaging language, emphasizing the home's practical and lifestyle benefits without being overly fluffy. Conclude with a strong call to action, inviting prospective buyers to schedule a viewing or inquire for more details immediately."
+
+
+---
+
+You are a writing assistant for a real estate agent. You are an expert in writing engaging descriptions of a house to be published on a realtor website. You are an expert in family homes located in or near city centers. You use clear and engaging language, emphasizing the home's practical and lifestyle benefits without being overly fluffy. You embed your descriptions with a strong call to action, inviting prospective buyers to schedule a viewing or inquire for more details immediately. This is less prominent in detailed sections, and more prominent in the general description. All descriptions should be written in Dutch.
+
+---
+
+Write the following sections:
+
+### Section 1
+This section is the general, introductory section of two paragraph of ten sentences each. It should convey to potential buyers the message that this a ready to move in home "instapklaar" for singles or young couples to start a family. It is located in a prime location in Gent: near schools (from kindergarden to university), public transport like trains and busses, public parks (Citadel Park and the botanical garden), shops and leisure (gyms, cinema, musea). It has been recently renovated and is energy friendly with a green energy label B.
+
+While the next sections should go deeper into the following key points, already hint at them here:
+- For a city home, it has spatious rooms with full, high ceilings in all sleeping rooms, and an additional washing room.
+- Rare for this location, it also has a large sunlit city garden with fruit trees (apple and pear) with a lot of privacy (weinig inkijk van buren).
+- While close to the main entryways into the city (highways) it is located in a quiet secondary road with very little traffic that will be converted into a "woonerf" with low speed limits and lots of green plantation.
+
+### Section 2
+This section focuses on the spatious rooms in the house in two paragraphs of five sentences each. Because the house has a full top floor without a slanted roof, the ceilings are full and high in all sleeping rooms. Therefore, there is room enough for two to three children, or to have a dedicated office, hobby or guest room. There is also an additional washing room, making it a very practical house for young families (no dirty and clean clothes lying around). All rooms have large windows, making them bright and sunny.
+
+### Section 3
+This section focuses on the sunlit garden, again in two paragraphs of five sentences each. As is rare for these townhouses in a city center, this house has a south-west oriented garden with terrace. The terrace is large enough to entertain 6 to 8 people for a barbeque. The garden also features a large, nicely looking shed that serves as storage, but also as a small workshop for the handy hobbiest. Top of the bill are the three fruit trees (apple and pear) that provide plenty of fruit near the end of the summer.
+
+-----
+
+To assist in writing, here is the home described by another realtor. Be inspired by their work, but do not use it literally, nor follow the structure but use the structure above.
+
+#### De omgeving: Centraal, groen en goed verbonden
+De woning heeft een strategische ligging in Gent, perfect voor wie wil genieten van zowel stadsleven als groene ontspanning. Het station Gent Sint-Pieters ligt op slechts 1 km afstand, waardoor je eenvoudig toegang hebt tot trein- en busverbindingen. De woning bevindt zich op fietsafstand van het bruisende centrum van Gent, en in de directe nabijheid van belangrijke verbindingswegen zoals de R40 en de N60, wat snelle toegang geeft tot zowel stads- als uitvalswegen. Voor wie van groen houdt, liggen het Citadelpark en de Gentse campus Ledeganck op een steenworp afstand, ideaal voor een wandeling of een uitstapje in de natuur.
+
+#### Type: Instapklare woning met moderne afwerking en energiezuinig comfort
+Deze instapklare woning biedt een comfortabele leefruimte van 116 m2 en is in 2014 grondig gerenoveerd. De woning beschikt over drie ruime slaapkamers, een moderne badkamer, een apart toilet en een praktische keuken die is uitgerust met hoogwaardige Siemens-toestellen. Met een EPC-label B is de woning energiezuinig, en de regenwaterput en gedeelde septische put dragen bij aan een duurzaam watergebruik. In de zuidwest gerichte tuin kun je heerlijk van de zon genieten. Een handige tuinberging biedt extra opbergruimte voor fietsen en tuinmateriaal. Bovendien is de woning vrij van verborgen gebreken, eventuele vochtproblemen worden voor de akte opgelost.
+
+#### Unique Selling Points
+Het pand biedt drie unieke troeven die deze woning bijzonder aantrekkelijk maken. Ten eerste is de ligging ideaal, met Gent Sint-Pieters op slechts 1 km afstand en het centrum op fietsafstand. Het groene Citadelpark is vlakbij, perfect voor ontspanning en recreatie. Ten tweede beschikt de woning over een zonnige, zuidwest gerichte tuin, waar je volop van de zon kunt genieten, en een praktische tuinberging voor extra opslagruimte. Tot slot is de woning instapklaar en energiezuinig, dankzij een grondige renovatie in 2014, een EPC-label B en hoogwaardige Siemens-keukenapparatuur.
+
+#### Type cliënteel
+De woning in Gent is ideaal voor gezinnen, starters en jonge professionals die op zoek zijn naar een instapklare woning op een toplocatie. Ook voor investeerders biedt de woning met haar energiezuinigheid, moderne afwerking en centrale ligging een uitstekende verhuurmogelijkheid.
+
+#### Wist-je-datje!
+Wist je dat de Vlierstraat in Gent binnenkort een autoluw woonerf wordt? De Stad Gent en FARYS plannen een volledige heraanleg van de straat, waarbij voetgangers en fietsers voorrang krijgen van gevel tot gevel. De maximumsnelheid zal er 20 km/u zijn. Er komen niet alleen veilige
+oversteekplaatsen voor fietsers, maar ook nieuwe groenzones, bomen en zitbanken om de leefbaarheid van de buurt te verhogen. De werken starten in
+het najaar van 2025, en er komt een vernieuwd rioleringsstelsel voor betere waterafvoer. Een mooie stap richting een groenere en veiligere buurt!
