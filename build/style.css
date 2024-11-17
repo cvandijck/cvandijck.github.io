@@ -704,6 +704,9 @@ video {
 .object-scale-down {
   object-fit: scale-down;
 }
+.p-6 {
+  padding: 1.5rem;
+}
 .p-8 {
   padding: 2rem;
 }
@@ -863,6 +866,10 @@ video {
     --tw-space-y-reverse: 0;
     margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(0px * var(--tw-space-y-reverse));
+  }
+
+  .lg\:p-0 {
+    padding: 0px;
   }
 
   .lg\:pl-10 {
