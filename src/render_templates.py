@@ -126,7 +126,7 @@ def main():
     # intro_hero, intro_detail = _generate_image_links('0_intro')
     intro_section = SectionContent(
         id='intro',
-        title='Maak kennis met deze gezellige gezinswoning',
+        title='Maak kennis met deze prachtige gezinswoning',
         content=[LOREM_IPSUM, LOREM_IPSUM],
         hero_image=INTRO_HERO,
         detail_images=INTRO_DETAIL,
