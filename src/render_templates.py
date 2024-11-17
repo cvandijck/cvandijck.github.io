@@ -61,6 +61,26 @@ INTRO_DETAIL = [
     'https://i.ibb.co/BTY5rXx/kamers-01.jpg',
 ]
 
+MAILTO_RECEIVER = 'vlierstraat26@outlook.com'
+MAILTO_SUBJECT = 'Afspraak bezichtinging Vlierstraat 26 op zaterdag 30 november'
+
+MAILTO_BODY = """
+Beste,
+
+Ik heb interesse in uw woning en zou graag een bezichtiging inboeken op de kijkdag op 30 november.
+
+Mijn voorkeur gaat uit naar:
+
+U kan me contacteren op:
+"""
+
+
+def _format_mailto(s: str) -> str:
+    s = s.strip('\n')
+    s = s.replace(' ', '%20')
+    s = s.replace('\n', '%0D%0A')
+    return s
+
 
 @dataclass
 class MailTo:
@@ -142,7 +162,7 @@ def main():
         detail_images=WASH_DETAIL,
     )
 
-    garden_hero, garden_detail = _generate_image_links('4_tuin')
+    # garden_hero, garden_detail = _generate_image_links('4_tuin')
     garden_section = SectionContent(
         id='tuin',
         title='Zonovergoten stadstuin',
@@ -155,9 +175,9 @@ def main():
     )
 
     mailto = MailTo(
-        receiver='vlierstraat26@outlook.com',
-        subject='Afspraak%20bezichtinging%20Vlierstraat%2026%20op%20zaterdag%2030%20november',
-        body='test',
+        receiver=MAILTO_RECEIVER,
+        subject=_format_mailto(MAILTO_SUBJECT),
+        body=_format_mailto(MAILTO_BODY),
     )
     # banner_image = IMAGE_PATH / 'x_banner' / 'banner_hero.jpg'
     # banner_image = banner_image.relative_to(ROOT_DIR).as_posix()
