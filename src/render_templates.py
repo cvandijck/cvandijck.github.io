@@ -62,7 +62,7 @@ INTRO_DETAIL = [
 ]
 
 MAILTO_RECEIVER = 'vlierstraat26@outlook.com'
-MAILTO_SUBJECT = 'Afspraak bezichtinging Vlierstraat 26 op zaterdag 30 november'
+MAILTO_SUBJECT = 'Afspraak bezichtiging Vlierstraat 26 op zaterdag 30 november'
 
 MAILTO_BODY = """
 Beste,
