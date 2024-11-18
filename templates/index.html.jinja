@@ -312,6 +312,7 @@
 
         carouselContainer.addEventListener("touchstart", (e) => {
           startX = e.touches[0].clientX;
+          endX = startX; // reset endX to avoid misfires when no touchmove
         });
 
         carouselContainer.addEventListener("touchmove", (e) => {
