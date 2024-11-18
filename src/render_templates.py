@@ -54,8 +54,8 @@ LIVING_HERO = 'https://i.ibb.co/6R6Ftg1/leefruimte-hero.jpg'
 # ibb reuses the links to already existing images
 INTRO_HERO = 'https://i.ibb.co/Qjxy2mK/tuin-02.jpg'
 INTRO_DETAIL = [
-    'https://i.ibb.co/YZBT1xG/leefruimte-00.jpg',
     'https://i.ibb.co/dMS6M7H/intro-00.jpg',
+    'https://i.ibb.co/YZBT1xG/leefruimte-00.jpg',
     'https://i.ibb.co/bb93LSB/tuin-00.jpg',
     'https://i.ibb.co/sqDVv1s/badkamer-wasplaats-01.jpg',
     'https://i.ibb.co/BTY5rXx/kamers-01.jpg',
