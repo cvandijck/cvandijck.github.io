@@ -123,13 +123,13 @@
 
                 <!-- Arrows for navigation -->
                 <button
-                  class="absolute left-40 top-1/2 -translate-y-1/2 transform rounded bg-black bg-opacity-50 px-2 py-1 text-white"
+                  class="absolute left-0 lg:left-40 top-1/2 -translate-y-1/2 transform rounded bg-black bg-opacity-50 px-2 py-1 text-white"
                   onclick="prevSlide('carousel-image-{{ section.id }}')"
                 >
                   &#9665;
                 </button>
                 <button
-                  class="absolute right-40 top-1/2 -translate-y-1/2 transform rounded bg-black bg-opacity-50 px-2 py-1 text-white"
+                  class="absolute right-0 lg:right-40 top-1/2 -translate-y-1/2 transform rounded bg-black bg-opacity-50 px-2 py-1 text-white"
                   onclick="nextSlide('carousel-image-{{ section.id }}')"
                 >
                   &#9655;
@@ -178,12 +178,12 @@
             </iframe>
           </div>
           <div class="mx-2 p-8 text-justify lg:mx-8 lg:w-1/2 lg:pl-10">
-            <h2 class="mb-4 text-3xl font-bold text-left">{{ content.location.title }}</h2>
+            <h2 class="mb-6 text-3xl font-bold text-left">{{ content.location.title }}</h2>
               {% for paragraph in content.location.content %}
                 {% if loop.last %}
-                  <p class="mb-4 text-lg">{{ paragraph|safe }}</p>
+                  <p class="mb-12 text-lg">{{ paragraph|safe }}</p>
                 {% else %}
-                  <p class="mb-8 text-lg">{{ paragraph|safe }}</p>
+                  <p class="mb-6 text-lg">{{ paragraph|safe }}</p>
                 {% endif %}
               {% endfor %}
           </div>

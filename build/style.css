@@ -537,14 +537,14 @@ video {
 .inset-0 {
   inset: 0px;
 }
-.left-40 {
-  left: 10rem;
+.left-0 {
+  left: 0px;
+}
+.right-0 {
+  right: 0px;
 }
 .right-4 {
   right: 1rem;
-}
-.right-40 {
-  right: 10rem;
 }
 .top-1\/2 {
   top: 50%;
@@ -574,14 +574,8 @@ video {
 .mb-24 {
   margin-bottom: 6rem;
 }
-.mb-4 {
-  margin-bottom: 1rem;
-}
 .mb-6 {
   margin-bottom: 1.5rem;
-}
-.mb-8 {
-  margin-bottom: 2rem;
 }
 .flex {
   display: flex;
@@ -826,6 +820,14 @@ video {
   text-decoration-line: underline;
 }
 @media (min-width: 1024px) {
+
+  .lg\:left-40 {
+    left: 10rem;
+  }
+
+  .lg\:right-40 {
+    right: 10rem;
+  }
 
   .lg\:mx-4 {
     margin-left: 1rem;
