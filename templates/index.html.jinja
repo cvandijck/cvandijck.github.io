@@ -50,8 +50,11 @@
           <h2 class="mb-6 text-2xl font-bold lg:text-4xl">
             Prachtige Gezinswoning in Gentse Stropbuurt
           </h2>
-          <p class="mb-4 font-bold text-xl">
-            Energiezuinig | 3 volwaardige slaapkamers | Zonnige stadstuin | Centrale locatie
+          <p class="mb-6 font-bold text-xl hidden lg:flex">
+            Energiezuinig | Volwaardige 3 slaapkamers | Zonnige stadstuin | Centrale locatie
+          </p>
+          <p class="mb-6 font-bold text-xl lg:hidden">
+            Energiezuinig<br>Volwaardige 3 slaapkamers<br>Zonnige stadstuin<br>Centrale locatie
           </p>
           <p class="mb-24 text-xl">Prijs: {{ content.price }}</p>
           <a
@@ -68,13 +71,13 @@
     {% for section in content.sections %}
       {% if loop.index0 % 2 == 0 %}
         <section
-            class="section-feature flex items-center bg-stone-50 py-8 lg:h-screen"
+            class="section-feature flex items-center bg-stone-50 lg:h-screen"
         >
           <div class="container mx-auto h-full">
             <div class="flex flex-col h-full lg:flex-row">
       {% else %}
         <section
-            class="section-feature flex items-center bg-stone-100 py-8 lg:h-screen"
+            class="section-feature flex items-center bg-stone-100 lg:h-screen"
         >
           <div class="container mx-auto h-full">
             <div class="flex flex-col h-full lg:flex-row-reverse">
@@ -90,19 +93,20 @@
             </div>
 
             <!-- section text  -->
-            <div class="mx-2 lg:mx-8 p-8 text-justify lg:w-3/5">
-              <h2 class="mb-4 text-3xl font-bold text-left">{{ section.title }}</h2>
-              {% for sectioncontent in section.content %}
+            <div class="mx-2 my-auto lg:mx-8 p-8 text-justify lg:w-3/5">
+              <h2 class="mb-6 text-3xl font-bold text-left">{{ section.title }}</h2>
+              {% for paragraph in section.content %}
                 {% if loop.last %}
-                  <p class="mb-4 text-lg">{{ sectioncontent }}</p>
+                  <p class="mb-12 text-lg">{{ paragraph }}</p>
                 {% else %}
-                  <p class="mb-8 text-lg">{{ sectioncontent }}</p>
+                  <p class="mb-6 text-lg">{{ paragraph }}</p>
                 {% endif %}
               {% endfor %}
 
+              {% if section.detail_images %}
               <!-- Carousel for additional images -->
               <div class="relative">
-                <div class="carousel flex h-80 my-auto overflow-hidden" id="carousel-{{ section.id }}">
+                <div class="carousel flex h-64 my-auto overflow-hidden" id="carousel-{{ section.id }}">
                   {% for detail_image in section.detail_images %}
                     <div
                       class="carousel-image-{{ section.id }} carousel-item w-full flex-shrink-0 my-auto"
@@ -110,7 +114,7 @@
                       <img
                         src="{{ detail_image }}"
                         alt="{{ section.id }} detail"
-                        class="mx-auto my-auto max-h-80 cursor-pointer rounded-lg object-cover shadow-lg"
+                        class="mx-auto my-auto max-h-64 cursor-pointer rounded-lg object-cover shadow-lg"
                         onclick="openLightbox('{{ detail_image }}')"
                       />
                     </div>
@@ -119,26 +123,24 @@
 
                 <!-- Arrows for navigation -->
                 <button
-                  class="absolute left-0 top-1/2 -translate-y-1/2 transform rounded bg-black bg-opacity-50 px-2 py-1 text-white"
+                  class="absolute left-40 top-1/2 -translate-y-1/2 transform rounded bg-black bg-opacity-50 px-2 py-1 text-white"
                   onclick="prevSlide('carousel-image-{{ section.id }}')"
                 >
                   &#9665;
                 </button>
                 <button
-                  class="absolute right-0 top-1/2 -translate-y-1/2 transform rounded bg-black bg-opacity-50 px-2 py-1 text-white"
+                  class="absolute right-40 top-1/2 -translate-y-1/2 transform rounded bg-black bg-opacity-50 px-2 py-1 text-white"
                   onclick="nextSlide('carousel-image-{{ section.id }}')"
                 >
                   &#9655;
                 </button>
               </div>
+              {% endif %}
             </div>
           </div>
         </div>
       </section>
     {% endfor %}
-
-    <!-- Repeat similar structure for other sections -->
-    <!-- Kitchen, Garden, and Specifications as before -->
 
     <!-- Features Section: Location -->
     <section
@@ -176,23 +178,14 @@
             </iframe>
           </div>
           <div class="mx-2 p-8 text-justify lg:mx-8 lg:w-1/2 lg:pl-10">
-            <h2 class="mb-4 text-3xl font-bold">Centrale locatie</h2>
-            <p class="mb-6 text-lg">
-              Deze woning is gelegen in de populaire stropbuurt. Op een
-              boogscheut van het Citadelpark vind je hier winkels en scholen op
-              wandelafstand. Openbaar vervoer is steeds nabij met belangrijke
-              buslijnen in de naburige straten en het Sint-Pietersstation op
-              slechts 5 minuten fietsen. Via de grote invalswegen E17 en E40 ben
-              je ook zo weer uit de stad naar je werk of naar de zee! Voor
-              ontspanning heb je verschillende musea, zwembad "De Strop",
-              kinepolis cinema en verschillende fitness centra ter je
-              beschikking!
-            </p>
-            <p class="mb-6 text-lg">
-              De Vlierstaat en omgeving wordt binnenkort heraangelegd tot autoluwe woonerf waarbij er
-              ruimte wordt gemaakt voor de zwakke weggebruiker met o.a. groenzones en zitbanken.
-              Meer informatie kan u terugvinden op de <a class="font-medium text-blue-100 dark:text-blue-500 hover:underline" href="https://stad.gent/nl/plannen-en-projecten/project-vlierstraat-en-omgeving" target="_blank">webpagina</a> van Stad Gent.
-            </p>
+            <h2 class="mb-4 text-3xl font-bold text-left">{{ content.location.title }}</h2>
+              {% for paragraph in content.location.content %}
+                {% if loop.last %}
+                  <p class="mb-4 text-lg">{{ paragraph|safe }}</p>
+                {% else %}
+                  <p class="mb-8 text-lg">{{ paragraph|safe }}</p>
+                {% endif %}
+              {% endfor %}
           </div>
         </div>
       </div>
@@ -278,12 +271,25 @@
           </tbody>
         </table>
         <div
-          class="flex flex-col items-center justify-center space-y-4 py-8 lg:flex-row lg:space-x-4 lg:space-y-0"
+          class="flex flex-col flex-wrap items-center justify-center space-y-4 py-8 lg:flex-row lg:gap-y-4 lg:space-x-4 lg:space-y-0"
         >
-          {% for file in content.files %}
+            {% for file in content.files %}
+              <a
+              href="{{ file.path }}"
+              class="rounded-lg bg-blue-500 px-4 py-2 text-white transition hover:bg-blue-700"
+              target="_blank"
+              >Download {{ file.label }}</a
+            >
+          {% endfor %}
+
+       </div>
+       <div
+          class="flex flex-col flex-wrap items-center justify-center space-y-4 py-8 lg:flex-row lg:gap-y-4 lg:space-x-4 lg:space-y-0"
+        >
+          {% for file in content.important_files %}
             <a
             href="{{ file.path }}"
-            class="rounded-lg bg-blue-500 px-4 py-2 text-white transition hover:bg-blue-700"
+            class="rounded-lg bg-red-500 px-4 py-2 text-white transition hover:bg-red-700"
             target="_blank"
             >Download {{ file.label }}</a
           >
@@ -337,7 +343,9 @@
 
       // Initialize swipe events for each carousel
       {% for section in content.sections %}
-        addSwipeEvents("carousel-{{ section.id }}", "carousel-image-{{ section.id }}");
+        {% if section.detail_images %}
+          addSwipeEvents("carousel-{{ section.id }}", "carousel-image-{{ section.id }}");
+        {% endif %}
       {% endfor %}
 
       let currentSlides = {
