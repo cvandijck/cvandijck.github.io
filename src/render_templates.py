@@ -19,7 +19,7 @@ BANNER = 'https://i.ibb.co/mHKCmw5/banner-hero.jpg'
 # ibb reuses the links to already existing images
 INTRO_TITLE = 'Welkom in uw nieuwe thuis'
 INTRO_CONTENT = [
-    'Bent u op zoek naar een gezellige, praktische en instapklare woning? In deze mooi gerenoveerde, energiezuinige gezinswoning geniet u van modern comfort op een toplocatie in de gezelligste stad van Vlaanderen. Gelegen op een rustige eenrichtingsstraat in de zeer gegeerde Stropbuurt, geniet u van alle voordelen van de stad zonder het drukke verkeer. Winkels, scholen, voorzieningen voor sport en ontspanning liggen allemaal op wandel- of fietsafstand. De stad ontsnappen is ook geen probleem. In slechts enkele minuten bent u bij trein, tram of bus, of je rijdt de stad uit via elk van de belangrijke invalswegen. Ook de fiets biedt soelaas via de nabijgelegen fietssnelwegen. Voor natuur hoef je gelukkig niet ver te gaan met zowel het Citadelpark als de Plantentuin slechts een boogscheut verwijderd.',
+    'Bent u op zoek naar een gezellige, praktische en instapklare woning? In deze mooie, energiezuinige gezinswoning geniet u van modern comfort op een toplocatie in de gezelligste stad van Vlaanderen. Gelegen in een rustige eenrichtingsstraat in de zeer gegeerde Stropbuurt, geniet u van alle voordelen van de stad zonder het drukke verkeer. Winkels, scholen, voorzieningen voor sport en ontspanning liggen allemaal op wandel- of fietsafstand. De stad ontsnappen is ook geen probleem. In slechts enkele minuten bent u bij trein, tram of bus, of u rijdt de stad uit via de belangrijke invalswegen. Ook de fiets biedt soelaas via de nabijgelegen fietssnelwegen.',
     'De woning biedt niet alleen energiezuinigheid met een groen EPC-label B, maar ook verrassend veel ruimte. Hoge plafonds in alle slaapkamers, een handige wasruimte en een grote stadstuin met fruitbomen maken dit een zeldzame vondst. De zuidwest georiënteerde tuin biedt veel privacy en vormt een zonnige oase van rust midden in de stad. Kortom, een woning die alle praktische noden en comfort van het stadsleven vervult. Aarzel niet en plan vandaag nog een bezoek – uw toekomstige thuis wacht op u!',
 ]
 INTRO_HERO = 'https://i.ibb.co/Qjxy2mK/tuin-02.jpg'
@@ -35,12 +35,12 @@ INTRO_DETAIL = None
 # LIVING
 LIVING_TITLE = 'Leven in de stad – kom binnen in de gezellige leefruimte'
 LIVING_CONTENT = [
-    'We heten u welkom in de hal. Niet alleen een handige plaats voor jassen, maar vooral een ruimte die voorkomt dat u vanuit de straat rechtstreeks de gezellige leefruimte binnenstapt. Netjes betegeld zodat u zelfs met natte schoenen zonder zorgen kan binnen komen.',
-    'Via de tussendeur komt u in de living die niet enkel plaats biedt aan een ruim salon, maar ook aan een extra ruimte die benut kan worden als speelhoek of bureau. Aansluitend vindt u de volledig geïnstalleerde leefkeuken met kwalitatieve toestellen. Met zicht op de tuin kook je hier naar hartenlust terwijl de kinderen spelen of de gasten al van een aperitief genieten.',
+    'We heten u welkom in de hal. Niet alleen een handige plaats voor jassen, maar vooral een ruimte die voorkomt dat u vanuit de straat rechtstreeks de gezellige leefruimte binnenstapt. Netjes betegeld zodat u zelfs met natte schoenen zonder zorgen kan binnenkomen.',
+    'Via de tussendeur komt u in de living die niet enkel plaats biedt aan een ruim salon, maar ook aan een extra ruimte die benut kan worden als speelhoek of bureau. Aansluitend vindt u de volledig geïnstalleerde leefkeuken met kwalitatieve toestellen. Met zicht op de tuin kookt u hier naar hartenlust terwijl de kinderen spelen of de gasten al van een aperitief genieten.',
 ]
 LIVING_HERO = 'https://i.ibb.co/6R6Ftg1/leefruimte-hero.jpg'
 LIVING_DETAIL = [
-    'https://i.ibb.co/YZBT1xG/leefruimte-00.jpg',
+    'https://i.ibb.co/Js4QZWt/leefruimte-00.jpg',
     'https://i.ibb.co/vxz4vpf/leefruimte-01.jpg',
     'https://i.ibb.co/dsNM2Ps/leefruimte-02.jpg',
     'https://i.ibb.co/938cL2n/leefruimte-03.jpg',
@@ -52,8 +52,8 @@ LIVING_DETAIL = [
 # ROOMS
 ROOMS_TITLE = 'Ruimte en licht – een perfecte combinatie'
 ROOMS_CONTENT = [
-    'Deze woning verrast met haar ruime, lichte kamers. Als een van de enige huizen in de wijk met een volwaardige bovenverdieping biedt dit huis veel meer ruimte als vergelijkbare panden in de buurt. Mede dankzij deze configuratie en de aanwezige coax- en ethernetaansluitingen kunnen de slaapkamers optimaal benut worden als thuiskantoor of als kinder-, logeer- of hobbykamer en is de woning perfect afgestemd op de noden van een jong gezin.',
-    'Alle kamers zijn voorzien van grote ramen die het natuurlijke licht maximaal binnenlaten, waardoor de ruimtes fris en uitnodigend aanvoelen. Een vliegenraam in elke kamer garanderen een ononderbroken slaap!',
+    'Deze woning verrast met haar ruime, lichte kamers. Als een van de enige huizen in de wijk met een volwaardige bovenverdieping biedt dit huis veel meer ruimte dan vergelijkbare panden in de buurt. Door de aanwezige coax- en ethernetaansluitingen kunnen de slaapkamers optimaal benut worden als thuiskantoor, kinder-, logeer- of hobbykamer en is de woning perfect afgestemd op de noden van een jong gezin.',
+    'Alle kamers zijn voorzien van grote ramen die het natuurlijke licht maximaal binnenlaten, waardoor de ruimtes fris en uitnodigend aanvoelen. Een vliegenraam in elke kamer garandeert een ononderbroken slaap!',
 ]
 ROOMS_HERO = 'https://i.ibb.co/Gnpd5bF/kamers-hero.jpg'
 ROOMS_DETAIL = [
@@ -68,7 +68,7 @@ ROOMS_DETAIL = [
 # WASH
 WASH_TITLE = 'Kom tot rust in uw douche of ligbad, aan u de keuze'
 WASH_CONTENT = [
-    'De badkamer is fris en praktisch ingericht, ook in deze ruimte geniet u van veel licht door het grote raam. Naast een douche en ligbad vindt u een ladekast met dubbele lavabo en een spiegelkastje met extra opbergruimte. Naast de badkamer vindt u een apart toilet.',
+    'De badkamer is fris en praktisch ingericht, ook in deze ruimte geniet u van veel licht door het grote raam. Naast een douche en ligbad vindt u een ladekast met dubbele lavabo en een spiegelkastje met extra opbergruimte. Een apart toilet bevindt zich naast de badkamer.',
     'Dankzij de extra wasruimte naast de inkomhal ligt uw leefruimte of badkamer nooit meer vol was – een praktisch voordeel dat u zeker zal waarderen. In deze ruimte plaatst u met gemak een wasmachine, droogkast en een extra koelkast of voorraadkast. De vaste rekken geven u een praktische opbergplaats voor uw huishoudelijke producten.',
 ]
 WASH_HERO = 'https://i.ibb.co/b19BKLZ/badkamer-wasplaats-hero.jpg'
@@ -82,8 +82,8 @@ WASH_DETAIL = [
 # GARDEN
 GARDEN_TITLE = 'Uw eigen stadstuin – zon, privacy en fruit'
 GARDEN_CONTENT = [
-    'Een ruime, zonnige tuin in hartje Gent? Ja, u leest het goed! Deze zuidwest georiënteerde buitenruimte is een echte parel voor stadsliefhebbers die ook van groen willen genieten. De tuin biedt voldoende ruimte voor een gezellige barbecue, of om simpelweg te relaxen op het zonnige terras.',
-    'Daarnaast is er een handig tuinhuisje die dienstdoet als opslagplaats én als werkplek voor de doe-het-zelver. Maar het meest bijzondere zijn de drie prachtige fruitbomen – twee perenbomen en een appelboom – die in de late zomer heerlijke vruchten opleveren. Omringd door groen en met weinig inkijk, geniet u hier in alle rust van een uniek stukje natuur in de stad. Dit is de perfecte plek om te ontsnappen aan de drukte, zonder de stad te verlaten.',
+    'Een ruime, zonnige tuin in hartje Gent? Ja, u leest het goed! De zuidwest georiënteerde buitenruimte is een echte parel voor stadsliefhebbers die ook van groen willen genieten. De tuin biedt voldoende ruimte voor een gezellige barbecue, of om simpelweg te relaxen op het zonnige terras.',
+    'Daarnaast is er een handig tuinhuisje dat dienst doet als opslagplaats én als werkplek voor de doe-het-zelver. Maar het meest bijzondere zijn de drie prachtige fruitbomen – twee perenbomen en een appelboom – die in de late zomer heerlijke vruchten opleveren. Omringd door groen en met weinig inkijk, geniet u hier in alle rust van een uniek stukje natuur in de stad. Dit is de perfecte plek om te ontsnappen aan de drukte, zonder de stad te verlaten.',
 ]
 GARDEN_HERO = 'https://i.ibb.co/KmvGtF8/tuin-hero.jpg'
 GARDEN_DETAIL = [
@@ -95,8 +95,8 @@ GARDEN_DETAIL = [
 # LOCATION
 LOCATION_TITLE = 'Dicht bij alles, snel ver weg'
 LOCATION_CONTENT = [
-    'Deze woning is gelegen in de populaire Stropbuurt. Op een boogscheut van het Citadelpark, vindt u hier winkels en scholen op wandelafstand. Openbaar vervoer is steeds nabij met belangrijke buslijnen in de naburige straten en het Sint-Pietersstation op slechts 5 minuten fietsen. Ook met de wagen ben je via de grote invalswegen R4, E17 en E40 zo weer uit de stad. Voor ontspanning, cultuur en sport is er voor elk wat wils met verschillende musea, een cinema, zwembad "De Strop", en fitness centra op wandel- en fietsafstand.',
-    'De Vlierstaat en omgeving worden binnenkort heraangelegd tot een autoluwe woonerf waarbij er ruimte wordt gemaakt voor de zwakke weggebruiker met o.a. groenzones en zitbanken. Meer informatie kan u terugvinden op de <a class="font-medium text-blue-100 dark:text-blue-500 hover:underline" href="https://stad.gent/nl/plannen-en-projecten/project-vlierstraat-en-omgeving" target="_blank">webpagina</a> van Stad Gent.',
+    'Deze woning is gelegen in de populaire Stropbuurt op een boogscheut van het Citadelpark. Op wandelafstand vindt u hier verschillende winkels en scholen. Openbaar vervoer is steeds nabij met belangrijke buslijnen in de naburige straten en het Sint-Pietersstation op slechts 5 minuten fietsen. Ook met de wagen bent u via de grote invalswegen R4, E17 en E40 zo weer uit de stad. Voor ontspanning, cultuur en sport is er voor elk wat wils met verschillende musea, een cinema, zwembad "De Strop", en fitnesscentra op wandel- en fietsafstand.',
+    'De Vlierstaat en omgeving worden binnenkort heraangelegd tot een autoluw woonerf waarbij er ruimte wordt gemaakt voor de zwakke weggebruiker met groenzones en zitbanken. Meer informatie kan u terugvinden op de <a class="font-medium text-blue-100 dark:text-blue-500 hover:underline" href="https://stad.gent/nl/plannen-en-projecten/project-vlierstraat-en-omgeving" target="_blank">webpagina</a> van Stad Gent.',
 ]
 
 MAILTO_RECEIVER = 'vlierstraat26@outlook.com'
@@ -245,7 +245,8 @@ def main():
             File('Perceel Plan', 'files/perceelplan.pdf'),
             File('Elektrische Keuring', 'files/elektrische_keuring.jpg'),
         ],
-        important_files=[File('Bod Formulier', 'files/perceelplan.pdf')],
+        # important_files=[File('Bod Formulier', 'files/perceelplan.pdf')],
+        important_files=[],
     )
 
     for file in content.files:
