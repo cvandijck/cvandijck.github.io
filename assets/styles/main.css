@@ -107,3 +107,41 @@ html {
 .social-icon {
   @apply text-2xl text-white;
 }
+
+
+/* keep spacing consistent when typing */
+#typewriter {
+  display: inline-block;
+  white-space: pre;
+}
+
+#typewriter::after {
+  content: "|";
+  display: inline-block;
+  font-weight: 700;
+  color: #FFD54A;
+  animation: blink-caret 0.75s ease-in-out infinite;
+  margin-left: -1px;
+  /* remove spacing */
+  position: relative;
+  top: -1px;
+  /* optional: align vertically */
+}
+
+/* stop blinking when typing */
+#typewriter.typing::after {
+  animation: none;
+  opacity: 1;
+  /* keep caret visible while typing */
+}
+
+@keyframes blink-caret {
+  0%,   100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
