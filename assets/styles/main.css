@@ -6,3 +6,32 @@ html {
 }
 
 @tailwind utilities;
+
+/* Semantic helper classes to reduce repeated Tailwind utility usage */
+.nav-link {
+  @apply cursor-pointer pt-0.5 font-header font-semibold uppercase text-white;
+}
+
+.nav-underline {
+  @apply block h-0.5 w-full bg-transparent;
+}
+
+.btn-primary {
+  @apply flex h-20 w-full items-center justify-center space-x-4 rounded bg-primary px-8 font-header text-lg font-bold uppercase text-white;
+}
+
+.card {
+  @apply rounded px-8 py-12 shadow;
+}
+
+.card-icon {
+  @apply mx-auto h-52 w-52 text-center xl:h-56 xl:w-56;
+}
+
+.section-title {
+  @apply text-center font-header text-4xl font-semibold uppercase text-primary;
+}
+
+.contact-box {
+  @apply w-full px-6 py-6 border-2 border-grey-60;
+}
