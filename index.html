@@ -80,8 +80,11 @@
         <div class="flex flex-col items-center justify-center lg:flex-row">
           <img src="/assets/img/profile_crop.jpeg" class="h-48 rounded-full border-8 border-white shadow-xl sm:h-56" alt="author" />
           <div class="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">
-            <h1 class="text-center font-header text-4xl text-white sm:text-left sm:text-5xl md:text-6xl">Hello, I'm Christophe!</h1>
-            <div class="flex flex-col justify-center pt-3 sm:flex-row sm:pt-5 lg:justify-start">
+            <h1 class="border text-center font-header text-4xl text-white sm:text-left sm:text-5xl md:text-6xl">Hello, I'm Christophe!</h1>
+            <div class="border pt-4 text-center sm:text-left">
+              <span class="font-body text-2xl text-yellow h-8" id="typewriter"></span>
+            </div>
+            <div class="border flex flex-col justify-center pt-3 sm:flex-row sm:pt-5 lg:justify-start">
               <div class="flex items-center justify-center pl-0 sm:justify-start md:pl-1">
                 <span class="font-body text-lg uppercase text-white">Let's connect</span>
                 <i class="bx bx-chevron-right text-3xl text-yellow hidden sm:block"></i>
@@ -362,6 +365,59 @@
     </div>
   </footer>
   <script src="/assets/js/main.js"></script>
+</body>
+<script>
+  // Typewriter animation configuration
+  const typewriterConfig = {
+    typingSpeed: 80,      // Speed of typing characters (milliseconds)
+    deletingSpeed: 60,    // Speed of deleting characters (milliseconds)
+    pauseBeforeDelete: 1200, // How long to pause before starting to delete (milliseconds)
+    pauseBeforeNext: 400,    // How long to pause before typing next role (milliseconds)
+    roles: [
+      "Research Engineer",
+      "Tech Lead",
+      "Biomedical Engineer",
+      "Solution Architect",
+      "Team Lead",
+      "Software Engineer",
+      "People Manager"
+    ]
+  };
+
+  const typewriter = document.getElementById("typewriter");
+  let roleIndex = 0;
+  let charIndex = 0;
+  let typing = true;
+
+  function updateTypewriter(text) {
+    typewriter.textContent = text || '\u00A0'; // Use non-breaking space if text is empty
+  }
+
+  function typeRole() {
+    if (typing) {
+      if (charIndex < typewriterConfig.roles[roleIndex].length) {
+        updateTypewriter(typewriterConfig.roles[roleIndex].slice(0, charIndex + 1));
+        charIndex++;
+        setTimeout(typeRole, typewriterConfig.typingSpeed);
+      } else {
+        typing = false;
+        setTimeout(typeRole, typewriterConfig.pauseBeforeDelete);
+      }
+    } else {
+      if (charIndex > 0) {
+        updateTypewriter(typewriterConfig.roles[roleIndex].slice(0, charIndex - 1));
+        charIndex--;
+        setTimeout(typeRole, typewriterConfig.deletingSpeed);
+      } else {
+        typing = true;
+        roleIndex = (roleIndex + 1) % typewriterConfig.roles.length;
+        setTimeout(typeRole, typewriterConfig.pauseBeforeNext);
+      }
+    }
+  }
+
+  if (typewriter) typeRole();
+</script>
 </body>
 
 </html>
