@@ -108,6 +108,11 @@ html {
   @apply text-2xl text-white;
 }
 
+@layer base {
+  section {
+    @apply min-h-screen flex flex-col justify-center;
+  }
+}
 
 /* keep spacing consistent when typing */
 #typewriter {

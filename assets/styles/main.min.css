@@ -572,6 +572,19 @@ select {
 [type='file']:focus {
   outline: 1px auto -webkit-focus-ring-color;
 }
+  section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
@@ -2323,7 +2336,6 @@ html {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-
 
 /* keep spacing consistent when typing */
 #typewriter {
