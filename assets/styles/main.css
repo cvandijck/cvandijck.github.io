@@ -65,7 +65,7 @@ html {
 
 /* Project card footer helper */
 .project-card-footer {
-  @apply bg-white py-6 px-5 xl:py-8;
+  @apply bg-white py-6 px-5 xl:py-8 flex flex-col flex-grow;
 }
 
 /* Timeline helpers */
