@@ -2,7 +2,7 @@
 
 Welcome to the website of Christophe Van Dijck. 
 
-Feel free to browse around in the source code, but you get the best experience at [www.christophevandijck.be](https://www.two-o-eight.be).
+Feel free to browse around in the source code, but you get the best experience at [www.christophevandijck.be](www.christophevandijck.be).
 
 
 ## Acknowledgement
