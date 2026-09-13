@@ -150,6 +150,28 @@ html {
   @apply absolute bottom-0 right-0 mb-4 mr-4 block rounded-full border-2 border-white px-6 py-2 text-center font-body text-sm font-bold uppercase text-white md:text-base;
 }
 
+/* Project carousel helpers */
+.carousel-track {
+  @apply flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-4 xl:gap-10;
+  scrollbar-width: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-item {
+  @apply w-full flex-none snap-center sm:w-1/2 lg:w-1/4;
+}
+
+.carousel-nav-btn {
+  @apply absolute top-12 z-10 hidden h-56 w-12 items-center justify-center sm:h-64 md:flex lg:h-48 xl:h-56;
+}
+
+.carousel-nav-btn-icon {
+  @apply flex h-12 w-12 items-center justify-center rounded-full bg-primary text-2xl text-white shadow transition-colors hover:bg-opacity-90;
+}
+
 /* Timeline helpers */
 .timeline-dot {
   @apply h-4 w-4 rounded-full border-2 border-grey-40 bg-white;
@@ -254,7 +276,7 @@ html {
   content: "|";
   display: inline-block;
   font-weight: 700;
-  color: #FFD54A;
+  color: #ffd54a;
   animation: blink-caret 0.75s ease-in-out infinite;
   margin-left: -1px;
   /* remove spacing */
@@ -271,7 +293,8 @@ html {
 }
 
 @keyframes blink-caret {
-  0%,   100% {
+  0%,
+  100% {
     opacity: 1;
   }
 
@@ -279,4 +302,3 @@ html {
     opacity: 0;
   }
 }
-

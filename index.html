@@ -256,9 +256,9 @@
             <div class="text-center">
               <h4 class="skill-title">Rapid<br />Prototyping</h4>
               <p class="skill-desc">
-                Fail fast, learn faster. I use my broad skill-set to quickly
-                build prototypes to explore new technologies or to validate
-                ideas.
+                Fail fast, learn even faster. I use my broad skill-set to
+                quickly build prototypes to explore new technologies or to
+                validate ideas.
               </p>
             </div>
           </article>
@@ -558,94 +558,145 @@
             Check out some of my passion projects!
           </h3>
           <div
-            class="mx-auto grid w-full grid-cols-1 gap-6 pt-12 sm:w-3/4 lg:w-11/12 lg:grid-cols-4 xl:gap-10"
+            class="relative mx-auto w-full pt-12 sm:w-3/4 lg:w-11/12"
+            x-data="{
+              scrollCarousel(dir) {
+                const el = this.$refs.carouselTrack;
+                el.scrollBy({ left: el.clientWidth * dir, behavior: 'smooth' });
+              },
+            }"
           >
-            <!-- cookiecutter for python -->
-            <a
-              href="https://github.com/cvandijck/cookiecutter-python"
-              class="project-card"
+            <button
+              @click="scrollCarousel(-1)"
+              class="carousel-nav-btn left-0 -translate-x-1/2"
+              aria-label="Previous project"
+              type="button"
             >
-              <div
-                style="background-image: url(/assets/img/cookiecutter.png)"
-                class="project-card-image group"
+              <span class="carousel-nav-btn-icon">
+                <i class="bx bx-chevron-left"></i>
+              </span>
+            </button>
+            <div x-ref="carouselTrack" class="carousel-track">
+              <!-- cookiecutter for python -->
+              <a
+                href="https://github.com/cvandijck/cookiecutter-python"
+                class="project-card carousel-item"
               >
-                <span class="project-card-overlay"></span>
-                <span class="project-card-badge">Read More</span>
-              </div>
-              <div class="project-card-footer">
-                <span class="project-title">Get your projects out there</span>
-                <span class="project-desc"
-                  >I developed a cookiecutter template to quickly setup, package
-                  and share your python projects with the world!</span
+                <div
+                  style="background-image: url(/assets/img/cookiecutter.png)"
+                  class="project-card-image group"
                 >
-              </div>
-            </a>
-            <!-- adopt -->
-            <a
-              href="https://github.com/cvandijck/azure-devops-tools"
-              class="project-card"
+                  <span class="project-card-overlay"></span>
+                  <span class="project-card-badge">Read More</span>
+                </div>
+                <div class="project-card-footer">
+                  <span class="project-title">Get your projects out there</span>
+                  <span class="project-desc"
+                    >I developed a cookiecutter template to quickly setup,
+                    package and share your python projects with the world!</span
+                  >
+                </div>
+              </a>
+              <!-- adopt -->
+              <a
+                href="https://github.com/cvandijck/azure-devops-tools"
+                class="project-card carousel-item"
+              >
+                <div
+                  style="
+                    background-image: url(https://github.com/cvandijck/azure-devops-tools/blob/main/adopt_logo.png?raw=true);
+                  "
+                  class="project-card-image group"
+                >
+                  <span class="project-card-overlay"></span>
+                  <span class="project-card-badge">Read More</span>
+                </div>
+                <div class="project-card-footer">
+                  <span class="project-title"
+                    >Azure DevOps Practical Tools</span
+                  >
+                  <span class="project-desc"
+                    >Azure DevOps Practical Tools is a set of tools to automate
+                    working with Azure Devops. The tools are developed as a CLI
+                    tool adopt to easily manage your Azure Devops project.</span
+                  >
+                </div>
+              </a>
+              <!-- typing-game -->
+              <a
+                href="https://github.com/cvandijck/typing-game"
+                class="project-card carousel-item"
+              >
+                <div
+                  style="
+                    background-image: url(https://github.com/cvandijck/typing-game/blob/main/favicon.svg?raw=true);
+                  "
+                  class="project-card-image group"
+                >
+                  <span class="project-card-overlay"></span>
+                  <span class="project-card-badge">Read More</span>
+                </div>
+                <div class="project-card-footer">
+                  <span class="project-title">Typing Game</span>
+                  <span class="project-desc"
+                    >A fun typing game I created so my toddlers can work
+                    alongside me on the computer. Built with Alpine.js featuring
+                    celebration animations, multilingual support, and responsive
+                    design for all devices.</span
+                  >
+                </div>
+              </a>
+              <!-- phd -->
+              <a href="/projects/phd/" class="project-card carousel-item">
+                <div
+                  style="background-image: url(/assets/img/doctoraat.jpg)"
+                  class="project-card-image group"
+                >
+                  <span class="project-card-overlay"></span>
+                  <span class="project-card-badge">Read More</span>
+                </div>
+                <div class="project-card-footer">
+                  <span class="project-title">My PhD Research</span>
+                  <span class="project-desc"
+                    >During my PhD in Biomedical Engineering at KU Leuven, I
+                    researched statistical shape models to personalise
+                    preoperative planning for knee replacement surgery.</span
+                  >
+                </div>
+              </a>
+              <!-- under construction -->
+              <a
+                href="https://github.com/cvandijck/"
+                class="project-card carousel-item"
+              >
+                <div
+                  style="
+                    background-image: url(/assets/img/under-construction.svg);
+                  "
+                  class="project-card-image group"
+                >
+                  <span class="project-card-overlay"></span>
+                  <span class="project-card-badge">Read More</span>
+                </div>
+                <div class="project-card-footer">
+                  <span class="project-title">Under construction</span>
+                  <span class="project-desc"
+                    >This webpage is still under construction. Tune in later for
+                    more blog posts or link to my favourite projects.</span
+                  >
+                </div>
+              </a>
+            </div>
+            <button
+              @click="scrollCarousel(1)"
+              class="carousel-nav-btn right-0 translate-x-1/2"
+              aria-label="Next project"
+              type="button"
             >
-              <div
-                style="
-                  background-image: url(https://github.com/cvandijck/azure-devops-tools/blob/main/adopt_logo.png?raw=true);
-                "
-                class="project-card-image group"
-              >
-                <span class="project-card-overlay"></span>
-                <span class="project-card-badge">Read More</span>
-              </div>
-              <div class="project-card-footer">
-                <span class="project-title">Azure DevOps Practical Tools</span>
-                <span class="project-desc"
-                  >Azure DevOps Practical Tools is a set of tools to automate
-                  working with Azure Devops. The tools are developed as a CLI
-                  tool adopt to easily manage your Azure Devops project.</span
-                >
-              </div>
-            </a>
-            <!-- typing-game -->
-            <a
-              href="https://github.com/cvandijck/typing-game"
-              class="project-card"
-            >
-              <div
-                style="
-                  background-image: url(https://github.com/cvandijck/typing-game/blob/main/favicon.svg?raw=true);
-                "
-                class="project-card-image group"
-              >
-                <span class="project-card-overlay"></span>
-                <span class="project-card-badge">Read More</span>
-              </div>
-              <div class="project-card-footer">
-                <span class="project-title">Typing Game</span>
-                <span class="project-desc"
-                  >A fun typing game I created so my toddlers can work alongside
-                  me on the computer. Built with Alpine.js featuring celebration
-                  animations, multilingual support, and responsive design for
-                  all devices.</span
-                >
-              </div>
-            </a>
-            <!-- under construction -->
-            <a href="https://github.com/cvandijck/" class="project-card">
-              <div
-                style="
-                  background-image: url(/assets/img/under-construction.svg);
-                "
-                class="project-card-image group"
-              >
-                <span class="project-card-overlay"></span>
-                <span class="project-card-badge">Read More</span>
-              </div>
-              <div class="project-card-footer">
-                <span class="project-title">Under construction</span>
-                <span class="project-desc"
-                  >This webpage is still under construction. Tune in later for
-                  more blog posts or link to my favourite projects.</span
-                >
-              </div>
-            </a>
+              <span class="carousel-nav-btn-icon">
+                <i class="bx bx-chevron-right"></i>
+              </span>
+            </button>
           </div>
         </div>
       </section>
