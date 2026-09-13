@@ -20,6 +20,9 @@ jobs:
 
       - run: npm ci
 
+      - name: Audit dependencies
+        run: npm audit --audit-level=critical
+
       - name: Build CSS
         run: npm run build
 
