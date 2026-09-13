@@ -3,111 +3,49 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Homepage | Christophe Van Dijck</title>
-    <meta
-      name="description"
-      content="Hi, I'm Christophe. Nice to meet you. Engineer, innovator, and technology enthusiast."
-    />
+    <meta name="description" content="Hi, I'm Christophe. Nice to meet you. Engineer, innovator, and technology enthusiast." />
     <meta name="author" content="Christophe Van Dijck" />
-    <meta
-      name="keywords"
-      content="Christophe Van Dijck, engineer, innovation, technology, AI, biomedical, projects, resume"
-    />
+    <meta name="keywords" content="Christophe Van Dijck, engineer, innovation, technology, AI, biomedical, projects, resume" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://cvandijck.github.io/" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/assets/img/icon.png"
-    />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icon.png" />
     <link rel="icon" type="image/svg+xml" href="/assets/img/icon.svg" />
     <link rel="apple-touch-icon" href="/assets/img/icon.png" />
     <meta name="theme-color" content="#5540af" />
     <meta property="og:title" content="Homepage | Christophe Van Dijck" />
-    <meta
-      property="og:description"
-      content="Hi, I'm Christophe. Nice to meet you. Engineer, innovator, and technology enthusiast."
-    />
+    <meta property="og:description" content="Hi, I'm Christophe. Nice to meet you. Engineer, innovator, and technology enthusiast." />
     <meta property="og:locale" content="en_US" />
     <meta property="og:url" content="https://cvandijck.github.io/" />
     <meta property="og:site_name" content="Christophe Van Dijck" />
-    <meta
-      property="og:image"
-      content="https://cvandijck.github.io/assets/img/social.jpg"
-    />
+    <meta property="og:image" content="https://cvandijck.github.io/assets/img/social.jpg" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@tailwindmade" />
     <meta name="twitter:title" content="Homepage | Christophe Van Dijck" />
-    <meta
-      name="twitter:description"
-      content="Hi, I'm Christophe. Nice to meet you. Engineer, innovator, and technology enthusiast."
-    />
-    <meta
-      name="twitter:image"
-      content="https://cvandijck.github.io/assets/img/social.jpg"
-    />
+    <meta name="twitter:description" content="Hi, I'm Christophe. Nice to meet you. Engineer, innovator, and technology enthusiast." />
+    <meta name="twitter:image" content="https://cvandijck.github.io/assets/img/social.jpg" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
-      rel="preload"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="/assets/styles/main.min.css"
-      rel="stylesheet"
-      media="screen"
-      crossorigin="anonymous"
-    />
-    <script
-      defer
-      src="https://unpkg.com/@alpine-collective/toolkit@1.0.0/dist/cdn.min.js"
-    ></script>
-    <script
-      defer
-      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
-    ></script>
+    <link as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap" rel="preload" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <link href="/assets/styles/main.min.css" rel="stylesheet" media="screen" crossorigin="anonymous" />
+    <script defer src="https://unpkg.com/@alpine-collective/toolkit@1.0.0/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
 
-  <body
-    :class="{ 'overflow-hidden max-h-screen': mobileMenu }"
-    class="relative"
-    x-data="{ mobileMenu: false }"
-  >
-    <header
-      class="absolute top-0 z-50 w-full py-3 sm:py-5"
-      x-data="{ nav: [ { id: '#about', label: 'About' }, { id: '#skills', label: 'Skills' }, { id: '#work', label: 'Work' }, { id: '#education', label: 'Education' }, { id: '#projects', label: 'Projects' }, { id: '#contact', label: 'Contact' } ], triggerNavItem(id) { window.scrollTo({ top: document.querySelector(id).offsetTop - 80, behavior: 'smooth' }); }, triggerMobileNavItem(id) { mobileMenu = false; this.triggerNavItem(id) } }"
-    >
+  <body :class="{ 'overflow-hidden max-h-screen': mobileMenu }" class="relative" x-data="{ mobileMenu: false }">
+    <header class="absolute top-0 z-50 w-full py-3 sm:py-5" x-data="{ nav: [ { id: '#about', label: 'About' }, { id: '#skills', label: 'Skills' }, { id: '#work', label: 'Work' }, { id: '#education', label: 'Education' }, { id: '#projects', label: 'Projects' }, { id: '#contact', label: 'Contact' } ], triggerNavItem(id) { window.scrollTo({ top: document.querySelector(id).offsetTop - 80, behavior: 'smooth' }); }, triggerMobileNavItem(id) { mobileMenu = false; this.triggerNavItem(id) } }">
       <div class="container flex items-center justify-between">
         <a href="/">
-          <img
-            src="/assets/img/logo_white.svg"
-            class="h-12 lg:h-16"
-            alt="logo image"
-          />
+          <img src="/assets/img/logo_white.svg" class="h-12 lg:h-16" alt="logo image" />
         </a>
         <nav class="hidden lg:block" aria-label="Main navigation">
           <ul class="flex items-center">
             <template x-for="item in nav" :key="item.id">
               <li class="group pl-6">
-                <span
-                  @click="triggerNavItem(item.id)"
-                  class="nav-link"
-                  x-text="item.label"
-                ></span>
+                <span @click="triggerNavItem(item.id)" class="nav-link" x-text="item.label"></span>
                 <span class="nav-underline group-hover:bg-yellow"></span>
               </li>
             </template>
@@ -117,32 +55,15 @@
           <i class="bx bx-menu text-4xl text-white"></i>
         </button>
       </div>
-      <div
-        class="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden"
-        :class="{ 'opacity-100 pointer-events-auto': mobileMenu }"
-      >
-        <nav
-          class="absolute right-0 min-h-screen w-2/3 bg-primary px-8 py-4 shadow md:w-1/3"
-          aria-label="Mobile navigation"
-        >
-          <button
-            class="absolute right-0 top-0 mr-4 mt-4"
-            @click="mobileMenu = false"
-          >
-            <img
-              src="/assets/img/icon-close.svg"
-              class="h-10 w-auto"
-              alt="close menu"
-            />
+      <div class="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden" :class="{ 'opacity-100 pointer-events-auto': mobileMenu }">
+        <nav class="absolute right-0 min-h-screen w-2/3 bg-primary px-8 py-4 shadow md:w-1/3" aria-label="Mobile navigation">
+          <button class="absolute right-0 top-0 mr-4 mt-4" @click="mobileMenu = false">
+            <img src="/assets/img/icon-close.svg" class="h-10 w-auto" alt="close menu" />
           </button>
           <ul class="mt-8 flex flex-col">
             <template x-for="item in nav" :key="item.id">
               <li class="py-2">
-                <span
-                  @click="triggerMobileNavItem(item.id)"
-                  class="nav-link"
-                  x-text="item.label"
-                ></span>
+                <span @click="triggerMobileNavItem(item.id)" class="nav-link" x-text="item.label"></span>
               </li>
             </template>
           </ul>
@@ -150,70 +71,26 @@
       </div>
     </header>
     <main id="main" class="relative">
-      <section
-        aria-label="Hero"
-        class="relative bg-cover bg-center bg-no-repeat py-16"
-        style="background-image: url(/assets/img/bg-presenting2_gray.png)"
-      >
-        <div
-          class="absolute inset-0 z-20 bg-gradient-to-r from-hero-gradient-from to-hero-gradient-to bg-cover bg-center bg-no-repeat"
-        ></div>
-        <div
-          class="container relative z-30 pb-12 pt-20 sm:pb-48 sm:pt-56 lg:pb-48 lg:pt-64"
-        >
-          <div class="flex flex-col items-center justify-center lg:flex-row">
-            <img
-              src="/assets/img/profile_optimized_tshirt2.png"
-              class="h-48 w-48 rounded-full border-8 border-white shadow-xl sm:h-56 sm:w-56"
-              alt="author"
-            />
-            <div class="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">
-              <h1
-                class="text-center font-header text-4xl text-white sm:text-left sm:text-5xl md:text-6xl"
-              >
-                Hello, I'm Christophe!
-              </h1>
+      <section aria-label="Hero" class="hero-section" style="background-image: url(/assets/img/bg-presenting2_gray.png)">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <div class="hero-profile">
+            <img src="/assets/img/profile_optimized_tshirt2.png" class="hero-profile-img" alt="author" />
+            <div class="hero-text">
+              <h1 class="hero-title">Hello, I'm Christophe!</h1>
               <div class="pt-2 text-center sm:text-left">
-                <span
-                  class="font-body text-xl sm:text-2xl md:text-3xl text-yellow min-h-[2rem]"
-                  id="typewriter"
-                ></span>
+                <span class="hero-typewriter" id="typewriter"></span>
               </div>
-              <div
-                class="flex flex-col justify-center pt-6 sm:flex-row sm:pt-8 lg:justify-start"
-              >
-                <div
-                  class="flex items-center justify-center pl-0 sm:justify-start md:pl-1"
-                >
-                  <span class="font-body text-lg uppercase text-white"
-                    >Let's connect</span
-                  >
-                  <i
-                    class="bx bx-chevron-right text-3xl text-yellow hidden sm:block"
-                  ></i>
+              <div class="hero-cta-row">
+                <div class="hero-cta-label">
+                  <span class="hero-cta-text">Let's connect</span>
+                  <i class="bx bx-chevron-right text-3xl text-yellow hidden sm:block"></i>
                 </div>
-                <div
-                  class="social-icons justify-center pl-2 pt-5 sm:justify-start sm:pt-0"
-                >
-                  <a
-                    href="mailto:christophe.vdijck@gmail.com?SUBJECT=I want to connect"
-                    ><i
-                      class="bx bxs-envelope social-icon hover:text-yellow"
-                    ></i
-                  ></a>
-                  <a href="https://www.linkedin.com/in/cvandijck/"
-                    ><i
-                      class="bx bxl-linkedin social-icon hover:text-yellow"
-                    ></i
-                  ></a>
-                  <a href="https://github.com/cvandijck"
-                    ><i class="bx bxl-github social-icon hover:text-yellow"></i
-                  ></a>
-                  <a href="https://wa.me/+32485403370"
-                    ><i
-                      class="bx bxl-whatsapp social-icon hover:text-yellow"
-                    ></i
-                  ></a>
+                <div class="social-icons justify-center pl-2 pt-5 sm:justify-start sm:pt-0">
+                  <a href="mailto:christophe.vdijck@gmail.com?SUBJECT=I want to connect"><i class="bx bxs-envelope social-icon hover:text-yellow"></i></a>
+                  <a href="https://www.linkedin.com/in/cvandijck/"><i class="bx bxl-linkedin social-icon hover:text-yellow"></i></a>
+                  <a href="https://github.com/cvandijck"><i class="bx bxl-github social-icon hover:text-yellow"></i></a>
+                  <a href="https://wa.me/+32485403370"><i class="bx bxl-whatsapp social-icon hover:text-yellow"></i></a>
                 </div>
               </div>
             </div>
@@ -221,32 +98,14 @@
         </div>
       </section>
       <section id="about" class="bg-secondary">
-        <div
-          class="container flex flex-col justify-center py-20 lg:w-full lg:flex-row lg:px-8"
-        >
-          <div class="w-full text-center lg:basis-2/3 lg:text-left">
+        <div class="about-content">
+          <div class="about-text">
             <h2 class="section-heading-lg">Who am I?</h2>
-            <h3
-              class="pt-6 font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl"
-            >
-              I'm Christophe Van Dijck, an engineer with a passion for
-              innovation and technology.
-            </h3>
-            <p class="pt-6 text-justify font-body leading-relaxed text-grey-20">
-              I am passionate about finding meaningful innovation in a complex
-              reality. Driven by continuous self-development, I keep myself up
-              to date with the latest technological advancements. Trying to
-              understand the needs of end-users and being able to solve their
-              complex problems with creative, passionate people is something I enjoy profoundly. Technology is
-              my passion, and with my innate critical and result-oriented
-              mindset I am able to manage the innovation process in an agile
-              way.
-            </p>
+            <h3 class="about-tagline">I'm Christophe Van Dijck, an engineer with a passion for innovation and technology.</h3>
+            <p class="about-desc">I am passionate about finding meaningful innovation in a complex reality. Driven by continuous self-development, I keep myself up to date with the latest technological advancements. Trying to understand the needs of end-users and being able to solve their complex problems with creative, passionate people is something I enjoy profoundly. Technology is my passion, and with my innate critical and result-oriented mindset I am able to manage the innovation process in an agile way.</p>
           </div>
-          <div class="mx-12 mt-12 lg:my-auto lg:ml-24 lg:basis-1/3">
-            <a
-              href="https://github.com/cvandijck/Resume/releases/latest/download/resume.pdf"
-            >
+          <div class="about-cta">
+            <a href="https://github.com/cvandijck/Resume/releases/latest/download/resume.pdf">
               <button class="btn-primary hover:bg-grey-20">
                 <i class="bx bx-download text-3xl"></i>
                 <span>Download Resume</span>
@@ -258,94 +117,45 @@
       <section id="skills" class="container py-16 md:py-20">
         <h2 class="section-title-responsive">What I'm good at</h2>
         <h3 class="section-subtitle">The skills I have to offer</h3>
-        <div
-          class="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 xl:grid-cols-4 xl:gap-10 xl:pt-12"
-        >
+        <div class="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 xl:grid-cols-4 xl:gap-10 xl:pt-12">
           <article class="card group">
             <div class="card-icon">
-              <img
-                src="/assets/img/prototype_accent.svg"
-                alt="prototyping"
-                class="hidden group-hover:block"
-              />
-              <img
-                src="/assets/img/prototype_primary.svg"
-                alt="prototyping"
-                class="block group-hover:hidden"
-              />
+              <img src="/assets/img/prototype_accent.svg" alt="prototyping" class="hidden group-hover:block" />
+              <img src="/assets/img/prototype_primary.svg" alt="prototyping" class="block group-hover:hidden" />
             </div>
             <div class="text-center">
               <h4 class="skill-title">Rapid<br />Prototyping</h4>
-              <p class="skill-desc">
-                Fail fast, learn faster. I use my broad skill-set to quickly
-                build prototypes to explore new technologies or to validate
-                ideas.
-              </p>
+              <p class="skill-desc">Fail fast, learn faster. I use my broad skill-set to quickly build prototypes to explore new technologies or to validate ideas.</p>
             </div>
           </article>
           <article class="card group">
             <div class="card-icon">
-              <img
-                src="/assets/img/problem_accent.svg"
-                alt="problem solving"
-                class="hidden group-hover:block"
-              />
-              <img
-                src="/assets/img/problem_primary.svg"
-                alt="problem solving"
-                class="block group-hover:hidden"
-              />
+              <img src="/assets/img/problem_accent.svg" alt="problem solving" class="hidden group-hover:block" />
+              <img src="/assets/img/problem_primary.svg" alt="problem solving" class="block group-hover:hidden" />
             </div>
             <div class="text-center">
               <h4 class="skill-title">Result-oriented<br />problem solver</h4>
-              <p class="skill-desc">
-                Innovation can be a rabbit hole. By employing agile principles,
-                I make sure we stay focused on addressing the needs of the
-                end-user.
-              </p>
+              <p class="skill-desc">Innovation can be a rabbit hole. By employing agile principles, I make sure we stay focused on addressing the needs of the end-user.</p>
             </div>
           </article>
           <article class="card group">
             <div class="card-icon">
-              <img
-                src="/assets/img/team_accent.svg"
-                alt="leadership"
-                class="hidden group-hover:block"
-              />
-              <img
-                src="/assets/img/team_primary.svg"
-                alt="leadership"
-                class="block group-hover:hidden"
-              />
+              <img src="/assets/img/team_accent.svg" alt="leadership" class="hidden group-hover:block" />
+              <img src="/assets/img/team_primary.svg" alt="leadership" class="block group-hover:hidden" />
             </div>
             <div class="text-center">
               <h4 class="skill-title">Trust-based<br />Leadership</h4>
-              <p class="skill-desc">
-                With trust and transparency, I cultivate an environment where
-                everyone is encouraged to contribute and take ownership.
-              </p>
+              <p class="skill-desc">With trust and transparency, I cultivate an environment where everyone is encouraged to contribute and take ownership.</p>
             </div>
           </article>
           <article class="card group">
             <div class="card-icon">
-              <img
-                src="/assets/img/development2_accent.svg"
-                alt="development"
-                class="hidden group-hover:block"
-              />
-              <img
-                src="/assets/img/development2_primary.svg"
-                alt="development"
-                class="block group-hover:hidden"
-              />
+              <img src="/assets/img/development2_accent.svg" alt="development" class="hidden group-hover:block" />
+              <img src="/assets/img/development2_primary.svg" alt="development" class="block group-hover:hidden" />
             </div>
             <div class="text-center">
               <h4 class="skill-title">Continuous<br />Self-Development</h4>
-              <p class="skill-desc">
-                Innovation is a moving target. I keep track of the
-                state-of-the-art to be able to address complex problems together
-                with experts in the field.
-              </p>
+              <p class="skill-desc">Innovation is a moving target. I keep track of the state-of-the-art to be able to address complex problems together with experts in the field.</p>
             </div>
           </article>
         </div>
@@ -353,20 +163,14 @@
       <section id="work" class="bg-grey-50 py-16 md:py-20">
         <h2 class="section-title-responsive">Work experience</h2>
         <h3 class="section-subtitle">Here's what I did up till now</h3>
-        <div
-          class="relative mt-12 flex w-full flex-col px-4 lg:mx-auto lg:w-2/3"
-        >
+        <div class="relative mt-12 flex w-full flex-col px-4 lg:mx-auto lg:w-2/3">
           <span class="absolute hidden md:block timeline-vertical"></span>
           <!-- Sopra -->
           <div class="timeline-company">
             <div class="pt-6 pb-8 md:w-2/6">
               <div class="timeline-company-header">
                 <span class="shrink-0">
-                  <img
-                    src="/assets/img/logo_sopra_grey.svg"
-                    class="h-auto w-32"
-                    alt="company logo"
-                  />
+                  <img src="/assets/img/logo_sopra_grey.svg" class="h-auto w-32" alt="company logo" />
                 </span>
                 <div class="timeline-company-divider">
                   <span class="timeline-company-divider-line"></span>
@@ -375,72 +179,43 @@
             </div>
             <div class="timeline-jobs">
               <div class="job-entry">
-                <span
-                  class="absolute left-8 mt-1 hidden md:block timeline-dot"
-                ></span>
+                <span class="absolute left-8 mt-1 hidden md:block timeline-dot"></span>
                 <div class="job-entry-icon">
-                  <i
-                    class="bx bxs-right-arrow hidden text-primary md:block"
-                  ></i>
+                  <i class="bx bxs-right-arrow hidden text-primary md:block"></i>
                   <div class="job-entry-content">
                     <span class="job-date">Sep 2025 - <i>current</i></span>
                     <span class="job-title">People Manager</span>
-                    <span class="job-subtitle"
-                      >Smart Search &amp; Assistance</span
-                    >
+                    <span class="job-subtitle">Smart Search &amp; Assistance</span>
                     <div class="pb-8 pt-2">
-                      <span class="job-desc"
-                        >People management of 15+ Smart Search &amp; Assistance
-                        consultants within the OptimAI business line.
-                        Responsible for mid- to long-term growth and operational
-                        excellence.</span
-                      >
+                      <span class="job-desc">People management of 15+ Smart Search &amp; Assistance consultants within the OptimAI business line. Responsible for mid- to long-term growth and operational excellence.</span>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="job-entry">
-                <span
-                  class="absolute left-8 mt-1 hidden md:block timeline-dot"
-                ></span>
+                <span class="absolute left-8 mt-1 hidden md:block timeline-dot"></span>
                 <div class="job-entry-icon">
-                  <i
-                    class="bx bxs-right-arrow hidden text-primary md:block"
-                  ></i>
+                  <i class="bx bxs-right-arrow hidden text-primary md:block"></i>
                   <div class="job-entry-content">
                     <span class="job-date">Jun 2024 - <i>current</i></span>
                     <span class="job-title">AI Solution Architect</span>
                     <span class="job-subtitle">Smart Search & Assistance</span>
                     <div class="pb-8 pt-2">
-                      <span class="job-desc"
-                        >Consultancy in Computer Vision and Natural Language
-                        Processing in public and private sector; definition,
-                        management and execution of AI-driven development
-                        projects</span
-                      >
+                      <span class="job-desc">Consultancy in Computer Vision and Natural Language Processing in public and private sector; definition, management and execution of AI-driven development projects</span>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="job-entry">
-                <span
-                  class="absolute left-8 mt-1 hidden md:block timeline-dot"
-                ></span>
+                <span class="absolute left-8 mt-1 hidden md:block timeline-dot"></span>
                 <div class="job-entry-icon">
-                  <i
-                    class="bx bxs-right-arrow hidden text-primary md:block"
-                  ></i>
+                  <i class="bx bxs-right-arrow hidden text-primary md:block"></i>
                   <div class="job-entry-content">
                     <span class="job-date">Dec 2023 - Jun 2024</span>
                     <span class="job-title">Competence Center Lead</span>
                     <span class="job-subtitle">Computer Vision</span>
                     <div class="pb-8 pt-2">
-                      <span class="job-desc"
-                        >Consultancy in Computer Vision, Natural Language
-                        Processing and Data Science; dissemination of technical
-                        expertise within the OptimAI Practice and the creation
-                        and management of Solution Assets</span
-                      >
+                      <span class="job-desc">Consultancy in Computer Vision, Natural Language Processing and Data Science; dissemination of technical expertise within the OptimAI Practice and the creation and management of Solution Assets</span>
                     </div>
                   </div>
                 </div>
@@ -452,11 +227,7 @@
             <div class="pb-8 md:w-2/6">
               <div class="timeline-company-header">
                 <span class="shrink-0">
-                  <img
-                    src="/assets/img/logo_materialise_grey.svg"
-                    class="h-auto w-32"
-                    alt="company logo"
-                  />
+                  <img src="/assets/img/logo_materialise_grey.svg" class="h-auto w-32" alt="company logo" />
                 </span>
                 <div class="timeline-company-divider">
                   <span class="timeline-company-divider-line"></span>
@@ -465,73 +236,42 @@
             </div>
             <div class="timeline-jobs">
               <div class="job-entry">
-                <span
-                  class="absolute left-8 mt-1 hidden md:block timeline-dot"
-                ></span>
+                <span class="absolute left-8 mt-1 hidden md:block timeline-dot"></span>
                 <div class="job-entry-icon">
-                  <i
-                    class="bx bxs-right-arrow hidden text-primary md:block"
-                  ></i>
+                  <i class="bx bxs-right-arrow hidden text-primary md:block"></i>
                   <div class="job-entry-content">
                     <span class="job-date">Jan 2020 - Dec 2023</span>
-                    <span class="job-title"
-                      >Research Coordinator &amp; Team Leader</span
-                    >
-                    <span class="job-subtitle"
-                      >Cranio-Maxillofacial Surgery</span
-                    >
+                    <span class="job-title">Research Coordinator &amp; Team Leader</span>
+                    <span class="job-subtitle">Cranio-Maxillofacial Surgery</span>
                     <div class="pb-8 pt-2">
-                      <span class="job-desc"
-                        >Owner of software innovation roadmap of CMF portfolio:
-                        lead team of senior researchers; define (funded)
-                        research proposals; manage collaboration projects with
-                        external partners</span
-                      >
+                      <span class="job-desc">Owner of software innovation roadmap of CMF portfolio: lead team of senior researchers; define (funded) research proposals; manage collaboration projects with external partners</span>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="job-entry">
-                <span
-                  class="absolute left-8 mt-1 hidden md:block timeline-dot"
-                ></span>
+                <span class="absolute left-8 mt-1 hidden md:block timeline-dot"></span>
                 <div class="job-entry-icon">
-                  <i
-                    class="bx bxs-right-arrow hidden text-primary md:block"
-                  ></i>
+                  <i class="bx bxs-right-arrow hidden text-primary md:block"></i>
                   <div class="job-entry-content">
                     <span class="job-date">Nov 2018 - Feb 2021</span>
                     <span class="job-title">Research Team Leader</span>
-                    <span class="job-subtitle"
-                      >Data-driven and Algorithmic Research</span
-                    >
+                    <span class="job-subtitle">Data-driven and Algorithmic Research</span>
                     <div class="pb-8 pt-2">
-                      <span class="job-desc"
-                        >People management of junior and senior researchers
-                        specialized in machine/deep learning, computational
-                        geometry, shape modeling and augmented reality</span
-                      >
+                      <span class="job-desc">People management of junior and senior researchers specialized in machine/deep learning, computational geometry, shape modeling and augmented reality</span>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="job-entry">
-                <span
-                  class="absolute left-8 mt-1 hidden md:block timeline-dot"
-                ></span>
+                <span class="absolute left-8 mt-1 hidden md:block timeline-dot"></span>
                 <div class="job-entry-icon">
-                  <i
-                    class="bx bxs-right-arrow hidden text-primary md:block"
-                  ></i>
+                  <i class="bx bxs-right-arrow hidden text-primary md:block"></i>
                   <div class="job-entry-content">
                     <span class="job-date">Jul 2013 - Nov 2018</span>
                     <span class="job-title">Research Engineer</span>
                     <div class="pb-8 pt-2">
-                      <span class="job-desc"
-                        >Software research in medical image processing and
-                        computational geometry to support Materialise’s
-                        preoperative planning solutions</span
-                      >
+                      <span class="job-desc">Software research in medical image processing and computational geometry to support Materialise’s preoperative planning solutions</span>
                     </div>
                   </div>
                 </div>
@@ -543,17 +283,12 @@
       <section id="education" class="container py-16 md:py-20">
         <h2 class="section-title-responsive">My Education</h2>
         <h3 class="section-subtitle">My training as biomedical engineer</h3>
-        <div
-          class="grid grid-cols-1 gap-6 pt-10 md:grid-cols-2 md:gap-10 md:pt-12"
-        >
+        <div class="grid grid-cols-1 gap-6 pt-10 md:grid-cols-2 md:gap-10 md:pt-12">
           <article class="group flex flex-col px-8 py-12">
             <img class="h-32" src="/assets/img/ugent_vub.svg" alt="ugent-vub" />
             <div class="text-center">
               <h4 class="edu-title">MSc in Biomedical Engineering</h4>
-              <p class="edu-desc">
-                Focus on medical imaging, medical image processing and
-                computational modelling.
-              </p>
+              <p class="edu-desc">Focus on medical imaging, medical image processing and computational modelling.</p>
             </div>
           </article>
           <article class="group flex flex-col px-8 py-12">
@@ -561,12 +296,8 @@
             <div class="text-center">
               <h4 class="edu-title">PhD in Biomedical Engineering</h4>
               <p class="edu-desc">
-                Mass Personalisation of Preoperative Planning for TKA<br />Evaluation
-                of Statistical Models to Predict Patient-Specific Shape
-                Information
-                <a href="https://lirias.kuleuven.be/retrieve/632232"
-                  ><i class="bx bx-download text-grey"></i
-                ></a>
+                Mass Personalisation of Preoperative Planning for TKA<br />Evaluation of Statistical Models to Predict Patient-Specific Shape Information
+                <a href="https://lirias.kuleuven.be/retrieve/632232"><i class="bx bx-download text-grey"></i></a>
               </p>
             </div>
           </article>
@@ -575,96 +306,50 @@
       <section id="projects" class="bg-grey-50">
         <div class="container py-16 md:py-20">
           <h2 class="section-title-responsive">My Projects</h2>
-          <h3 class="section-subtitle">
-            Check out some of my passion projects!
-          </h3>
-          <div
-            class="mx-auto grid w-full grid-cols-1 gap-6 pt-12 sm:w-3/4 lg:w-11/12 lg:grid-cols-4 xl:gap-10"
-          >
+          <h3 class="section-subtitle">Check out some of my passion projects!</h3>
+          <div class="mx-auto grid w-full grid-cols-1 gap-6 pt-12 sm:w-3/4 lg:w-11/12 lg:grid-cols-4 xl:gap-10">
             <!-- cookiecutter for python -->
-            <a
-              href="https://github.com/cvandijck/cookiecutter-python"
-              class="project-card"
-            >
-              <div
-                style="background-image: url(/assets/img/cookiecutter.png)"
-                class="project-card-image group"
-              >
+            <a href="https://github.com/cvandijck/cookiecutter-python" class="project-card">
+              <div style="background-image: url(/assets/img/cookiecutter.png)" class="project-card-image group">
                 <span class="project-card-overlay"></span>
                 <span class="project-card-badge">Read More</span>
               </div>
               <div class="project-card-footer">
                 <span class="project-title">Get your projects out there</span>
-                <span class="project-desc"
-                  >I developed a cookiecutter template to quickly setup, package
-                  and share your python projects with the world!</span
-                >
+                <span class="project-desc">I developed a cookiecutter template to quickly setup, package and share your python projects with the world!</span>
               </div>
             </a>
             <!-- adopt -->
-            <a
-              href="https://github.com/cvandijck/azure-devops-tools"
-              class="project-card"
-            >
-              <div
-                style="
-                  background-image: url(https://github.com/cvandijck/azure-devops-tools/blob/main/adopt_logo.png?raw=true);
-                "
-                class="project-card-image group"
-              >
+            <a href="https://github.com/cvandijck/azure-devops-tools" class="project-card">
+              <div style="background-image: url(https://github.com/cvandijck/azure-devops-tools/blob/main/adopt_logo.png?raw=true)" class="project-card-image group">
                 <span class="project-card-overlay"></span>
                 <span class="project-card-badge">Read More</span>
               </div>
               <div class="project-card-footer">
                 <span class="project-title">Azure DevOps Practical Tools</span>
-                <span class="project-desc"
-                  >Azure DevOps Practical Tools is a set of tools to automate
-                  working with Azure Devops. The tools are developed as a CLI
-                  tool adopt to easily manage your Azure Devops project.</span
-                >
+                <span class="project-desc">Azure DevOps Practical Tools is a set of tools to automate working with Azure Devops. The tools are developed as a CLI tool adopt to easily manage your Azure Devops project.</span>
               </div>
             </a>
             <!-- typing-game -->
-            <a
-              href="https://github.com/cvandijck/typing-game"
-              class="project-card"
-            >
-              <div
-                style="
-                  background-image: url(https://github.com/cvandijck/typing-game/blob/main/favicon.svg?raw=true);
-                "
-                class="project-card-image group"
-              >
+            <a href="https://github.com/cvandijck/typing-game" class="project-card">
+              <div style="background-image: url(https://github.com/cvandijck/typing-game/blob/main/favicon.svg?raw=true)" class="project-card-image group">
                 <span class="project-card-overlay"></span>
                 <span class="project-card-badge">Read More</span>
               </div>
               <div class="project-card-footer">
                 <span class="project-title">Typing Game</span>
-                <span class="project-desc"
-                  >A fun typing game I created so my toddlers can work alongside
-                  me on the computer. Built with Alpine.js featuring celebration
-                  animations, multilingual support, and responsive design for
-                  all devices.</span
-                >
+                <span class="project-desc">A fun typing game I created so my toddlers can work alongside me on the computer. Built with Alpine.js featuring celebration animations, multilingual support, and responsive design for all devices.</span>
               </div>
             </a>
             <!-- under construction -->
             <a href="https://github.com/cvandijck/" class="project-card">
-              <div
-                style="
-                  background-image: url(/assets/img/under-construction.svg);
-                "
-                class="project-card-image group"
-              >
+              <div style="background-image: url(/assets/img/under-construction.svg)" class="project-card-image group">
                 <span class="project-card-overlay"></span>
                 <span class="project-card-badge">Read More</span>
               </div>
               <div class="project-card-footer">
                 <span class="project-title">Under construction</span>
-                <span class="project-desc"
-                  >This webpage is still under construction. Tune in later for
-                  more blog posts or link to my favourite projects.</span
-                >
+                <span class="project-desc">This webpage is still under construction. Tune in later for more blog posts or link to my favourite projects.</span>
               </div>
             </a>
           </div>
@@ -672,9 +357,7 @@
       </section>
       <section id="contact" class="container py-16 md:py-20">
         <h2 class="section-title-responsive">Get in touch!</h2>
-        <h3 class="section-subtitle">
-          Have Any Questions? <br />Ideas For Collaboration?
-        </h3>
+        <h3 class="section-subtitle">Have Any Questions? <br />Ideas For Collaboration?</h3>
         <div class="mx-auto w-full pt-5 text-center sm:w-2/3 lg:pt-6">
           <p class="font-body text-grey-10">
             <!-- Add when they can hire me -->
@@ -696,10 +379,7 @@
               <span class="contact-label">My Email</span>
             </div>
             <p class="contact-value">
-              <a
-                href="mailto:christophe.vdijck@gmail.com?SUBJECT=I want to connect"
-                >christophe.vdijck@gmail.com</a
-              >
+              <a href="mailto:christophe.vdijck@gmail.com?SUBJECT=I want to connect">christophe.vdijck@gmail.com</a>
             </p>
           </div>
           <div class="contact-box lg:w-1/3 lg:border-l-0 lg:border-t-2">
@@ -708,9 +388,7 @@
               <span class="contact-label">My Location</span>
             </div>
             <p class="contact-value">
-              <a href="https://maps.app.goo.gl/YS4VJ65Kb2HrhW5d6"
-                >9000 Ghent, Belgium</a
-              >
+              <a href="https://maps.app.goo.gl/YS4VJ65Kb2HrhW5d6">9000 Ghent, Belgium</a>
             </p>
           </div>
         </address>
@@ -718,28 +396,15 @@
     </main>
     <footer class="bg-primary">
       <div class="container flex flex-col justify-between py-6 sm:flex-row">
-        <p
-          class="text-center font-body text-sm text-white md:text-left not-italic"
-        >
+        <p class="text-center font-body text-sm text-white md:text-left not-italic">
           © Copyright 2023. <br class="md:hidden" />
-          All right reserved, Christophe Van Dijck.<br /><a
-            href="https://storyset.com/idea"
-            >Illustrations by Storyset</a
-          >, Webdesign by ATOM.
+          All right reserved, Christophe Van Dijck.<br /><a href="https://storyset.com/idea">Illustrations by Storyset</a>, Webdesign by ATOM.
         </p>
         <div class="social-icons justify-center pt-5 sm:justify-start sm:pt-0">
-          <a href="mailto:christophe.vdijck@gmail.com?SUBJECT=I want to connect"
-            ><i class="bx bxs-envelope social-icon hover:text-yellow"></i
-          ></a>
-          <a href="https://www.linkedin.com/in/cvandijck/"
-            ><i class="bx bxl-linkedin social-icon hover:text-yellow"></i
-          ></a>
-          <a href="https://github.com/cvandijck"
-            ><i class="bx bxl-github social-icon hover:text-yellow"></i
-          ></a>
-          <a href="https://wa.me/+32485403370"
-            ><i class="bx bxl-whatsapp social-icon hover:text-yellow"></i
-          ></a>
+          <a href="mailto:christophe.vdijck@gmail.com?SUBJECT=I want to connect"><i class="bx bxs-envelope social-icon hover:text-yellow"></i></a>
+          <a href="https://www.linkedin.com/in/cvandijck/"><i class="bx bxl-linkedin social-icon hover:text-yellow"></i></a>
+          <a href="https://github.com/cvandijck"><i class="bx bxl-github social-icon hover:text-yellow"></i></a>
+          <a href="https://wa.me/+32485403370"><i class="bx bxl-whatsapp social-icon hover:text-yellow"></i></a>
         </div>
       </div>
     </footer>
@@ -752,14 +417,7 @@
         deletingSpeed: 60, // Speed of deleting characters (milliseconds)
         pauseBeforeDelete: 1200, // How long to pause before starting to delete (milliseconds)
         pauseBeforeNext: 400, // How long to pause before typing next role (milliseconds)
-        roles: [
-          "Research Engineer",
-          "Tech Lead",
-          "Biomedical Engineer",
-          "Solution Architect",
-          "Team Lead",
-          "Software Engineer",
-        ],
+        roles: ["Research Engineer", "Tech Lead", "Biomedical Engineer", "Solution Architect", "Team Lead", "Software Engineer"],
       };
 
       const typewriter = document.getElementById("typewriter");
@@ -774,31 +432,23 @@
       function typeRole() {
         if (typing) {
           if (charIndex < typewriterConfig.roles[roleIndex].length) {
-            if (!typewriter.classList.contains("typing"))
-              typewriter.classList.add("typing");
-            updateTypewriter(
-              typewriterConfig.roles[roleIndex].slice(0, charIndex + 1),
-            );
+            if (!typewriter.classList.contains("typing")) typewriter.classList.add("typing");
+            updateTypewriter(typewriterConfig.roles[roleIndex].slice(0, charIndex + 1));
             charIndex++;
             setTimeout(typeRole, typewriterConfig.typingSpeed);
           } else {
-            if (typewriter.classList.contains("typing"))
-              typewriter.classList.remove("typing");
+            if (typewriter.classList.contains("typing")) typewriter.classList.remove("typing");
             typing = false;
             setTimeout(typeRole, typewriterConfig.pauseBeforeDelete);
           }
         } else {
           if (charIndex > 0) {
-            if (!typewriter.classList.contains("typing"))
-              typewriter.classList.add("typing");
-            updateTypewriter(
-              typewriterConfig.roles[roleIndex].slice(0, charIndex - 1),
-            );
+            if (!typewriter.classList.contains("typing")) typewriter.classList.add("typing");
+            updateTypewriter(typewriterConfig.roles[roleIndex].slice(0, charIndex - 1));
             charIndex--;
             setTimeout(typeRole, typewriterConfig.deletingSpeed);
           } else {
-            if (typewriter.classList.contains("typing"))
-              typewriter.classList.remove("typing");
+            if (typewriter.classList.contains("typing")) typewriter.classList.remove("typing");
             typing = true;
             roleIndex = (roleIndex + 1) % typewriterConfig.roles.length;
             setTimeout(typeRole, typewriterConfig.pauseBeforeNext);
@@ -809,17 +459,8 @@
       if (typewriter) typeRole();
     </script>
     <!-- 100% privacy-first analytics -->
-    <script
-      async
-      defer
-      src="https://scripts.simpleanalyticscdn.com/latest.js"
-    ></script>
-    <noscript
-      ><img
-        src="https://queue.simpleanalyticscdn.com/noscript.gif"
-        alt=""
-        referrerpolicy="no-referrer-when-downgrade"
-    /></noscript>
+    <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+    <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
     <script src="https://getinsights.io/js/insights.js"></script>
     <script>
       insights.init("CpWNemAT2qFxjZCJ");
