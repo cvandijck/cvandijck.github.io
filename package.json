@@ -7,8 +7,10 @@
     "css": "postcss assets/styles/main.css -o assets/styles/main.min.css --verbose",
     "server-reload": "browser-sync start --config \"browser-sync-config.js\"",
     "develop": "concurrently \"npm:css -- --watch\" \"npm:server-reload\"",
-    "build": "npm run css -- --env \"production\"",
-    "format": "npx prettier ./**/*.html"
+    "build": "npm run css",
+    "format": "npx prettier --write ./**/*.html",
+    "format:check": "npx prettier --check ./**/*.html",
+    "prepare": "husky"
   },
   "browserslist": [
     "last 2 versions",
@@ -25,6 +27,7 @@
   },
   "devDependencies": {
     "autoprefixer": "10.4.5",
+    "husky": "^9.1.7",
     "postcss": "^8.4.7",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.1.8",

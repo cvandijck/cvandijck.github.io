@@ -21,7 +21,7 @@ html {
 }
 
 .card {
-  @apply rounded px-8 py-12 shadow;
+  @apply rounded px-8 py-12 shadow hover:bg-primary transition-colors duration-200;
 }
 
 .card-icon {
@@ -68,6 +68,22 @@ html {
   @apply bg-white py-6 px-5 xl:py-8 flex flex-col flex-grow;
 }
 
+.project-card {
+  @apply shadow flex flex-col;
+}
+
+.project-card-image {
+  @apply relative h-56 bg-cover bg-center bg-no-repeat sm:h-64 lg:h-48 xl:h-56;
+}
+
+.project-card-overlay {
+  @apply absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50;
+}
+
+.project-card-badge {
+  @apply absolute bottom-0 right-0 mb-4 mr-4 block rounded-full border-2 border-white px-6 py-2 text-center font-body text-sm font-bold uppercase text-white md:text-base;
+}
+
 /* Timeline helpers */
 .timeline-dot {
   @apply h-4 w-4 rounded-full border-2 border-grey-40 bg-white;
@@ -77,13 +93,49 @@ html {
   @apply inset-y-0 left-1/3 ml-11 hidden w-0.5 bg-grey-40;
 }
 
+.timeline-company {
+  @apply mt-8 flex flex-col text-center md:flex-row md:text-left;
+}
+
+.timeline-company-header {
+  @apply flex justify-center md:justify-start;
+}
+
+.timeline-company-divider {
+  @apply relative ml-3 hidden w-full md:block;
+}
+
+.timeline-company-divider-line {
+  @apply absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70;
+}
+
+.timeline-jobs {
+  @apply pt-5 md:w-4/6;
+}
+
+.job-entry {
+  @apply relative flex md:pl-18;
+}
+
+.job-entry-icon {
+  @apply mt-1 flex;
+}
+
+.job-entry-content {
+  @apply md:-mt-1 md:pl-8;
+}
+
+.job-subtitle {
+  @apply block pt-2 font-body text-base font-bold text-primary;
+}
+
 /* Skill card helpers */
 .skill-title {
-  @apply text-primary pt-8 text-lg font-semibold uppercase lg:text-xl;
+  @apply text-primary pt-8 text-lg font-semibold uppercase lg:text-xl group-hover:text-yellow transition-colors duration-200;
 }
 
 .skill-desc {
-  @apply text-grey-20 pt-4 text-sm md:text-base;
+  @apply text-grey-20 pt-4 text-sm md:text-base invisible group-hover:visible group-hover:text-white transition-colors duration-200;
 }
 
 /* Job helpers */
@@ -103,9 +155,21 @@ html {
   @apply w-full px-6 py-6 border-2 border-grey-60;
 }
 
+.contact-label {
+  @apply pl-2 font-body font-bold uppercase text-grey-40 lg:text-lg;
+}
+
+.contact-value {
+  @apply pt-2 text-left font-body font-bold text-primary lg:text-lg;
+}
+
 /* Social icon helper used in header/footer/hero */
 .social-icon {
   @apply text-2xl text-white;
+}
+
+.social-icons {
+  @apply flex items-center space-x-4;
 }
 
 @layer base {
