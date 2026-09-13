@@ -1,1 +1,6 @@
-npm run build npm run format:check
+npm run build
+if ! git diff --quiet -- assets/styles/main.min.css; then
+  echo "assets/styles/main.min.css is out of date. Run npm run build and git add assets/styles/main.min.css."
+  exit 1
+fi
+npm run format:check
