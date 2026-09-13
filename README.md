@@ -2,7 +2,7 @@
 
 Welcome to the website of Christophe Van Dijck.
 
-Feel free to browse around in the source code, but you get the best experience at [www.christophevandijck.be](www.christophevandijck.be).
+Feel free to browse around in the source code, but you get the best experience at [www.christophevandijck.be](https://www.christophevandijck.be).
 
 ## Getting Started
 
@@ -66,7 +66,15 @@ A [Husky](https://typicode.github.io/husky/) `pre-commit` hook runs `npm run bui
 
 Styles are authored in `assets/styles/main.css` and compiled to `assets/styles/main.min.css` via the `css` npm script — edit the source file, not the generated one.
 
-The site is built with the [Atom](https://redpixelthemes.com/templates/atom/) TailwindCSS template; see [README_ATOM.md](README_ATOM.md) for more details on the template itself.
+The site is built with the [Atom](https://redpixelthemes.com/templates/atom/) TailwindCSS template.
+
+## Built With
+
+- [TailwindCSS](https://tailwindcss.com/): utility-first CSS framework.
+- [Alpine.js](https://github.com/alpinejs/alpine) & [Alpine Collective Toolkit](https://github.com/alpine-collective/toolkit): reactive/declarative behavior without a heavy framework.
+- [Boxicons](https://boxicons.com/): icon set.
+- [Highlight.js](https://highlightjs.org/): code syntax highlighting (Atom Dark theme).
+- Tailwind plugins: [Forms](https://github.com/tailwindlabs/tailwindcss-forms), [Typography](https://github.com/tailwindlabs/tailwindcss-typography), [Aspect Ratio](https://github.com/tailwindlabs/tailwindcss-aspect-ratio).
 
 ## Continuous Integration
 
