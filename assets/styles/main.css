@@ -195,6 +195,28 @@ html {
   @apply block pt-2 font-body text-base font-bold text-primary;
 }
 
+/* Git-graph branch helpers: visualize a concurrent role split off the main trunk */
+.job-entry--branch {
+  @apply md:pl-26;
+}
+
+/* vertical branch lane, spans the branching job-entry, stops short to leave room for the elbow */
+.timeline-branch-line {
+  @apply absolute hidden w-0.5 bg-grey-40 md:block;
+  left: 4.4375rem;
+  top: 0;
+  bottom: 2rem;
+}
+
+/* curve connecting the branch lane back into the trunk lane at the bottom of the entry */
+.timeline-branch-elbow {
+  @apply absolute hidden text-grey-40 md:block;
+  left: 2.5rem;
+  bottom: 0;
+  width: 2rem;
+  height: 2rem;
+}
+
 /* Skill card helpers */
 .skill-title {
   @apply text-primary pt-8 text-lg font-semibold uppercase lg:text-xl group-hover:text-yellow transition-colors duration-200;

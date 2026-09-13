@@ -47,7 +47,7 @@ module.exports = {
     },
 
     extend: {
-      animation: ['group-hover'],
+      animation: ["group-hover"],
 
       spacing: {
         13: "3.25rem",
@@ -55,6 +55,7 @@ module.exports = {
         17: "4.25rem",
         18: "4.5rem",
         19: "4.75rem",
+        26: "6.5rem",
         42: "10.5rem",
         76: "19rem",
         84: "21rem",
@@ -98,9 +99,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require("@tailwindcss/typography"),
-    require("@tailwindcss/forms"),
-    require("@tailwindcss/aspect-ratio"),
-  ],
+  plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms"), require("@tailwindcss/aspect-ratio")],
 };
