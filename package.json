@@ -7,7 +7,7 @@
     "css": "postcss assets/styles/main.css -o assets/styles/main.min.css --verbose",
     "server-reload": "browser-sync start --config \"browser-sync-config.js\"",
     "develop": "concurrently \"npm:css -- --watch\" \"npm:server-reload\"",
-    "build": "npm run css -- --env \"production\"",
+    "build": "npm run css",
     "format": "npx prettier --write ./**/*.html",
     "format:check": "npx prettier --check ./**/*.html",
     "prepare": "husky"
