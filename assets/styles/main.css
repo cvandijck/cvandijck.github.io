@@ -164,7 +164,8 @@ html {
 }
 
 .timeline-company-header {
-  @apply flex justify-center md:justify-start;
+  /* fixed height centers logos of any aspect ratio on the first job's timeline dot */
+  @apply flex justify-center md:h-16 md:items-center md:justify-start;
 }
 
 .timeline-company-divider {
