@@ -38,7 +38,7 @@ html {
 }
 
 .hero-profile-img {
-  @apply h-48 w-48 rounded-full border-8 border-white shadow-xl sm:h-56 sm:w-56;
+  @apply h-48 w-48 rounded-full border-8 border-white object-cover object-center shadow-xl sm:h-56 sm:w-56;
 }
 
 .hero-text {
@@ -242,6 +242,12 @@ html {
 @layer base {
   section {
     @apply min-h-screen flex flex-col justify-center;
+  }
+
+  /* deter casual image saving (not a real security measure) */
+  img {
+    @apply select-none;
+    -webkit-user-drag: none;
   }
 }
 
