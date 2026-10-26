@@ -1,0 +1,203 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "logo image" [ref=e5]
+      - navigation "Main navigation" [ref=e6]:
+        - list [ref=e7]:
+          - listitem [ref=e8]: About
+          - listitem [ref=e10]: Skills
+          - listitem [ref=e12]: Work
+          - listitem [ref=e14]: Education
+          - listitem [ref=e16]: Projects
+          - listitem [ref=e18]: Contact
+      - text: 
+  - main [ref=e20]:
+    - region "Hero" [ref=e21]:
+      - generic [ref=e24]:
+        - img "author" [ref=e25]
+        - generic [ref=e26]:
+          - heading "Hello, I'm Christophe!" [level=1] [ref=e27]
+          - generic [ref=e28]: Rese |
+          - generic [ref=e30]:
+            - generic [ref=e31]:
+              - generic [ref=e32]: Let's connect
+              - generic [ref=e33]: 
+            - generic [ref=e34]:
+              - link "" [ref=e35] [cursor=pointer]:
+                - /url: mailto:christophe.vdijck@gmail.com?SUBJECT=I want to connect
+              - link "" [ref=e37] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/cvandijck/
+              - link "" [ref=e39] [cursor=pointer]:
+                - /url: https://github.com/cvandijck
+              - link "" [ref=e41] [cursor=pointer]:
+                - /url: https://wa.me/+32485403370
+    - generic [ref=e44]:
+      - generic [ref=e45]:
+        - heading "Who am I?" [level=2] [ref=e46]
+        - heading "I'm Christophe Van Dijck, an engineer with a passion for innovation and technology." [level=3] [ref=e47]
+        - paragraph [ref=e48]: I am passionate about finding meaningful innovation in a complex reality. Driven by continuous self-development, I keep myself up to date with the latest technological advancements. Trying to understand the needs of end-users and being able to solve their complex problems with creative, passionate people is something I enjoy profoundly. Technology is my passion, and with my innate critical and result-oriented mindset I am able to manage the innovation process in an agile way.
+      - link [ref=e50] [cursor=pointer]:
+        - /url: https://github.com/cvandijck/Resume/releases/latest/download/resume.pdf
+        - button " Download Resume" [ref=e51]:
+          - generic [ref=e52]: 
+          - generic [ref=e53]: Download Resume
+    - generic [ref=e54]:
+      - heading "What I'm good at" [level=2] [ref=e55]
+      - heading "The skills I have to offer" [level=3] [ref=e56]
+      - generic [ref=e57]:
+        - article [ref=e58]:
+          - img "prototyping" [ref=e60]
+          - heading "Rapid Prototyping" [level=4] [ref=e62]: RapidPrototyping
+        - article [ref=e63]:
+          - img "problem solving" [ref=e65]
+          - heading "Result-oriented problem solver" [level=4] [ref=e67]: Result-orientedproblem solver
+        - article [ref=e68]:
+          - img "leadership" [ref=e70]
+          - heading "Trust-based Leadership" [level=4] [ref=e72]: Trust-basedLeadership
+        - article [ref=e73]:
+          - img "development" [ref=e75]
+          - heading "Continuous Self-Development" [level=4] [ref=e77]: ContinuousSelf-Development
+    - generic [ref=e78]:
+      - heading "Work experience" [level=2] [ref=e79]
+      - heading "Here's what I did up till now" [level=3] [ref=e80]
+      - generic [ref=e81]:
+        - generic [ref=e83]:
+          - img "company logo" [ref=e87]
+          - generic [ref=e90]:
+            - generic [ref=e93]:
+              - generic [ref=e94]: 
+              - generic [ref=e95]:
+                - generic [ref=e96]: Sep 2025 - current
+                - generic [ref=e97]: People Manager
+                - generic [ref=e98]: Smart Search & Assistance
+                - generic [ref=e99]: People management of 15+ Smart Search & Assistance consultants within the OptimAI business line. Responsible for mid- to long-term growth and operational excellence.
+            - generic [ref=e103]:
+              - generic [ref=e104]: 
+              - generic [ref=e105]:
+                - generic [ref=e106]: Jun 2024 - current
+                - generic [ref=e107]: AI Solution Architect
+                - generic [ref=e108]: Smart Search & Assistance
+                - generic [ref=e109]: Consultancy in Computer Vision and Natural Language Processing in public and private sector; definition, management and execution of AI-driven development projects
+        - generic [ref=e111]:
+          - img "company logo" [ref=e115]
+          - generic [ref=e121]:
+            - generic [ref=e122]: 
+            - generic [ref=e123]:
+              - generic [ref=e124]: Dec 2023 - Jun 2024
+              - generic [ref=e125]: Competence Center Lead
+              - generic [ref=e126]: Computer Vision
+              - generic [ref=e127]: Consultancy in Computer Vision, Natural Language Processing and Data Science; dissemination of technical expertise and the creation and management of Solution Assets
+        - generic [ref=e129]:
+          - img "company logo" [ref=e133]
+          - generic [ref=e136]:
+            - generic [ref=e139]:
+              - generic [ref=e140]: 
+              - generic [ref=e141]:
+                - generic [ref=e142]: Jan 2020 - Dec 2023
+                - generic [ref=e143]: Research Coordinator & Team Leader
+                - generic [ref=e144]: Cranio-Maxillofacial Surgery
+                - generic [ref=e145]: "Owner of software innovation roadmap of CMF portfolio: lead team of senior researchers; define (funded) research proposals; manage collaboration projects with external partners"
+            - generic [ref=e149]:
+              - generic [ref=e150]: 
+              - generic [ref=e151]:
+                - generic [ref=e152]: Nov 2018 - Feb 2021
+                - generic [ref=e153]: Research Team Leader
+                - generic [ref=e154]: Data-driven and Algorithmic Research
+                - generic [ref=e155]: People management of junior and senior researchers specialized in machine/deep learning, computational geometry, shape modeling and augmented reality
+            - generic [ref=e159]:
+              - generic [ref=e160]: 
+              - generic [ref=e161]:
+                - generic [ref=e162]: Jul 2013 - Nov 2018
+                - generic [ref=e163]: Research Engineer
+                - generic [ref=e164]: Software research in medical image processing and computational geometry to support Materialise’s preoperative planning solutions
+    - generic [ref=e166]:
+      - heading "My Education" [level=2] [ref=e167]
+      - heading "My training as biomedical engineer" [level=3] [ref=e168]
+      - generic [ref=e169]:
+        - article [ref=e170]:
+          - img "ugent-vub" [ref=e171]
+          - generic [ref=e172]:
+            - heading "MSc in Biomedical Engineering" [level=4] [ref=e173]
+            - paragraph [ref=e174]: Focus on medical imaging, medical image processing and computational modelling.
+        - article [ref=e175]:
+          - img "kuleuven" [ref=e176]
+          - generic [ref=e177]:
+            - heading "PhD in Biomedical Engineering" [level=4] [ref=e178]
+            - paragraph [ref=e179]:
+              - text: Mass Personalisation of Preoperative Planning for TKAEvaluation of Statistical Models to Predict Patient-Specific Shape Information
+              - link "" [ref=e180] [cursor=pointer]:
+                - /url: https://lirias.kuleuven.be/retrieve/632232
+    - generic [ref=e183]:
+      - heading "My Projects" [level=2] [ref=e184]
+      - heading "Check out some of my passion projects!" [level=3] [ref=e185]
+      - generic [ref=e186]:
+        - link "Read More Get your projects out there I developed a cookiecutter template to quickly setup, package and share your python projects with the world!" [ref=e187] [cursor=pointer]:
+          - /url: https://github.com/cvandijck/cookiecutter-python
+          - generic [ref=e188]: Read More
+          - generic [ref=e191]:
+            - generic [ref=e192]: Get your projects out there
+            - generic [ref=e193]: I developed a cookiecutter template to quickly setup, package and share your python projects with the world!
+        - link "Read More Azure DevOps Practical Tools Azure DevOps Practical Tools is a set of tools to automate working with Azure Devops. The tools are developed as a CLI tool adopt to easily manage your Azure Devops project." [ref=e194] [cursor=pointer]:
+          - /url: https://github.com/cvandijck/azure-devops-tools
+          - generic [ref=e195]: Read More
+          - generic [ref=e198]:
+            - generic [ref=e199]: Azure DevOps Practical Tools
+            - generic [ref=e200]: Azure DevOps Practical Tools is a set of tools to automate working with Azure Devops. The tools are developed as a CLI tool adopt to easily manage your Azure Devops project.
+        - link "Read More Typing Game A fun typing game I created so my toddlers can work alongside me on the computer. Built with Alpine.js featuring celebration animations, multilingual support, and responsive design for all devices." [ref=e201] [cursor=pointer]:
+          - /url: https://github.com/cvandijck/typing-game
+          - generic [ref=e202]: Read More
+          - generic [ref=e205]:
+            - generic [ref=e206]: Typing Game
+            - generic [ref=e207]: A fun typing game I created so my toddlers can work alongside me on the computer. Built with Alpine.js featuring celebration animations, multilingual support, and responsive design for all devices.
+        - link "Read More Under construction This webpage is still under construction. Tune in later for more blog posts or link to my favourite projects." [ref=e208] [cursor=pointer]:
+          - /url: https://github.com/cvandijck/
+          - generic [ref=e209]: Read More
+          - generic [ref=e212]:
+            - generic [ref=e213]: Under construction
+            - generic [ref=e214]: This webpage is still under construction. Tune in later for more blog posts or link to my favourite projects.
+    - generic [ref=e215]:
+      - heading "Get in touch!" [level=2] [ref=e216]
+      - heading "Have Any Questions? Ideas For Collaboration?" [level=3] [ref=e217]
+      - generic [ref=e218]:
+        - paragraph
+      - generic [ref=e219]:
+        - generic [ref=e220]:
+          - generic [ref=e221]:
+            - generic [ref=e222]: 
+            - generic [ref=e223]: My Phone
+          - paragraph [ref=e224]:
+            - link "(+32) 485 40 33 70" [ref=e225] [cursor=pointer]:
+              - /url: https://wa.me/+32485403370
+        - generic [ref=e226]:
+          - generic [ref=e227]:
+            - generic [ref=e228]: 
+            - generic [ref=e229]: My Email
+          - paragraph [ref=e230]:
+            - link "christophe.vdijck@gmail.com" [ref=e231] [cursor=pointer]:
+              - /url: mailto:christophe.vdijck@gmail.com?SUBJECT=I want to connect
+        - generic [ref=e232]:
+          - generic [ref=e233]:
+            - generic [ref=e234]: 
+            - generic [ref=e235]: My Location
+          - paragraph [ref=e236]:
+            - link "9000 Ghent, Belgium" [ref=e237] [cursor=pointer]:
+              - /url: https://maps.app.goo.gl/YS4VJ65Kb2HrhW5d6
+  - contentinfo [ref=e238]:
+    - generic [ref=e239]:
+      - paragraph [ref=e240]:
+        - text: © Copyright 2023. All right reserved, Christophe Van Dijck.
+        - link "Illustrations by Storyset" [ref=e241] [cursor=pointer]:
+          - /url: https://storyset.com/idea
+        - text: ", Webdesign by ATOM."
+      - generic [ref=e242]:
+        - link "" [ref=e243] [cursor=pointer]:
+          - /url: mailto:christophe.vdijck@gmail.com?SUBJECT=I want to connect
+        - link "" [ref=e245] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/cvandijck/
+        - link "" [ref=e247] [cursor=pointer]:
+          - /url: https://github.com/cvandijck
+        - link "" [ref=e249] [cursor=pointer]:
+          - /url: https://wa.me/+32485403370
+  - generic: "Browsersync: connected"
