@@ -165,7 +165,7 @@ html {
 }
 
 .carousel-nav-btn {
-  @apply absolute top-12 z-10 hidden h-56 w-12 items-center justify-center sm:h-64 md:flex lg:h-48 xl:h-56;
+  @apply absolute bottom-4 top-12 z-10 hidden w-12 items-center justify-center md:flex;
 }
 
 .carousel-nav-btn-icon {
