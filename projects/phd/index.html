@@ -2,40 +2,49 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
       name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <title>My PhD Research | Christophe Van Dijck</title>
+    <meta
+      name="description"
+      content="My PhD at KU Leuven in a few minutes: how statistical shape models can make personalised knee replacement planning available to every patient."
+    />
+    <meta name="author" content="Christophe Van Dijck" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://christophevandijck.be/projects/phd/" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/img/icon.png"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/img/icon.svg" />
+    <link rel="apple-touch-icon" href="/assets/img/icon.png" />
+    <meta name="theme-color" content="#5540af" />
     <meta
       property="og:title"
       content="My PhD Research | Christophe Van Dijck"
     />
+    <meta
+      property="og:description"
+      content="How statistical shape models can make personalised knee replacement planning available to every patient."
+    />
     <meta property="og:locale" content="en_US" />
-    <link rel="canonical" href="https://christophevandijck.be/projects/phd/" />
     <meta
       property="og:url"
       content="https://christophevandijck.be/projects/phd/"
     />
-    <meta
-      name="description"
-      content="An overview of my PhD research on statistical shape modelling for personalised preoperative planning, completed at KU Leuven."
-    />
-    <link rel="icon" type="image/png" href="/assets/img/icon.png" />
-    <meta name="theme-color" content="#5540af" />
     <meta property="og:site_name" content="Christophe Van Dijck" />
     <meta
       property="og:image"
-      content="https://cvandijck.github.io/assets/img/social.jpg"
+      content="https://christophevandijck.be/assets/img/phd/ssm-modes.webp"
     />
+    <meta property="og:type" content="article" />
     <meta name="twitter:card" content="summary_large_image" />
-
-    <link
-      crossorigin="crossorigin"
-      href="https://fonts.gstatic.com"
-      rel="preconnect"
-    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       as="style"
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
@@ -50,324 +59,1373 @@
       rel="stylesheet"
     />
     <link
-      crossorigin="anonymous"
       href="/assets/styles/main.min.css"
-      media="screen"
       rel="stylesheet"
+      crossorigin="anonymous"
     />
-    <script
-      defer
-      src="https://unpkg.com/@alpine-collective/toolkit@1.0.0/dist/cdn.min.js"
-    ></script>
     <script
       defer
       src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/atom-one-dark.min.css"
-    />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
-    <script>
-      hljs.highlightAll();
-    </script>
     <script type="text/javascript" src="https://unpkg.com/vtk.js"></script>
   </head>
 
   <body
     :class="{ 'overflow-hidden max-h-screen': mobileMenu }"
     class="relative"
-    x-data="{ mobileMenu: false }"
+    x-data="{ mobileMenu: false, nav: [ { href: '/#about', label: 'About' }, { href: '/#skills', label: 'Skills' }, { href: '/#work', label: 'Work' }, { href: '/#education', label: 'Education' }, { href: '/#projects', label: 'Projects' }, { href: '/#contact', label: 'Contact' } ] }"
   >
-    <div id="main" class="relative">
+    <header class="relative z-50 w-full bg-primary py-3 sm:py-5">
+      <div class="container flex max-w-6xl items-center justify-between">
+        <a href="/">
+          <img
+            src="/assets/img/logo_white.svg"
+            class="h-12 lg:h-16"
+            alt="logo image"
+          />
+        </a>
+        <nav class="hidden lg:block" aria-label="Main navigation">
+          <ul class="flex items-center">
+            <template x-for="item in nav" :key="item.href">
+              <li class="group pl-6">
+                <a :href="item.href" class="nav-link" x-text="item.label"></a>
+                <span class="nav-underline group-hover:bg-yellow"></span>
+              </li>
+            </template>
+          </ul>
+        </nav>
+        <button
+          class="block lg:hidden"
+          @click="mobileMenu = true"
+          aria-label="Open menu"
+        >
+          <i class="bx bx-menu text-4xl text-white"></i>
+        </button>
+      </div>
       <div
-        x-data="{ triggerNavItem(id) { $scroll(id) }, triggerMobileNavItem(id) { mobileMenu = false; this.triggerNavItem(id) } }"
+        class="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden"
+        :class="{ 'opacity-100 pointer-events-auto': mobileMenu }"
       >
-        <div class="top-0 z-50 w-full bg-primary py-3 sm:py-5">
-          <div class="container flex items-center justify-between">
-            <div>
-              <a href="/">
-                <img
-                  src="/assets/img/logo_white.svg"
-                  class="h-12"
-                  alt="logo image"
-                />
+        <nav
+          class="absolute right-0 min-h-screen w-2/3 bg-primary px-8 py-4 shadow md:w-1/3"
+          aria-label="Mobile navigation"
+        >
+          <button
+            class="absolute right-0 top-0 mr-4 mt-4"
+            @click="mobileMenu = false"
+          >
+            <img
+              src="/assets/img/icon-close.svg"
+              class="h-10 w-auto"
+              alt="close menu"
+            />
+          </button>
+          <ul class="mt-8 flex flex-col">
+            <template x-for="item in nav" :key="item.href">
+              <li class="py-2">
+                <a :href="item.href" class="nav-link" x-text="item.label"></a>
+              </li>
+            </template>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="relative">
+      <!--
+        NOTES FOR THE AUTHOR - compositions / visuals still to make or add
+        (all <img> files are the original media extracted from the decks):
+        1. "mass-personalisation": drivers graphic (TKA volume 700k -> 3.5M, younger patients, NHS GIRFT). Currently text + big numbers.
+        2. "three barriers": icon cards are placeholders for a composition (manual work, radiation, MRI-only cartilage).
+        3. "ssm-modes" (data-vtk): the slide's slider panel is a native PowerPoint composition; use the green femur grid for now.
+        4. Warping / fitting animations (media1.mp4, media3-8.mp4 in the decks): placeholders, to become vtk.js.
+        5. "cartilage-thickness" (data-vtk): static thickness map for now.
+        6. Pipeline overview (derive / reconstruct / augment): cards are native HTML, replace with a figure if wanted.
+      -->
+
+      <!-- Hero -->
+      <section class="min-h-0 bg-grey-50">
+        <div
+          class="container flex max-w-6xl flex-col gap-8 py-10 md:py-12 lg:flex-row lg:items-center lg:gap-16"
+        >
+          <div class="lg:w-3/5">
+            <a
+              href="/#projects"
+              class="inline-flex items-center font-body text-sm font-semibold text-primary hover:text-grey-20"
+            >
+              <i
+                class="bx bx-left-arrow-alt pr-2 text-xl"
+                aria-hidden="true"
+              ></i>
+              Back to projects
+            </a>
+            <h1
+              class="pt-6 font-header text-3xl font-semibold text-primary sm:text-4xl"
+            >
+              Mass Personalisation of Preoperative Planning for Total Knee
+              Arthroplasty
+            </h1>
+            <p class="pt-3 font-body text-lg text-grey-20 sm:text-xl">
+              Teaching computers the shape of the human knee, so that every
+              patient can get a surgery plan made for them.
+            </p>
+            <p class="pt-4 font-body text-sm text-grey-20">
+              PhD in Biomedical Engineering &middot; KU Leuven &amp; Materialise
+              &middot; 2021
+            </p>
+            <div class="flex flex-wrap gap-3 pt-6">
+              <a
+                href="https://lirias.kuleuven.be/retrieve/632232"
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center rounded bg-primary px-5 py-2 font-header text-sm font-bold uppercase text-white hover:bg-grey-10"
+              >
+                <i class="bx bx-book-open pr-2 text-xl" aria-hidden="true"></i>
+                Read the thesis
+              </a>
+              <a
+                href="#deeper"
+                class="inline-flex items-center rounded border-2 border-primary px-5 py-2 font-header text-sm font-bold uppercase text-primary hover:bg-grey-60"
+              >
+                <i class="bx bx-cube pr-2 text-xl" aria-hidden="true"></i>
+                Technical details
               </a>
             </div>
-            <div class="hidden lg:block">
-              <ul class="flex items-center">
-                <li class="group pl-6">
-                  <a
-                    href="/#about"
-                    class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                    >About</a
-                  >
-                  <span
-                    class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
-                  ></span>
+          </div>
+          <figure class="relative lg:w-2/5" data-vtk="knee-anatomy">
+            <img
+              src="/assets/img/phd/knee-anatomy.webp"
+              alt="Anatomical drawing of the knee showing femur, tibia and patella"
+              class="mx-auto max-h-72 w-auto object-contain mix-blend-multiply lg:max-h-[28rem]"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <!-- 1. Worn-out knee -->
+      <section class="min-h-0 justify-start py-10 md:py-12">
+        <div class="container max-w-6xl">
+          <div class="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-16">
+            <div class="lg:w-1/2">
+              <h2
+                class="section-heading-lg !text-4xl sm:!text-5xl lg:!text-5xl"
+              >
+                A worn-out knee
+              </h2>
+              <p class="pt-6 font-body leading-relaxed text-grey-20">
+                The knee is where the thigh bone (<em>femur</em>) meets the shin
+                bone (<em>tibia</em>), with the kneecap (<em>patella</em>) in
+                front. It carries your weight from hip to ankle while bending
+                and straightening. A thin layer of
+                <strong>cartilage</strong> on the bone ends lets them glide and
+                spreads the load.
+              </p>
+              <p class="pt-4 font-body leading-relaxed text-grey-20">
+                In <strong>osteoarthritis</strong> this cartilage slowly breaks
+                down until bone rubs on bone. The bones deform, movement
+                stiffens and pain becomes chronic. It is linked to age and
+                overweight, so the numbers will keep rising.
+              </p>
+              <div class="pt-16 text-center">
+                <p
+                  class="font-header text-6xl font-semibold text-primary sm:text-7xl"
+                >
+                  300M
+                </p>
+                <p class="font-body text-grey-20">people affected worldwide</p>
+              </div>
+            </div>
+            <div class="grid gap-6 lg:w-1/2">
+              <figure>
+                <img
+                  src="/assets/img/phd/osteoarthritis-cartilage.webp"
+                  alt="Healthy knee versus osteoarthritic knee with cartilage loss, bone spurs and joint space narrowing"
+                  class="mx-auto max-h-64 w-auto object-contain mix-blend-multiply"
+                  loading="lazy"
+                />
+              </figure>
+              <figure>
+                <img
+                  src="/assets/img/phd/osteoarthritis-xray.webp"
+                  alt="X-rays of a normal joint space and of a joint with loss of joint space"
+                  class="mx-auto max-h-64 w-auto object-contain"
+                  loading="lazy"
+                />
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Replacement and alignment -->
+      <section class="min-h-0 justify-start bg-grey-50 py-10 md:py-12">
+        <div class="container max-w-6xl">
+          <h2 class="section-heading-lg !text-4xl sm:!text-5xl lg:!text-5xl">
+            Replacing the joint
+          </h2>
+          <div class="grid items-center gap-8 pt-6 lg:grid-cols-2 lg:gap-16">
+            <div>
+              <p class="font-body leading-relaxed text-grey-20">
+                When conservative treatment is no longer enough, surgeons
+                perform a <strong>total knee arthroplasty</strong>: both worn
+                contact surfaces are replaced by metal implants with a plastic
+                spacer in between.
+              </p>
+              <p class="pt-4 font-body leading-relaxed text-grey-20">
+                Osteoarthritis often pushes the leg into a bow-legged
+                (<em>varus</em>) or knock-kneed (<em>valgus</em>) position,
+                which shifts the load and wears the cartilage faster. The
+                surgeon therefore tries to restore a healthy
+                <strong>alignment</strong> of the leg.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 gap-4">
+              <figure>
+                <img
+                  src="/assets/img/phd/knee-implant.webp"
+                  alt="Osteoarthritic knee next to a knee with femoral component, plastic spacer and tibial component"
+                  class="mx-auto max-h-64 w-auto object-contain mix-blend-multiply"
+                  loading="lazy"
+                />
+              </figure>
+              <!-- <figure>
+                <img
+                  src="/assets/img/phd/limb-alignment.webp"
+                  alt="Three legs: normal, bow-legged (varus) and knock-kneed (valgus)"
+                  class="mx-auto max-h-72 w-auto object-contain mix-blend-multiply"
+                  loading="lazy"
+                />
+              </figure> -->
+            </div>
+          </div>
+          <h3 class="pt-12 font-header text-2xl font-semibold text-primary">
+            What is a "healthy" alignment? A 40-year shift to personal
+          </h3>
+          <figure class="pt-6">
+            <img
+              src="/assets/img/phd/alignment-strategies.webp"
+              alt="Native, mechanical, anatomical and kinematic alignment of the leg"
+              class="mx-auto max-h-96 w-auto object-contain mix-blend-multiply"
+              loading="lazy"
+            />
+          </figure>
+          <div class="grid gap-6 pt-8 md:grid-cols-3">
+            <div class="rounded bg-white p-6 shadow">
+              <p class="font-body text-xs uppercase text-grey-20">Classic</p>
+              <h4 class="font-header text-xl font-semibold text-primary">
+                Mechanical
+              </h4>
+              <p class="pt-2 font-body text-grey-20">
+                Align the implant neutrally to the leg's load axis for an even
+                load on the joint. The same target for everybody.
+              </p>
+            </div>
+            <div class="rounded bg-white p-6 shadow">
+              <p class="font-body text-xs uppercase text-grey-20">Population</p>
+              <h4 class="font-header text-xl font-semibold text-primary">
+                Anatomical
+              </h4>
+              <p class="pt-2 font-body text-grey-20">
+                The average knee is a few degrees into varus, so aim for that.
+                Better, but still an average over a population.
+              </p>
+            </div>
+            <div class="rounded bg-white p-6 shadow">
+              <p class="font-body text-xs uppercase text-grey-20">Personal</p>
+              <h4 class="font-header text-xl font-semibold text-primary">
+                Kinematic
+              </h4>
+              <p class="pt-2 font-body text-grey-20">
+                Use the patient's own motion axes, corrected for the damage done
+                by osteoarthritis. This needs the cartilage.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Planning -->
+      <section class="min-h-0 justify-start py-10 md:py-12">
+        <div class="container max-w-6xl">
+          <h2 class="section-heading-lg !text-4xl sm:!text-5xl lg:!text-5xl">
+            Planning the surgery
+          </h2>
+          <p class="max-w-3xl pt-6 font-body leading-relaxed text-grey-20">
+            With a <strong>preoperative plan</strong> the surgeon studies the
+            procedure in advance and takes the patient's specific anatomy into
+            account: which implant, which size, where to cut. Planning has
+            evolved from acetate templates held over an X-ray, to digital 2D
+            templating, to a full <strong>3D model</strong> of the patient's
+            knee. <strong>3D-printed, patient-specific guides</strong> then
+            carry the plan into the operating room.
+          </p>
+          <div class="grid gap-6 pt-8 sm:grid-cols-2 lg:grid-cols-4">
+            <figure>
+              <img
+                src="/assets/img/phd/planning-xray.webp"
+                alt="Doctor holding a knee X-ray"
+                class="h-44 w-full rounded object-cover"
+                loading="lazy"
+              />
+              <figcaption class="pt-2 font-body text-sm text-grey-20">
+                1. Templates on X-ray film
+              </figcaption>
+            </figure>
+            <figure>
+              <img
+                src="/assets/img/phd/planning-2d.webp"
+                alt="Digital 2D templating on a computer screen"
+                class="h-44 w-full rounded object-cover"
+                loading="lazy"
+              />
+              <figcaption class="pt-2 font-body text-sm text-grey-20">
+                2. Digital 2D templating
+              </figcaption>
+            </figure>
+            <figure>
+              <img
+                src="/assets/img/phd/planning-3d.webp"
+                alt="3D knee models on a planning screen"
+                class="h-44 w-full rounded object-cover"
+                loading="lazy"
+              />
+              <figcaption class="pt-2 font-body text-sm text-grey-20">
+                3. Full 3D planning
+              </figcaption>
+            </figure>
+            <figure>
+              <img
+                src="/assets/img/phd/planning-guide.webp"
+                alt="3D-printed guide and its use during surgery"
+                class="h-44 w-full rounded object-cover"
+                loading="lazy"
+              />
+              <figcaption class="pt-2 font-body text-sm text-grey-20">
+                4. 3D-printed guide in the OR
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Mass personalisation + barriers -->
+      <section class="min-h-0 justify-start bg-grey-50 py-10 md:py-12">
+        <div class="container max-w-6xl">
+          <h2 class="section-heading-lg !text-4xl sm:!text-5xl lg:!text-5xl">
+            Personalised care for everyone?
+          </h2>
+          <div class="grid items-center gap-8 pt-6 lg:grid-cols-5 lg:gap-12">
+            <div class="lg:col-span-3">
+              <p class="font-body leading-relaxed text-grey-20">
+                <strong>Mass personalisation</strong> means personalised
+                treatment, available at scale. Three trends make it urgent:
+              </p>
+              <ul class="list-disc space-y-2 pl-5 pt-4 font-body text-grey-20">
+                <li>
+                  Knee replacements are booming: from about
+                  <strong>700,000 a year in 2014</strong> to a projected
+                  <strong>3.5 million by 2040</strong>.
                 </li>
-                <li class="group pl-6">
-                  <a
-                    href="/#skills"
-                    class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                    >Skills</a
-                  >
-                  <span
-                    class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
-                  ></span>
+                <li>
+                  Patients are younger and expect more from their knee &mdash;
+                  they still want to play padel every evening.
                 </li>
-                <li class="group pl-6">
-                  <a
-                    href="/#work"
-                    class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                    >Work</a
-                  >
-                  <span
-                    class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
-                  ></span>
-                </li>
-                <li class="group pl-6">
-                  <a
-                    href="/#education"
-                    class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                    >Education</a
-                  >
-                  <span
-                    class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
-                  ></span>
-                </li>
-                <li class="group pl-6">
-                  <a
-                    href="/#projects"
-                    class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                    >Projects</a
-                  >
-                  <span
-                    class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
-                  ></span>
-                </li>
-                <li class="group pl-6">
-                  <a
-                    href="/#contact"
-                    class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                    >Contact</a
-                  >
-                  <span
-                    class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
-                  ></span>
+                <li>
+                  Health systems, such as the UK's
+                  <em>Getting It Right First Time</em> programme, push for
+                  better-planned surgery.
                 </li>
               </ul>
+              <p class="pt-4 font-body leading-relaxed text-grey-20">
+                But personalised planning needs personal data, and acquiring and
+                processing that data does not scale easily.
+              </p>
             </div>
-            <div class="block lg:hidden">
-              <button @click="mobileMenu = true">
-                <i class="bx bx-menu text-4xl text-white"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden"
-          :class="{ 'opacity-100 pointer-events-auto': mobileMenu }"
-        >
-          <div
-            class="absolute right-0 min-h-screen w-2/3 bg-primary px-8 py-4 shadow md:w-1/3"
-          >
-            <button
-              class="absolute right-0 top-0 mr-4 mt-4"
-              @click="mobileMenu = false"
-            >
+            <figure class="lg:col-span-2">
               <img
-                src="/assets/img/icon-close.svg"
-                class="h-10 w-auto"
-                alt=""
+                src="/assets/img/phd/crowd-crop.jpg"
+                alt="Silhouettes of a crowd of people"
+                class="mx-auto max-h-64 w-auto object-contain mix-blend-multiply"
+                loading="lazy"
               />
-            </button>
+            </figure>
+          </div>
 
-            <ul class="mt-8 flex flex-col">
-              <li class="py-2">
-                <a
-                  href="/#about"
-                  class="pt-0.5 font-header font-semibold uppercase text-white"
-                  >About</a
-                >
-              </li>
-              <li class="py-2">
-                <a
-                  href="/#skills"
-                  class="pt-0.5 font-header font-semibold uppercase text-white"
-                  >Skills</a
-                >
-              </li>
-              <li class="py-2">
-                <a
-                  href="/#work"
-                  class="pt-0.5 font-header font-semibold uppercase text-white"
-                  >Work</a
-                >
-              </li>
-              <li class="py-2">
-                <a
-                  href="/#education"
-                  class="pt-0.5 font-header font-semibold uppercase text-white"
-                  >Education</a
-                >
-              </li>
-              <li class="py-2">
-                <a
-                  href="/#projects"
-                  class="pt-0.5 font-header font-semibold uppercase text-white"
-                  >Projects</a
-                >
-              </li>
-              <li class="py-2">
-                <a
-                  href="/#contact"
-                  class="pt-0.5 font-header font-semibold uppercase text-white"
-                  >Contact</a
-                >
-              </li>
-            </ul>
+          <h3 class="pt-12 font-header text-2xl font-semibold text-primary">
+            Three barriers
+          </h3>
+          <div class="grid gap-6 pt-6 md:grid-cols-3">
+            <div class="rounded bg-white p-6 shadow">
+              <i
+                class="bx bx-time text-5xl text-primary"
+                aria-hidden="true"
+              ></i>
+              <h4 class="pt-3 font-header text-xl font-semibold text-primary">
+                1. Manual processing
+              </h4>
+              <p class="pt-2 font-body text-grey-20">
+                Scans must be turned into 3D models and marked up with
+                anatomical reference points. That costs expert time and does not
+                scale.
+              </p>
+            </div>
+            <div class="rounded bg-white p-6 shadow">
+              <i
+                class="bx bx-radio-circle-marked text-5xl text-primary"
+                aria-hidden="true"
+              ></i>
+              <h4 class="pt-3 font-header text-xl font-semibold text-primary">
+                2. Radiation
+              </h4>
+              <p class="pt-2 font-body text-grey-20">
+                CT is cheap and widely available, but uses ionising radiation,
+                and a planning scan has to include the hip.
+              </p>
+            </div>
+            <div class="rounded bg-white p-6 shadow">
+              <i
+                class="bx bx-scan text-5xl text-primary"
+                aria-hidden="true"
+              ></i>
+              <h4 class="pt-3 font-header text-xl font-semibold text-primary">
+                3. Cartilage needs MRI
+              </h4>
+              <p class="pt-2 font-body text-grey-20">
+                MRI shows cartilage, which is key for kinematic alignment and
+                well-fitting guides, but it is slow, costly and less available.
+              </p>
+            </div>
+          </div>
+          <div class="grid gap-6 pt-8 sm:grid-cols-3">
+            <figure>
+              <img
+                src="/assets/img/phd/scan-ct.webp"
+                alt="CT slices of a knee: bone is visible, cartilage is not"
+                class="h-56 w-full rounded bg-none object-contain"
+                loading="lazy"
+              />
+              <figcaption
+                class="pt-2 text-center font-body text-sm text-grey-20"
+              >
+                CT: great for bone, no cartilage
+              </figcaption>
+            </figure>
+            <figure>
+              <img
+                src="/assets/img/phd/scan-mri.webp"
+                alt="MRI of a knee showing bone and cartilage"
+                class="h-56 w-full rounded bg-none object-contain"
+                loading="lazy"
+              />
+              <figcaption
+                class="pt-2 text-center font-body text-sm text-grey-20"
+              >
+                MRI: shows cartilage, but costly
+              </figcaption>
+            </figure>
+            <figure>
+              <img
+                src="/assets/img/phd/planner-software.webp"
+                alt="Preoperative planning software showing a knee plan"
+                class="h-56 w-full rounded bg-none object-contain"
+                loading="lazy"
+              />
+              <figcaption
+                class="pt-2 text-center font-body text-sm text-grey-20"
+              >
+                The plan itself needs processed data
+              </figcaption>
+            </figure>
           </div>
         </div>
+      </section>
 
-        <!-- Content -->
-        <div>
-          <div class="container py-6 md:py-10">
-            <div class="mx-auto max-w-4xl">
-              <!-- Heading -->
-              <div class="">
-                <h1
-                  class="pt-5 font-body text-3xl font-semibold text-primary sm:text-4xl md:text-5xl xl:text-6xl"
+      <!-- 5. The idea: statistical shape models -->
+      <section class="min-h-0 justify-start py-10 md:py-12">
+        <div
+          class="container flex max-w-6xl flex-col gap-8 lg:flex-row lg:items-center lg:gap-16"
+        >
+          <div class="lg:w-2/5">
+            <h2 class="section-heading-lg !text-4xl sm:!text-5xl lg:!text-5xl">
+              The idea
+            </h2>
+            <p class="pt-6 font-body leading-relaxed text-grey-20">
+              All three barriers come down to missing shape information. What if
+              we could <strong>predict</strong> it instead of measuring it?
+            </p>
+            <p class="pt-4 font-body leading-relaxed text-grey-20">
+              A <strong>statistical shape model</strong> (SSM) learns from many
+              example bones how a shape varies across a population. It consists
+              of one <em>average shape</em> and a handful of
+              <em>variation modes</em>, independent "sliders" found by
+              mathematics. Any bone can then be described by just a few numbers:
+              where each slider is set.
+            </p>
+            <p class="pt-4 font-body leading-relaxed text-grey-20">
+              Think of the character creator in a video game, except that the
+              sliders are not "nose size" but whatever the data says varies
+              most.
+            </p>
+          </div>
+          <figure class="relative lg:w-3/5" data-vtk="ssm-modes">
+            <img
+              src="/assets/img/phd/ssm-modes.webp"
+              alt="Femur shape model: the first three variation modes shown at minus 3, 0 and plus 3 standard deviations"
+              class="w-full object-contain mix-blend-multiply"
+              loading="lazy"
+            />
+            <figcaption
+              style="width: fit-content"
+              class="mt-2 block rounded bg-primary px-3 py-1 font-body text-xs text-white"
+            >
+              <i class="bx bx-cube pr-1" aria-hidden="true"></i>
+              Interactive 3D coming soon
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- 6. Hypothesis -->
+      <section class="min-h-0 justify-start bg-grey-50 py-10 md:py-12">
+        <div class="container max-w-6xl">
+          <h2
+            class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl"
+          >
+            Derive. Reconstruct. Augment.
+          </h2>
+          <p
+            class="mx-auto max-w-3xl pt-6 text-center font-body leading-relaxed text-grey-20"
+          >
+            A shape model describes a whole population, yet my hypothesis was
+            that it can be used to predict missing information for
+            <em>one</em> patient: <strong>derive</strong> information from the
+            shape, <strong>reconstruct</strong> what was not scanned, or
+            <strong>augment</strong> what is available with what is missing. One
+            application per barrier.
+          </p>
+          <div class="grid gap-6 pt-8 md:grid-cols-3">
+            <div class="rounded bg-primary p-6 text-white">
+              <p class="font-body text-xs uppercase text-yellow">
+                Barrier: manual work
+              </p>
+              <h3 class="pt-1 font-header text-2xl font-semibold">Derive</h3>
+              <p class="pt-2 font-body">
+                Anatomical landmarks and reference axes, automatically
+              </p>
+            </div>
+            <div class="rounded bg-primary p-6 text-white">
+              <p class="font-body text-xs uppercase text-yellow">
+                Barrier: radiation
+              </p>
+              <h3 class="pt-1 font-header text-2xl font-semibold">
+                Reconstruct
+              </h3>
+              <p class="pt-2 font-body">
+                The hip end of the thigh bone, so it need not be scanned
+              </p>
+            </div>
+            <div class="rounded bg-primary p-6 text-white">
+              <p class="font-body text-xs uppercase text-yellow">
+                Barrier: MRI-only cartilage
+              </p>
+              <h3 class="pt-1 font-header text-2xl font-semibold">Augment</h3>
+              <p class="pt-2 font-body">
+                CT bone models with predicted cartilage
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Tools -->
+      <section class="min-h-0 justify-start py-10 md:py-12">
+        <div class="container max-w-6xl">
+          <h2 class="section-heading-lg !text-4xl sm:!text-5xl lg:!text-5xl">
+            First, the tools
+          </h2>
+          <div class="grid gap-8 pt-6 lg:grid-cols-2 lg:gap-16">
+            <div>
+              <p class="font-body leading-relaxed text-grey-20">
+                A 3D bone is a cloud of points joined into triangles. To build a
+                shape model you need <strong>correspondence</strong>: every bone
+                must have the same number of points, and point <em>n</em> must
+                sit at the same anatomical spot on every bone.
+              </p>
+              <p class="pt-4 font-body leading-relaxed text-grey-20">
+                I improved a <strong>warping algorithm</strong> that deforms a
+                template onto each training bone. The resulting models are as
+                good as the state of the art, which only works for specific
+                shapes, whereas mine works for <em>any</em> anatomy.
+              </p>
+              <p class="pt-4 font-body leading-relaxed text-grey-20">
+                I also built a <strong>fitter</strong> that finds the slider
+                settings that best explain a new bone, even when part of it is
+                missing. Tests with artificially removed surface show that the
+                error grows with the missing area, but stays limited unless the
+                bone end itself is gone.
+              </p>
+              <p class="pt-4 font-body leading-relaxed text-grey-20">
+                Since then, colleagues and I have reused both tools for the leg,
+                forearm, vertebra, scapula, pelvis, heart and aorta.
+              </p>
+            </div>
+            <div class="grid gap-6">
+              <div class="grid grid-cols-2 gap-6">
+                <figure>
+                  <img
+                    src="/assets/img/phd/mesh-triangles.webp"
+                    alt="Femur head as a triangle mesh with corresponding landmark points in red"
+                    class="mx-auto max-h-56 w-auto object-contain mix-blend-multiply"
+                    loading="lazy"
+                  />
+                  <figcaption
+                    class="pt-2 text-center font-body text-sm text-grey-20"
+                  >
+                    Same points, same places
+                  </figcaption>
+                </figure>
+                <figure>
+                  <img
+                    src="/assets/img/phd/partial-data.webp"
+                    alt="Femur with missing surface patches, fitted by the shape model"
+                    class="mx-auto max-h-56 w-auto object-contain mix-blend-multiply"
+                    loading="lazy"
+                  />
+                  <figcaption
+                    class="pt-2 text-center font-body text-sm text-grey-20"
+                  >
+                    Fitting with missing data
+                  </figcaption>
+                </figure>
+              </div>
+              <figure>
+                <img
+                  src="/assets/img/phd/warping-results.webp"
+                  alt="Femur surface error maps for the state-of-the-art method, my warping and a baseline"
+                  class="mx-auto max-h-64 w-auto object-contain mix-blend-multiply"
+                  loading="lazy"
+                />
+                <figcaption
+                  class="pt-2 text-center font-body text-sm text-grey-20"
                 >
-                  My PhD Research
-                </h1>
-                <div class="flex items-center pt-5 md:pt-10">
-                  <div>
+                  Competitive with the state of the art
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <figure class="pt-8">
+            <img
+              src="/assets/img/phd/anatomies.webp"
+              alt="Shape models of leg, knee, forearm, vertebra, scapula, pelvis, heart and aorta"
+              class="mx-auto w-full max-w-3xl object-contain mix-blend-multiply"
+              loading="lazy"
+            />
+            <figcaption class="pt-2 text-center font-body text-sm text-grey-20">
+              The same tools, many anatomies
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- 8. Derive -->
+      <section class="min-h-0 justify-start bg-grey-50 py-10 md:py-12">
+        <div class="container max-w-6xl">
+          <p
+            class="pb-2 font-body text-sm font-semibold uppercase text-grey-20"
+          >
+            Result 1 &middot; Barrier: manual work
+          </p>
+          <h2 class="section-heading-lg !text-4xl sm:!text-5xl lg:!text-5xl">
+            Derive: landmarks, automatically
+          </h2>
+          <div class="grid gap-8 pt-6 lg:grid-cols-2 lg:gap-16">
+            <div>
+              <p class="font-body leading-relaxed text-grey-20">
+                Surgeons plan with <strong>reference axes</strong>, such as the
+                mechanical axis from hip to ankle. These axes follow from
+                <strong>landmarks</strong>: points that engineers place by hand
+                on each 3D bone. This takes clinical training and time, and it
+                is exactly the kind of step that does not scale.
+              </p>
+              <p class="pt-4 font-body leading-relaxed text-grey-20">
+                I first measured how well people do it. Between engineers, the
+                average difference is below 1&nbsp;mm, but occasionally a point
+                is off by more than a centimetre &mdash; an error that could
+                harm a patient if it slips through quality control.
+              </p>
+              <p class="pt-4 font-body leading-relaxed text-grey-20">
+                Then I let the shape model do it: landmarks are treated as just
+                another part of the shape that is "missing", and the fitter
+                fills them in. The result is comparable to manual work, without
+                outliers. Most derived axes are as accurate as manually derived
+                ones.
+              </p>
+              <p class="pt-4 font-body leading-relaxed text-grey-20">
+                <strong>Honest limit:</strong> the epicondylar axis, defined by
+                two small bumps on the knee, is not accurate enough yet. Axes
+                vary smoothly across people, which a model captures well; a
+                single landmark can differ abruptly between individuals, which
+                it does not.
+              </p>
+            </div>
+            <div class="grid grid-cols-2 gap-6">
+              <figure>
+                <img
+                  src="/assets/img/phd/landmarks-femur.webp"
+                  alt="Femur with landmark points and the mechanical axis and epicondylar axis"
+                  class="mx-auto max-h-72 w-auto object-contain mix-blend-multiply"
+                  loading="lazy"
+                />
+              </figure>
+              <figure>
+                <img
+                  src="/assets/img/phd/limb-axes.webp"
+                  alt="Leg with mechanical and anatomical axes of femur and tibia"
+                  class="mx-auto max-h-72 w-auto object-contain mix-blend-multiply"
+                  loading="lazy"
+                />
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. Reconstruct -->
+      <section class="min-h-0 justify-start py-10 md:py-12">
+        <div class="container max-w-6xl">
+          <p
+            class="pb-2 font-body text-sm font-semibold uppercase text-grey-20"
+          >
+            Result 2 &middot; Barrier: radiation
+          </p>
+          <h2 class="section-heading-lg !text-4xl sm:!text-5xl lg:!text-5xl">
+            Reconstruct: scanning less
+          </h2>
+          <div class="grid gap-8 pt-6 lg:grid-cols-2 lg:gap-16">
+            <div>
+              <p class="font-body leading-relaxed text-grey-20">
+                The mechanical axis runs from the hip joint to the ankle, so a
+                knee CT normally includes the hip, along with
+                radiation-sensitive tissue. Cutting the scan off halfway the
+                femur would spare them, but then the hip is missing.
+              </p>
+              <p class="pt-4 font-body leading-relaxed text-grey-20">
+                The bottom half of the bone alone does not tell the model
+                enough. But every CT scan starts with a free
+                <strong>topogram</strong>: a flat, X-ray-like overview image.
+                From it we take two measurements (femoral neck angle and femur
+                length) and the 2D positions of three landmarks.
+              </p>
+              <p class="pt-4 font-body leading-relaxed text-grey-20">
+                The shape model is <strong>conditioned</strong> on the
+                measurements, which shrinks the space of plausible bones. The 2D
+                landmarks become 3D lines pointing straight out of the topogram,
+                and the model is fitted so that its landmarks lie on these
+                lines.
+              </p>
+              <div class="flex flex-wrap items-end gap-8 pt-6">
+                <div>
+                  <p class="font-header text-5xl font-semibold text-primary">
+                    12%
+                  </p>
+                  <p class="font-body text-grey-20">of the dose, women</p>
+                </div>
+                <div>
+                  <p class="font-header text-5xl font-semibold text-primary">
+                    8%
+                  </p>
+                  <p class="font-body text-grey-20">of the dose, men</p>
+                </div>
+              </div>
+              <p class="pt-2 font-body text-sm text-grey-20">
+                Simulated effective radiation dose of the proposed protocol
+                compared to a conventional scan.
+              </p>
+              <p class="pt-4 font-body leading-relaxed text-grey-20">
+                <strong>The outcome:</strong> without the topogram the femur
+                comes out far too short. With it, the orientation of the
+                mechanical axis in the front view is as accurate as the manual
+                process. In the side view it is less reliable, because nothing
+                constrains it there.
+              </p>
+            </div>
+            <div class="grid gap-6">
+              <figure>
+                <img
+                  src="/assets/img/phd/topogram-region.webp"
+                  alt="Leg topogram with the radiosensitive region and the shortened region of interest marked"
+                  class="w-full object-contain mix-blend-multiply"
+                  loading="lazy"
+                />
+              </figure>
+              <figure>
+                <img
+                  src="/assets/img/phd/topogram-landmarks.webp"
+                  alt="Topogram with the measurements and landmarks of the proximal femur"
+                  class="mx-auto max-h-56 w-auto object-contain mix-blend-multiply"
+                  loading="lazy"
+                />
+              </figure>
+              <figure class="relative" data-vtk="posterior-ssm">
+                <img
+                  src="/assets/img/phd/femur-constraints.webp"
+                  alt="Femur reconstructions using different combinations of constraints, with error shown in red"
+                  class="w-full object-contain mix-blend-multiply"
+                  loading="lazy"
+                />
+                <figcaption
+                  style="width: fit-content"
+                  class="mt-2 block rounded bg-primary px-3 py-1 font-body text-xs text-white"
+                >
+                  <i class="bx bx-cube pr-1" aria-hidden="true"></i>
+                  Interactive 3D coming soon
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. Augment -->
+      <section class="min-h-0 justify-start bg-grey-50 py-10 md:py-12">
+        <div class="container max-w-6xl">
+          <p
+            class="pb-2 font-body text-sm font-semibold uppercase text-grey-20"
+          >
+            Result 3 &middot; Barrier: MRI-only cartilage
+          </p>
+          <h2 class="section-heading-lg !text-4xl sm:!text-5xl lg:!text-5xl">
+            Augment: adding the cartilage
+          </h2>
+          <div class="grid gap-8 pt-6 lg:grid-cols-2 lg:gap-16">
+            <div>
+              <p class="font-body leading-relaxed text-grey-20">
+                Cartilage matters twice. <strong>Guides</strong> that rest on
+                the cartilage surface sit more stably (today surgeons often
+                remove all cartilage first, which makes the surgery longer), and
+                <strong>kinematic alignment</strong> needs cartilage to find the
+                patient's pre-disease motion axes. Both normally require an MRI.
+              </p>
+              <p class="pt-4 font-body leading-relaxed text-grey-20">
+                Cartilage thickness is not random: it follows the bone's shape.
+                So I built models that combine bone and cartilage, for each bone
+                and for the whole joint, and asked the model to predict the
+                cartilage from a CT-derived bone.
+              </p>
+              <p class="pt-4 font-body leading-relaxed text-grey-20">
+                Two strategies work: predict the cartilage model's sliders from
+                the bone's sliders (<em>explicit</em>), or fit one combined
+                model to the bone and let it fill in the cartilage
+                (<em>implicit</em>). A final correction step makes the cartilage
+                follow the real bone exactly. Modelling the bones together with
+                their relative position needs far fewer details to reach the
+                same accuracy.
+              </p>
+              <p class="pt-4 font-body leading-relaxed text-grey-20">
+                <strong>Outcome:</strong> clearly better than assuming an
+                average thickness, and within the variability of manual
+                segmentation. Remaining error hotspots are at the kneecap joint
+                (the kneecap is not yet in the model) and on patient-specific
+                wear that is hard to predict.
+              </p>
+            </div>
+            <div class="grid gap-6">
+              <figure class="relative" data-vtk="cartilage-thickness">
+                <img
+                  src="/assets/img/phd/bone-cartilage-models.webp"
+                  alt="Bone and cartilage shape models of the knee"
+                  class="w-full object-contain mix-blend-multiply"
+                  loading="lazy"
+                />
+                <figcaption
+                  style="width: fit-content"
+                  class="mt-2 block rounded bg-primary px-3 py-1 font-body text-xs text-white"
+                >
+                  <i class="bx bx-cube pr-1" aria-hidden="true"></i>
+                  Interactive 3D coming soon
+                </figcaption>
+              </figure>
+              <div class="grid grid-cols-2 gap-4">
+                <figure>
+                  <img
+                    src="/assets/img/phd/guide-bone.webp"
+                    alt="Patient-specific guide resting on bone"
+                    class="w-full object-contain mix-blend-multiply"
+                    loading="lazy"
+                  />
+                  <figcaption
+                    class="pt-2 text-center font-body text-sm text-grey-20"
+                  >
+                    Guide on bone
+                  </figcaption>
+                </figure>
+                <figure>
+                  <img
+                    src="/assets/img/phd/guide-cartilage.webp"
+                    alt="Patient-specific guide resting on cartilage"
+                    class="w-full object-contain mix-blend-multiply"
+                    loading="lazy"
+                  />
+                  <figcaption
+                    class="pt-2 text-center font-body text-sm text-grey-20"
+                  >
+                    Guide on cartilage
+                  </figcaption>
+                </figure>
+              </div>
+              <figure>
+                <img
+                  src="/assets/img/phd/cartilage-error-map.webp"
+                  alt="Unrolled cartilage maps showing prediction error, mostly low with a few hotspots"
+                  class="mx-auto max-h-80 w-auto object-contain mix-blend-multiply"
+                  loading="lazy"
+                />
+                <figcaption
+                  class="pt-2 text-center font-body text-sm text-grey-20"
+                >
+                  Prediction error on the unrolled cartilage
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11. Take-home -->
+      <section class="min-h-0 justify-start bg-primary py-10 md:py-12">
+        <div class="container max-w-4xl">
+          <h2
+            class="font-header text-4xl font-semibold uppercase text-white sm:text-5xl"
+          >
+            Take-home message
+          </h2>
+          <p class="pt-6 font-body text-lg leading-relaxed text-white">
+            Shape models can <strong class="text-yellow">derive</strong>,
+            <strong class="text-yellow">reconstruct</strong> and
+            <strong class="text-yellow">augment</strong> patient-specific shape
+            information, helping to make personalised knee planning available at
+            scale.
+          </p>
+          <p class="pt-4 font-body leading-relaxed text-white">
+            There is a catch. A model describes a population, and it only
+            predicts reliably when:
+          </p>
+          <ol class="list-decimal space-y-2 pl-5 pt-3 font-body text-white">
+            <li>
+              the information behaves smoothly across people, rather than
+              jumping from one individual to the next, and
+            </li>
+            <li>
+              the model can be constrained enough to give not just a
+              <em>plausible</em> but the <em>correct</em> shape for this
+              patient.
+            </li>
+          </ol>
+          <p class="pt-4 font-body leading-relaxed text-white">
+            That is also an opportunity: machine and deep learning can help find
+            the constraints, while shape models, which need far less data, can
+            make up for machine learning's hunger for it.
+          </p>
+        </div>
+      </section>
+
+      <!-- Interactive demo -->
+      <section class="min-h-0 justify-start bg-grey-50 py-10 md:py-12">
+        <div class="container max-w-4xl">
+          <h2 class="section-heading-lg !text-4xl sm:!text-5xl lg:!text-5xl">
+            Try it
+          </h2>
+          <p class="pt-6 font-body leading-relaxed text-grey-20">
+            Interactive 3D shape models are on their way. Meanwhile, a small
+            demo of mesh resolution, a basic building block of shape models:
+            more points, more detail.
+          </p>
+          <input
+            type="range"
+            min="3"
+            max="50"
+            value="6"
+            id="cone_slider"
+            class="relative mt-6 w-full"
+            aria-label="Mesh resolution"
+          />
+          <div
+            id="cone_container"
+            class="relative mt-4 h-80 overflow-hidden rounded bg-white"
+          ></div>
+        </div>
+      </section>
+
+      <!-- Technical details -->
+      <section
+        id="deeper"
+        class="min-h-0 justify-start py-10 md:py-12"
+        x-data="{ open: false }"
+      >
+        <div class="container max-w-6xl">
+          <button
+            class="flex w-full items-center justify-between text-left"
+            @click="open = !open"
+            :aria-expanded="open"
+            aria-controls="deeper-panel"
+          >
+            <span class="section-heading-lg !text-4xl sm:!text-5xl lg:!text-5xl"
+              >Go deeper</span
+            >
+            <i
+              class="bx bx-chevron-down text-5xl text-primary transition-transform"
+              :class="{ 'rotate-180': open }"
+              aria-hidden="true"
+            ></i>
+          </button>
+          <p class="pt-4 font-body text-grey-20">
+            For a technical audience: the methods and findings behind each
+            result, with figures from the preliminary defense.
+          </p>
+
+          <div
+            id="deeper-panel"
+            x-show="open"
+            x-transition
+            style="display: none"
+          >
+            <div class="space-y-16 pt-10">
+              <!-- Warping -->
+              <div class="flex flex-col gap-8">
+                <div>
+                  <h3 class="font-header text-2xl font-semibold text-primary">
+                    Building better models: improved warping
+                  </h3>
+                  <p class="pt-3 font-body leading-relaxed text-grey-20">
+                    Many methods can bring meshes into correspondence, but few
+                    are good enough to build high-quality models. The state of
+                    the art, MDL optimisation, is specific to one topology, and
+                    model quality is usually judged on only three metrics
+                    (Davies et al.).
+                  </p>
+                  <p class="pt-3 font-body leading-relaxed text-grey-20">
+                    I improved a known non-rigid registration algorithm
+                    specifically to improve the quality of the correspondences,
+                    and showed that the resulting model is competitive with MDL.
+                    An extensive sensitivity analysis, using existing and newly
+                    proposed metrics, shows how its parameters affect model
+                    quality.
+                  </p>
+                </div>
+                <div class="grid items-end gap-6 sm:grid-cols-2">
+                  <figure>
                     <img
-                      src="/assets/img/profile_crop.jpeg"
-                      class="hidden h-20 w-20 rounded-full border-2 border-white shadow md:block"
-                      alt="author image"
+                      src="/assets/img/phd/warping-compare.webp"
+                      alt="Generalisation error on the femur for MDL, warping and a baseline"
+                      class="mx-auto max-h-56 w-auto object-contain mix-blend-multiply"
+                      loading="lazy"
                     />
-                  </div>
-                  <div class="md:pl-5">
-                    <span class="block font-body text-xl font-bold text-grey-10"
-                      >By Christophe Van Dijck</span
-                    >
-                    <span
-                      class="block pt-1 font-body text-xl font-bold text-grey-30"
-                      >PhD in Biomedical Engineering, KU Leuven</span
-                    >
-                  </div>
+                  </figure>
+                  <figure>
+                    <img
+                      src="/assets/img/phd/warping-sensitivity.webp"
+                      alt="Sensitivity analysis of model quality metrics against warping parameters"
+                      class="mx-auto max-h-64 w-auto object-contain mix-blend-multiply"
+                      loading="lazy"
+                    />
+                  </figure>
                 </div>
               </div>
 
-              <!-- Body -->
-              <div class="prose max-w-none pt-8">
-                <h2>Overview</h2>
-                <p>[Add a short overview of the PhD research here.]</p>
-
-                <h2>Research Focus</h2>
-                <p>
-                  My PhD, &ldquo;Mass Personalisation of Preoperative Planning
-                  for TKA &mdash; Evaluation of Statistical Models to Predict
-                  Patient-Specific Shape Information&rdquo;, was completed
-                  within Biomedical Engineering at KU Leuven. [Add more detail
-                  on the research focus here.]
-                </p>
-
-                <h2>Methodology</h2>
-                <p>[Add methodology details here.]</p>
-
-                <h2>Key Contributions</h2>
-                <p>[Add key contributions here.]</p>
-
-                <h2>Interactive Illustration</h2>
-                <p>
-                  A small interactive demo illustrating mesh resolution, a basic
-                  building block of the statistical shape models used throughout
-                  this research.
-                </p>
-                <input
-                  type="range"
-                  min="3"
-                  max="50"
-                  value="6"
-                  id="cone_slider"
-                  class="relative"
-                  label=""
-                />
-                <div id="cone_container" class="max-h-128"></div>
-
-                <h2>Publications</h2>
-                <p>
-                  Full thesis:
-                  <a
-                    href="https://lirias.kuleuven.be/retrieve/632232"
-                    target="_blank"
-                    rel="noopener"
-                    >Mass Personalisation of Preoperative Planning for TKA</a
-                  >
-                </p>
+              <!-- Fitter -->
+              <div class="flex flex-col gap-8">
+                <div>
+                  <h3 class="font-header text-2xl font-semibold text-primary">
+                    A general-purpose fitter for partial data
+                  </h3>
+                  <p class="pt-3 font-body leading-relaxed text-grey-20">
+                    To apply a model I wanted a mesh-based technique that
+                    handles missing data intrinsically and works on any anatomy.
+                    The fitter alternates between finding correspondences and
+                    updating the model coefficients, with missing regions simply
+                    excluded from the match.
+                  </p>
+                  <p class="pt-3 font-body leading-relaxed text-grey-20">
+                    Synthetic experiments removed increasing portions of the
+                    femur. Accuracy decreases with the amount removed, but the
+                    impact on the overall fit stays limited, except when large
+                    parts of a bone end are missing. The same fitter was later
+                    reused for the leg, forearm, vertebra, scapula, pelvis,
+                    heart and aorta. For the heart, the warping had to be
+                    extended to better match separate sub-surfaces.
+                  </p>
+                </div>
+                <div class="grid items-end gap-6 sm:grid-cols-2">
+                  <figure>
+                    <img
+                      src="/assets/img/phd/fitter-flow.webp"
+                      alt="Flow diagram of the fitting algorithm: registration, correspondence, sampling and projection"
+                      class="w-full object-contain mix-blend-multiply"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <figure>
+                    <img
+                      src="/assets/img/phd/partial-data-patterns.webp"
+                      alt="Different patterns of missing surface used to test the fitter"
+                      class="w-full object-contain mix-blend-multiply"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <figure>
+                    <img
+                      src="/assets/img/phd/partial-data-error.webp"
+                      alt="Fitting error per femur region for increasing amounts of missing data"
+                      class="w-full object-contain mix-blend-multiply"
+                      loading="lazy"
+                    />
+                  </figure>
+                </div>
               </div>
 
-              <!-- Tags -->
-              <div class="flex flex-wrap gap-2 pt-10">
-                <span
-                  class="rounded-xl bg-primary px-4 py-1 font-body font-bold text-white"
-                  >Statistical Shape Modelling</span
-                >
-                <span
-                  class="rounded-xl bg-primary px-4 py-1 font-body font-bold text-white"
-                  >Biomedical Engineering</span
-                >
+              <!-- Landmarks -->
+              <div class="flex flex-col gap-8">
+                <div>
+                  <h3 class="font-header text-2xl font-semibold text-primary">
+                    Landmarking: variability and automation
+                  </h3>
+                  <p class="pt-3 font-body leading-relaxed text-grey-20">
+                    Landmarking is still manual in the planning process, and
+                    unlike image segmentation it is little studied in the
+                    literature. An intra- and inter-observer study quantified
+                    today's variability and tested the effect of imaging
+                    modality (CT or MRI) and joint orientation in the image.
+                  </p>
+                  <p class="pt-3 font-body leading-relaxed text-grey-20">
+                    Modality and orientation changed the annotation variability
+                    of several landmarks, but not significantly that of the
+                    derived reference axes. Landmark variability was generally
+                    small, with a few incidental outliers. For the axes the
+                    largest variability is in the axial plane.
+                  </p>
+                  <p class="pt-3 font-body leading-relaxed text-grey-20">
+                    Adding the landmarks to the shape model gave landmark errors
+                    higher than the average manual variability, yet reference
+                    axes that were accurate enough. A second refinement step
+                    with more flexible local models brought no significant
+                    improvement.
+                  </p>
+                </div>
+                <div class="grid items-end gap-6 sm:grid-cols-2">
+                  <figure>
+                    <img
+                      src="/assets/img/phd/landmark-variability.webp"
+                      alt="Manual versus SSM landmark error for head centre, mid notch and anterior trochanter"
+                      class="w-full object-contain mix-blend-multiply"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <figure>
+                    <img
+                      src="/assets/img/phd/axis-variability.webp"
+                      alt="Manual versus SSM error on rotations of the derived reference axes"
+                      class="mx-auto max-h-64 w-auto object-contain mix-blend-multiply"
+                      loading="lazy"
+                    />
+                  </figure>
+                </div>
               </div>
 
-              <!-- Links -->
-              <div class="mt-10 flex justify-start border-t py-12">
-                <a href="/#projects" class="flex items-center no-underline">
-                  <i class="bx bx-left-arrow-alt text-2xl text-primary"></i>
-                  <span
-                    class="block pl-2 font-body text-lg font-bold uppercase text-primary md:pl-5"
-                    >Back to Projects</span
-                  >
-                </a>
+              <!-- Topogram -->
+              <div class="flex flex-col gap-8">
+                <div>
+                  <h3 class="font-header text-2xl font-semibold text-primary">
+                    Reconstructing the proximal femur
+                  </h3>
+                  <p class="pt-3 font-body leading-relaxed text-grey-20">
+                    Alternative low-dose protocols exist, but they are hard to
+                    roll out over the many centres that mass personalisation
+                    implies. My protocol only limits the scan range to halfway
+                    the femur and uses the topogram that is acquired anyway.
+                  </p>
+                  <p class="pt-3 font-body leading-relaxed text-grey-20">
+                    The fitter's correspondence search was extended with
+                    <strong
+                      >3D lines perpendicular to the topogram plane</strong
+                    >
+                    to use the 2D landmark locations. The measurements are
+                    integrated directly by <strong>conditioning</strong> the
+                    model a priori, giving a posterior shape model. The same
+                    technique enables a user-friendly way to explore a model
+                    through interpretable measurements instead of abstract
+                    modes, planned as a plugin for the SSM module in 3-matic.
+                  </p>
+                  <p class="pt-3 font-body leading-relaxed text-grey-20">
+                    Evaluated over many combinations of constraints, the
+                    topogram information directly improved the reconstruction in
+                    the coronal plane (the plane of the topogram), reaching
+                    manual accuracy. The sagittal plane, with no extra
+                    information, was not accurate enough. Because a shape model
+                    regularises towards plausible shapes, it can never guarantee
+                    a <em>correct</em> one for an individual; extra data is
+                    often needed.
+                  </p>
+                </div>
+                <div class="grid items-end gap-6 sm:grid-cols-2">
+                  <figure>
+                    <img
+                      src="/assets/img/phd/topogram-3d-lines.webp"
+                      alt="Landmarks on a topogram turned into 3D lines through the femur head"
+                      class="mx-auto max-h-64 w-auto object-contain"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <figure>
+                    <img
+                      src="/assets/img/phd/femur-measurements.webp"
+                      alt="Femur measurements used as constraints: neck angle, length, head diameter and more"
+                      class="mx-auto max-h-64 w-auto object-contain mix-blend-multiply"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <figure>
+                    <img
+                      src="/assets/img/phd/femur-constraints-pp.webp"
+                      alt="Reconstruction for combinations of shape, measurements and landmarks"
+                      class="w-full object-contain mix-blend-multiply"
+                      loading="lazy"
+                    />
+                  </figure>
+                </div>
+              </div>
+
+              <!-- Cartilage -->
+              <div class="flex flex-col gap-8">
+                <div>
+                  <h3 class="font-header text-2xl font-semibold text-primary">
+                    Predicting tibiofemoral cartilage
+                  </h3>
+                  <p class="pt-3 font-body leading-relaxed text-grey-20">
+                    Predicting cartilage from bone extends the information in a
+                    CT to the full bone-and-cartilage geometry an MRI gives. I
+                    built combined bone-cartilage models for the individual
+                    bones and for the whole tibiofemoral joint.
+                  </p>
+                  <p class="pt-3 font-body leading-relaxed text-grey-20">
+                    Both the <strong>explicit</strong> and the
+                    <strong>implicit</strong> approach predict cartilage
+                    reliably, compared with applying a population average. A
+                    post-processing step based on thin-plate splines deforms the
+                    cartilage by the difference between the fitted model bone
+                    and the real bone. When the joint is modelled together, with
+                    the relative femur-tibia position encoded, much less shape
+                    detail (fewer modes) is needed for the same accuracy.
+                  </p>
+                  <p class="pt-3 font-body leading-relaxed text-grey-20">
+                    Predictions work as long as the association between
+                    structures is clearly present in the population and can be
+                    captured by the model. Splitting into subpopulations, such
+                    as varus and valgus knees, may still be needed to improve
+                    accuracy and reliability.
+                  </p>
+                </div>
+                <div class="grid items-end gap-6 sm:grid-cols-2">
+                  <figure>
+                    <img
+                      src="/assets/img/phd/cartilage-thickness-modes.webp"
+                      alt="Cartilage thickness modes of variation for the knee joint"
+                      class="mx-auto max-h-64 w-auto object-contain mix-blend-multiply"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <figure>
+                    <img
+                      src="/assets/img/phd/cartilage-curves-all.webp"
+                      alt="Prediction error versus number of modes for femur and tibiofemoral models, explicit and implicit"
+                      class="w-full object-contain mix-blend-multiply"
+                      loading="lazy"
+                    />
+                  </figure>
+                </div>
               </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <!-- Footer -->
-        <div class="bg-primary">
-          <div class="container flex flex-col justify-between py-6 sm:flex-row">
-            <p class="text-center font-body text-sm text-white md:text-left">
-              © Copyright 2023. All right reserved, Christophe Van Dijck.
-              <br />
-              <a href="https://storyset.com/idea">Illustrations by Storyset</a>,
-              Webdesign by ATOM.
-            </p>
-            <div
-              class="social-icons justify-center pt-5 sm:justify-start sm:pt-0"
-            >
+      <!-- Publications -->
+      <section class="min-h-0 justify-start bg-grey-50 py-10 md:py-12">
+        <div class="container max-w-4xl">
+          <h2 class="section-heading-lg !text-4xl sm:!text-5xl lg:!text-5xl">
+            Read more
+          </h2>
+          <ul class="list-disc space-y-3 pl-5 pt-6 font-body text-grey-20">
+            <li>
               <a
-                href="mailto:christophe.vdijck@gmail.com?SUBJECT=I want to connect"
+                class="font-semibold text-primary underline"
+                href="https://lirias.kuleuven.be/retrieve/632232"
+                target="_blank"
+                rel="noopener"
+                >Full thesis on Lirias</a
               >
-                <i class="bx bxs-envelope social-icon hover:text-yellow"></i>
-              </a>
-              <a href="https://www.linkedin.com/in/cvandijck/">
-                <i class="bx bxl-linkedin social-icon hover:text-yellow"></i>
-              </a>
-              <a href="https://github.com/cvandijck">
-                <i class="bx bxl-github social-icon hover:text-yellow"></i>
-              </a>
-              <a href="https://wa.me/+32485403370">
-                <i class="bx bxl-whatsapp social-icon hover:text-yellow"></i>
-              </a>
-            </div>
+            </li>
+            <li>
+              C. Van Dijck, R. Wirix-Speetjens, I. Jonkers, J. Vander Sloten.
+              <em
+                >Statistical shape model-based prediction of tibiofemoral
+                cartilage.</em
+              >
+              Computer Methods in Biomechanics and Biomedical Engineering,
+              21(9):568&ndash;578, 2018.
+            </li>
+          </ul>
+          <p class="pt-6 font-body text-grey-20">
+            Research funded by Materialise and VLAIO, supervised at KU Leuven. I
+            also contributed to publications by colleagues and to two patents
+            that use the shape modelling technology at the heart of this work.
+          </p>
+          <div class="flex flex-wrap gap-2 pt-8">
+            <span
+              class="rounded-xl bg-primary px-4 py-1 font-body text-sm font-bold text-white"
+              >Statistical Shape Modelling</span
+            >
+            <span
+              class="rounded-xl bg-primary px-4 py-1 font-body text-sm font-bold text-white"
+              >Biomedical Engineering</span
+            >
+            <span
+              class="rounded-xl bg-primary px-4 py-1 font-body text-sm font-bold text-white"
+              >Knee Arthroplasty</span
+            >
           </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-primary">
+      <div
+        class="container flex max-w-6xl flex-col justify-between py-6 sm:flex-row"
+      >
+        <p
+          class="text-center font-body text-sm not-italic text-white md:text-left"
+        >
+          © Copyright 2023. <br class="md:hidden" />
+          All right reserved, Christophe Van Dijck.<br /><a
+            href="https://storyset.com/idea"
+            >Illustrations by Storyset</a
+          >, Webdesign by ATOM.
+        </p>
+        <div class="social-icons justify-center pt-5 sm:justify-start sm:pt-0">
+          <a href="mailto:christophe.vdijck@gmail.com?SUBJECT=I want to connect"
+            ><i class="bx bxs-envelope social-icon hover:text-yellow"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/cvandijck/"
+            ><i class="bx bxl-linkedin social-icon hover:text-yellow"></i
+          ></a>
+          <a href="https://github.com/cvandijck"
+            ><i class="bx bxl-github social-icon hover:text-yellow"></i
+          ></a>
+          <a href="https://wa.me/+32485403370"
+            ><i class="bx bxl-whatsapp social-icon hover:text-yellow"></i
+          ></a>
         </div>
       </div>
-    </div>
+    </footer>
 
     <script src="/assets/js/main.js"></script>
     <script type="text/javascript" src="cone.js"></script>
