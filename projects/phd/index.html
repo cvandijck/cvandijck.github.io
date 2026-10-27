@@ -137,8 +137,7 @@
         (all <img> files are the original media extracted from the decks):
         1. "mass-personalisation": drivers graphic (TKA volume 700k -> 3.5M, younger patients, NHS GIRFT). Currently text + big numbers.
         2. "three barriers": icon cards are placeholders for a composition (manual work, radiation, MRI-only cartilage).
-        3. "ssm-modes" (data-vtk): the slide's slider panel is a native PowerPoint composition; use the green femur grid for now.
-        4. Warping / fitting animations (media1.mp4, media3-8.mp4 in the decks): placeholders, to become vtk.js.
+        3. "ssm-modes", warping and fitting (data-vtk / video): mp4 exports of the deck videos for now, to be replaced by vtk.js.
         5. "cartilage-thickness" (data-vtk): static thickness map for now.
         6. Pipeline overview (derive / reconstruct / augment): cards are native HTML, replace with a figure if wanted.
       -->
@@ -182,13 +181,6 @@
               >
                 <i class="bx bx-book-open pr-2 text-xl" aria-hidden="true"></i>
                 Read the thesis
-              </a>
-              <a
-                href="#deeper"
-                class="inline-flex items-center rounded border-2 border-primary px-5 py-2 font-header text-sm font-bold uppercase text-primary hover:bg-grey-60"
-              >
-                <i class="bx bx-cube pr-2 text-xl" aria-hidden="true"></i>
-                Technical details
               </a>
             </div>
           </div>
@@ -567,19 +559,20 @@
               most.
             </p>
           </div>
-          <figure class="relative lg:w-3/5" data-vtk="ssm-modes">
-            <img
-              src="/assets/img/phd/ssm-modes.webp"
-              alt="Femur shape model: the first three variation modes shown at minus 3, 0 and plus 3 standard deviations"
-              class="w-full object-contain mix-blend-multiply"
-              loading="lazy"
-            />
-            <figcaption
-              style="width: fit-content"
-              class="mt-2 block rounded bg-primary px-3 py-1 font-body text-xs text-white"
-            >
-              <i class="bx bx-cube pr-1" aria-hidden="true"></i>
-              Interactive 3D coming soon
+          <figure class="lg:w-3/5" data-vtk="ssm-modes">
+            <video
+              class="mx-auto max-h-[28rem] w-auto rounded bg-white"
+              src="/assets/video/phd/ssm-modes.mp4"
+              poster="/assets/video/phd/ssm-modes.jpg"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              aria-label="Femur shape model: one variation mode slider moving from minus 2 to plus 2 standard deviations"
+            ></video>
+            <figcaption class="pt-2 text-center font-body text-sm text-grey-20">
+              Moving one slider of the shape model changes the whole bone
             </figcaption>
           </figure>
         </div>
@@ -643,20 +636,51 @@
           <h2 class="section-heading-lg !text-4xl sm:!text-5xl lg:!text-5xl">
             First, the tools
           </h2>
-          <div class="grid gap-8 pt-6 lg:grid-cols-2 lg:gap-16">
+          <p class="max-w-3xl pt-6 font-body leading-relaxed text-grey-20">
+            A 3D bone is a cloud of points joined into triangles. To build a
+            shape model you need <strong>correspondence</strong>: every bone
+            must have the same number of points, and point <em>n</em> must sit
+            at the same anatomical spot on every bone. I built two tools for
+            this.
+          </p>
+          <div class="grid gap-10 pt-8 md:grid-cols-2 lg:gap-16">
             <div>
-              <p class="font-body leading-relaxed text-grey-20">
-                A 3D bone is a cloud of points joined into triangles. To build a
-                shape model you need <strong>correspondence</strong>: every bone
-                must have the same number of points, and point <em>n</em> must
-                sit at the same anatomical spot on every bone.
-              </p>
+              <h3 class="pb-3 font-header text-2xl font-semibold text-primary">
+                Warping
+              </h3>
+              <video
+                class="aspect-[4/3] w-full rounded bg-white object-contain"
+                src="/assets/video/phd/warping.mp4"
+                poster="/assets/video/phd/warping.jpg"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                aria-label="Template femur being warped onto a target femur"
+              ></video>
               <p class="pt-4 font-body leading-relaxed text-grey-20">
                 I improved a <strong>warping algorithm</strong> that deforms a
                 template onto each training bone. The resulting models are as
                 good as the state of the art, which only works for specific
                 shapes, whereas mine works for <em>any</em> anatomy.
               </p>
+            </div>
+            <div>
+              <h3 class="pb-3 font-header text-2xl font-semibold text-primary">
+                Fitting
+              </h3>
+              <video
+                class="aspect-[4/3] w-full rounded bg-white object-contain"
+                src="/assets/video/phd/fitting.mp4"
+                poster="/assets/video/phd/fitting.jpg"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                aria-label="Shape model being fitted to a femur with missing surface patches"
+              ></video>
               <p class="pt-4 font-body leading-relaxed text-grey-20">
                 I also built a <strong>fitter</strong> that finds the slider
                 settings that best explain a new bone, even when part of it is
@@ -664,66 +688,38 @@
                 error grows with the missing area, but stays limited unless the
                 bone end itself is gone.
               </p>
-              <p class="pt-4 font-body leading-relaxed text-grey-20">
-                Since then, colleagues and I have reused both tools for the leg,
-                forearm, vertebra, scapula, pelvis, heart and aorta.
-              </p>
-            </div>
-            <div class="grid gap-6">
-              <div class="grid grid-cols-2 gap-6">
-                <figure>
-                  <img
-                    src="/assets/img/phd/mesh-triangles.webp"
-                    alt="Femur head as a triangle mesh with corresponding landmark points in red"
-                    class="mx-auto max-h-56 w-auto object-contain mix-blend-multiply"
-                    loading="lazy"
-                  />
-                  <figcaption
-                    class="pt-2 text-center font-body text-sm text-grey-20"
-                  >
-                    Same points, same places
-                  </figcaption>
-                </figure>
-                <figure>
-                  <img
-                    src="/assets/img/phd/partial-data.webp"
-                    alt="Femur with missing surface patches, fitted by the shape model"
-                    class="mx-auto max-h-56 w-auto object-contain mix-blend-multiply"
-                    loading="lazy"
-                  />
-                  <figcaption
-                    class="pt-2 text-center font-body text-sm text-grey-20"
-                  >
-                    Fitting with missing data
-                  </figcaption>
-                </figure>
-              </div>
-              <figure>
-                <img
-                  src="/assets/img/phd/warping-results.webp"
-                  alt="Femur surface error maps for the state-of-the-art method, my warping and a baseline"
-                  class="mx-auto max-h-64 w-auto object-contain mix-blend-multiply"
-                  loading="lazy"
-                />
-                <figcaption
-                  class="pt-2 text-center font-body text-sm text-grey-20"
-                >
-                  Competitive with the state of the art
-                </figcaption>
-              </figure>
             </div>
           </div>
-          <figure class="pt-8">
-            <img
-              src="/assets/img/phd/anatomies.webp"
-              alt="Shape models of leg, knee, forearm, vertebra, scapula, pelvis, heart and aorta"
-              class="mx-auto w-full max-w-3xl object-contain mix-blend-multiply"
-              loading="lazy"
-            />
-            <figcaption class="pt-2 text-center font-body text-sm text-grey-20">
-              The same tools, many anatomies
-            </figcaption>
-          </figure>
+          <p class="pt-8 font-body leading-relaxed text-grey-20">
+            Since then, colleagues and I have reused both tools for the leg,
+            forearm, vertebra, scapula, pelvis, heart and aorta.
+          </p>
+          <div class="grid items-center gap-8 pt-6 lg:grid-cols-3 lg:gap-12">
+            <figure class="lg:col-span-3">
+              <img
+                src="/assets/img/phd/anatomies.webp"
+                alt="Shape models of leg, knee, forearm, vertebra, scapula, pelvis, heart and aorta"
+                class="mx-auto w-4/5 object-contain mix-blend-multiply"
+                loading="lazy"
+              />
+              <figcaption
+                class="pt-2 text-center font-body text-sm text-grey-20"
+              >
+                The same tools, many anatomies
+              </figcaption>
+            </figure>
+            <!-- <figure class="lg:col-span-2">
+              <img
+                src="/assets/img/phd/warping-results.webp"
+                alt="Femur surface error maps for the state-of-the-art method, my warping and a baseline"
+                class="mx-auto w-full object-contain mix-blend-multiply"
+                loading="lazy"
+              />
+              <figcaption class="pt-2 text-center font-body text-sm text-grey-20">
+                Competitive with the state of the art
+              </figcaption>
+            </figure> -->
+          </div>
         </div>
       </section>
 
@@ -731,14 +727,14 @@
       <section class="min-h-0 justify-start bg-grey-50 py-10 md:py-12">
         <div class="container max-w-6xl">
           <p
-            class="pb-2 font-body text-sm font-semibold uppercase text-grey-20"
+            class="pb-4 font-body text-sm font-semibold uppercase text-grey-20"
           >
             Result 1 &middot; Barrier: manual work
           </p>
           <h2 class="section-heading-lg !text-4xl sm:!text-5xl lg:!text-5xl">
             Derive: landmarks, automatically
           </h2>
-          <div class="grid gap-8 pt-6 lg:grid-cols-2 lg:gap-16">
+          <div class="grid gap-8 pt-6 lg:grid-cols-2 lg:items-center lg:gap-16">
             <div>
               <p class="font-body leading-relaxed text-grey-20">
                 Surgeons plan with <strong>reference axes</strong>, such as the
@@ -768,20 +764,20 @@
                 it does not.
               </p>
             </div>
-            <div class="grid grid-cols-2 gap-6">
-              <figure>
+            <div class="flex items-center justify-center gap-6">
+              <figure class="w-3/5">
                 <img
                   src="/assets/img/phd/landmarks-femur.webp"
                   alt="Femur with landmark points and the mechanical axis and epicondylar axis"
-                  class="mx-auto max-h-72 w-auto object-contain mix-blend-multiply"
+                  class="mx-auto max-h-[30rem] w-full object-contain mix-blend-multiply"
                   loading="lazy"
                 />
               </figure>
-              <figure>
+              <figure class="w-2/5">
                 <img
                   src="/assets/img/phd/limb-axes.webp"
                   alt="Leg with mechanical and anatomical axes of femur and tibia"
-                  class="mx-auto max-h-72 w-auto object-contain mix-blend-multiply"
+                  class="mx-auto max-h-[30rem] w-full object-contain mix-blend-multiply"
                   loading="lazy"
                 />
               </figure>
@@ -794,7 +790,7 @@
       <section class="min-h-0 justify-start py-10 md:py-12">
         <div class="container max-w-6xl">
           <p
-            class="pb-2 font-body text-sm font-semibold uppercase text-grey-20"
+            class="pb-4 font-body text-sm font-semibold uppercase text-grey-20"
           >
             Result 2 &middot; Barrier: radiation
           </p>
@@ -823,21 +819,25 @@
                 and the model is fitted so that its landmarks lie on these
                 lines.
               </p>
-              <div class="flex flex-wrap items-end gap-8 pt-6">
+              <div class="flex flex-wrap items-end gap-12 py-8">
                 <div>
-                  <p class="font-header text-5xl font-semibold text-primary">
+                  <p
+                    class="pb-1 font-header text-5xl font-semibold text-primary"
+                  >
                     12%
                   </p>
                   <p class="font-body text-grey-20">of the dose, women</p>
                 </div>
                 <div>
-                  <p class="font-header text-5xl font-semibold text-primary">
+                  <p
+                    class="pb-1 font-header text-5xl font-semibold text-primary"
+                  >
                     8%
                   </p>
                   <p class="font-body text-grey-20">of the dose, men</p>
                 </div>
               </div>
-              <p class="pt-2 font-body text-sm text-grey-20">
+              <p class="pb-2 font-body text-sm text-grey-20">
                 Simulated effective radiation dose of the proposed protocol
                 compared to a conventional scan.
               </p>
@@ -890,7 +890,7 @@
       <section class="min-h-0 justify-start bg-grey-50 py-10 md:py-12">
         <div class="container max-w-6xl">
           <p
-            class="pb-2 font-body text-sm font-semibold uppercase text-grey-20"
+            class="pb-4 font-body text-sm font-semibold uppercase text-grey-20"
           >
             Result 3 &middot; Barrier: MRI-only cartilage
           </p>
@@ -930,21 +930,6 @@
               </p>
             </div>
             <div class="grid gap-6">
-              <figure class="relative" data-vtk="cartilage-thickness">
-                <img
-                  src="/assets/img/phd/bone-cartilage-models.webp"
-                  alt="Bone and cartilage shape models of the knee"
-                  class="w-full object-contain mix-blend-multiply"
-                  loading="lazy"
-                />
-                <figcaption
-                  style="width: fit-content"
-                  class="mt-2 block rounded bg-primary px-3 py-1 font-body text-xs text-white"
-                >
-                  <i class="bx bx-cube pr-1" aria-hidden="true"></i>
-                  Interactive 3D coming soon
-                </figcaption>
-              </figure>
               <div class="grid grid-cols-2 gap-4">
                 <figure>
                   <img
@@ -973,6 +958,21 @@
                   </figcaption>
                 </figure>
               </div>
+              <figure class="relative" data-vtk="cartilage-thickness">
+                <img
+                  src="/assets/img/phd/bone-cartilage-models.webp"
+                  alt="Bone and cartilage shape models of the knee"
+                  class="w-full object-contain mix-blend-multiply"
+                  loading="lazy"
+                />
+                <figcaption
+                  style="width: fit-content"
+                  class="mt-2 block rounded bg-primary px-3 py-1 font-body text-xs text-white"
+                >
+                  <i class="bx bx-cube pr-1" aria-hidden="true"></i>
+                  Interactive 3D coming soon
+                </figcaption>
+              </figure>
               <figure>
                 <img
                   src="/assets/img/phd/cartilage-error-map.webp"
@@ -1030,7 +1030,7 @@
       </section>
 
       <!-- Interactive demo -->
-      <section class="min-h-0 justify-start bg-grey-50 py-10 md:py-12">
+      <!-- <section class="min-h-0 justify-start bg-grey-50 py-10 md:py-12">
         <div class="container max-w-4xl">
           <h2 class="section-heading-lg !text-4xl sm:!text-5xl lg:!text-5xl">
             Try it
@@ -1054,299 +1054,7 @@
             class="relative mt-4 h-80 overflow-hidden rounded bg-white"
           ></div>
         </div>
-      </section>
-
-      <!-- Technical details -->
-      <section
-        id="deeper"
-        class="min-h-0 justify-start py-10 md:py-12"
-        x-data="{ open: false }"
-      >
-        <div class="container max-w-6xl">
-          <button
-            class="flex w-full items-center justify-between text-left"
-            @click="open = !open"
-            :aria-expanded="open"
-            aria-controls="deeper-panel"
-          >
-            <span class="section-heading-lg !text-4xl sm:!text-5xl lg:!text-5xl"
-              >Go deeper</span
-            >
-            <i
-              class="bx bx-chevron-down text-5xl text-primary transition-transform"
-              :class="{ 'rotate-180': open }"
-              aria-hidden="true"
-            ></i>
-          </button>
-          <p class="pt-4 font-body text-grey-20">
-            For a technical audience: the methods and findings behind each
-            result, with figures from the preliminary defense.
-          </p>
-
-          <div
-            id="deeper-panel"
-            x-show="open"
-            x-transition
-            style="display: none"
-          >
-            <div class="space-y-16 pt-10">
-              <!-- Warping -->
-              <div class="flex flex-col gap-8">
-                <div>
-                  <h3 class="font-header text-2xl font-semibold text-primary">
-                    Building better models: improved warping
-                  </h3>
-                  <p class="pt-3 font-body leading-relaxed text-grey-20">
-                    Many methods can bring meshes into correspondence, but few
-                    are good enough to build high-quality models. The state of
-                    the art, MDL optimisation, is specific to one topology, and
-                    model quality is usually judged on only three metrics
-                    (Davies et al.).
-                  </p>
-                  <p class="pt-3 font-body leading-relaxed text-grey-20">
-                    I improved a known non-rigid registration algorithm
-                    specifically to improve the quality of the correspondences,
-                    and showed that the resulting model is competitive with MDL.
-                    An extensive sensitivity analysis, using existing and newly
-                    proposed metrics, shows how its parameters affect model
-                    quality.
-                  </p>
-                </div>
-                <div class="grid items-end gap-6 sm:grid-cols-2">
-                  <figure>
-                    <img
-                      src="/assets/img/phd/warping-compare.webp"
-                      alt="Generalisation error on the femur for MDL, warping and a baseline"
-                      class="mx-auto max-h-56 w-auto object-contain mix-blend-multiply"
-                      loading="lazy"
-                    />
-                  </figure>
-                  <figure>
-                    <img
-                      src="/assets/img/phd/warping-sensitivity.webp"
-                      alt="Sensitivity analysis of model quality metrics against warping parameters"
-                      class="mx-auto max-h-64 w-auto object-contain mix-blend-multiply"
-                      loading="lazy"
-                    />
-                  </figure>
-                </div>
-              </div>
-
-              <!-- Fitter -->
-              <div class="flex flex-col gap-8">
-                <div>
-                  <h3 class="font-header text-2xl font-semibold text-primary">
-                    A general-purpose fitter for partial data
-                  </h3>
-                  <p class="pt-3 font-body leading-relaxed text-grey-20">
-                    To apply a model I wanted a mesh-based technique that
-                    handles missing data intrinsically and works on any anatomy.
-                    The fitter alternates between finding correspondences and
-                    updating the model coefficients, with missing regions simply
-                    excluded from the match.
-                  </p>
-                  <p class="pt-3 font-body leading-relaxed text-grey-20">
-                    Synthetic experiments removed increasing portions of the
-                    femur. Accuracy decreases with the amount removed, but the
-                    impact on the overall fit stays limited, except when large
-                    parts of a bone end are missing. The same fitter was later
-                    reused for the leg, forearm, vertebra, scapula, pelvis,
-                    heart and aorta. For the heart, the warping had to be
-                    extended to better match separate sub-surfaces.
-                  </p>
-                </div>
-                <div class="grid items-end gap-6 sm:grid-cols-2">
-                  <figure>
-                    <img
-                      src="/assets/img/phd/fitter-flow.webp"
-                      alt="Flow diagram of the fitting algorithm: registration, correspondence, sampling and projection"
-                      class="w-full object-contain mix-blend-multiply"
-                      loading="lazy"
-                    />
-                  </figure>
-                  <figure>
-                    <img
-                      src="/assets/img/phd/partial-data-patterns.webp"
-                      alt="Different patterns of missing surface used to test the fitter"
-                      class="w-full object-contain mix-blend-multiply"
-                      loading="lazy"
-                    />
-                  </figure>
-                  <figure>
-                    <img
-                      src="/assets/img/phd/partial-data-error.webp"
-                      alt="Fitting error per femur region for increasing amounts of missing data"
-                      class="w-full object-contain mix-blend-multiply"
-                      loading="lazy"
-                    />
-                  </figure>
-                </div>
-              </div>
-
-              <!-- Landmarks -->
-              <div class="flex flex-col gap-8">
-                <div>
-                  <h3 class="font-header text-2xl font-semibold text-primary">
-                    Landmarking: variability and automation
-                  </h3>
-                  <p class="pt-3 font-body leading-relaxed text-grey-20">
-                    Landmarking is still manual in the planning process, and
-                    unlike image segmentation it is little studied in the
-                    literature. An intra- and inter-observer study quantified
-                    today's variability and tested the effect of imaging
-                    modality (CT or MRI) and joint orientation in the image.
-                  </p>
-                  <p class="pt-3 font-body leading-relaxed text-grey-20">
-                    Modality and orientation changed the annotation variability
-                    of several landmarks, but not significantly that of the
-                    derived reference axes. Landmark variability was generally
-                    small, with a few incidental outliers. For the axes the
-                    largest variability is in the axial plane.
-                  </p>
-                  <p class="pt-3 font-body leading-relaxed text-grey-20">
-                    Adding the landmarks to the shape model gave landmark errors
-                    higher than the average manual variability, yet reference
-                    axes that were accurate enough. A second refinement step
-                    with more flexible local models brought no significant
-                    improvement.
-                  </p>
-                </div>
-                <div class="grid items-end gap-6 sm:grid-cols-2">
-                  <figure>
-                    <img
-                      src="/assets/img/phd/landmark-variability.webp"
-                      alt="Manual versus SSM landmark error for head centre, mid notch and anterior trochanter"
-                      class="w-full object-contain mix-blend-multiply"
-                      loading="lazy"
-                    />
-                  </figure>
-                  <figure>
-                    <img
-                      src="/assets/img/phd/axis-variability.webp"
-                      alt="Manual versus SSM error on rotations of the derived reference axes"
-                      class="mx-auto max-h-64 w-auto object-contain mix-blend-multiply"
-                      loading="lazy"
-                    />
-                  </figure>
-                </div>
-              </div>
-
-              <!-- Topogram -->
-              <div class="flex flex-col gap-8">
-                <div>
-                  <h3 class="font-header text-2xl font-semibold text-primary">
-                    Reconstructing the proximal femur
-                  </h3>
-                  <p class="pt-3 font-body leading-relaxed text-grey-20">
-                    Alternative low-dose protocols exist, but they are hard to
-                    roll out over the many centres that mass personalisation
-                    implies. My protocol only limits the scan range to halfway
-                    the femur and uses the topogram that is acquired anyway.
-                  </p>
-                  <p class="pt-3 font-body leading-relaxed text-grey-20">
-                    The fitter's correspondence search was extended with
-                    <strong
-                      >3D lines perpendicular to the topogram plane</strong
-                    >
-                    to use the 2D landmark locations. The measurements are
-                    integrated directly by <strong>conditioning</strong> the
-                    model a priori, giving a posterior shape model. The same
-                    technique enables a user-friendly way to explore a model
-                    through interpretable measurements instead of abstract
-                    modes, planned as a plugin for the SSM module in 3-matic.
-                  </p>
-                  <p class="pt-3 font-body leading-relaxed text-grey-20">
-                    Evaluated over many combinations of constraints, the
-                    topogram information directly improved the reconstruction in
-                    the coronal plane (the plane of the topogram), reaching
-                    manual accuracy. The sagittal plane, with no extra
-                    information, was not accurate enough. Because a shape model
-                    regularises towards plausible shapes, it can never guarantee
-                    a <em>correct</em> one for an individual; extra data is
-                    often needed.
-                  </p>
-                </div>
-                <div class="grid items-end gap-6 sm:grid-cols-2">
-                  <figure>
-                    <img
-                      src="/assets/img/phd/topogram-3d-lines.webp"
-                      alt="Landmarks on a topogram turned into 3D lines through the femur head"
-                      class="mx-auto max-h-64 w-auto object-contain"
-                      loading="lazy"
-                    />
-                  </figure>
-                  <figure>
-                    <img
-                      src="/assets/img/phd/femur-measurements.webp"
-                      alt="Femur measurements used as constraints: neck angle, length, head diameter and more"
-                      class="mx-auto max-h-64 w-auto object-contain mix-blend-multiply"
-                      loading="lazy"
-                    />
-                  </figure>
-                  <figure>
-                    <img
-                      src="/assets/img/phd/femur-constraints-pp.webp"
-                      alt="Reconstruction for combinations of shape, measurements and landmarks"
-                      class="w-full object-contain mix-blend-multiply"
-                      loading="lazy"
-                    />
-                  </figure>
-                </div>
-              </div>
-
-              <!-- Cartilage -->
-              <div class="flex flex-col gap-8">
-                <div>
-                  <h3 class="font-header text-2xl font-semibold text-primary">
-                    Predicting tibiofemoral cartilage
-                  </h3>
-                  <p class="pt-3 font-body leading-relaxed text-grey-20">
-                    Predicting cartilage from bone extends the information in a
-                    CT to the full bone-and-cartilage geometry an MRI gives. I
-                    built combined bone-cartilage models for the individual
-                    bones and for the whole tibiofemoral joint.
-                  </p>
-                  <p class="pt-3 font-body leading-relaxed text-grey-20">
-                    Both the <strong>explicit</strong> and the
-                    <strong>implicit</strong> approach predict cartilage
-                    reliably, compared with applying a population average. A
-                    post-processing step based on thin-plate splines deforms the
-                    cartilage by the difference between the fitted model bone
-                    and the real bone. When the joint is modelled together, with
-                    the relative femur-tibia position encoded, much less shape
-                    detail (fewer modes) is needed for the same accuracy.
-                  </p>
-                  <p class="pt-3 font-body leading-relaxed text-grey-20">
-                    Predictions work as long as the association between
-                    structures is clearly present in the population and can be
-                    captured by the model. Splitting into subpopulations, such
-                    as varus and valgus knees, may still be needed to improve
-                    accuracy and reliability.
-                  </p>
-                </div>
-                <div class="grid items-end gap-6 sm:grid-cols-2">
-                  <figure>
-                    <img
-                      src="/assets/img/phd/cartilage-thickness-modes.webp"
-                      alt="Cartilage thickness modes of variation for the knee joint"
-                      class="mx-auto max-h-64 w-auto object-contain mix-blend-multiply"
-                      loading="lazy"
-                    />
-                  </figure>
-                  <figure>
-                    <img
-                      src="/assets/img/phd/cartilage-curves-all.webp"
-                      alt="Prediction error versus number of modes for femur and tibiofemoral models, explicit and implicit"
-                      class="w-full object-contain mix-blend-multiply"
-                      loading="lazy"
-                    />
-                  </figure>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      </section> -->
 
       <!-- Publications -->
       <section class="min-h-0 justify-start bg-grey-50 py-10 md:py-12">
@@ -1428,6 +1136,6 @@
     </footer>
 
     <script src="/assets/js/main.js"></script>
-    <script type="text/javascript" src="cone.js"></script>
+    <!-- <script type="text/javascript" src="cone.js"></script> -->
   </body>
 </html>
