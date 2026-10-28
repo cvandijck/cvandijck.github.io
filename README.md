@@ -66,7 +66,7 @@ A [Husky](https://typicode.github.io/husky/) `pre-commit` hook runs `npm run bui
 
 Styles are authored in `assets/styles/main.css` and compiled to `assets/styles/main.min.css` via the `css` npm script — edit the source file, not the generated one.
 
-The site is built with the [Atom](https://redpixelthemes.com/templates/atom/) TailwindCSS template.
+The site is built with the Atom TailwindCSS template by [Red Pixel Themes](https://redpixelthemes.com/).
 
 ## Built With
 
@@ -83,7 +83,8 @@ Two GitHub Actions workflows run automatically to help catch issues early:
 - **CI** ([.github/workflows/ci.yml](.github/workflows/ci.yml)): installs dependencies, audits for known vulnerabilities, builds the CSS bundle and checks HTML formatting with Prettier on every push/PR to `main`.
 - **Links** ([.github/workflows/links.yml](.github/workflows/links.yml)): scans HTML/Markdown files for broken links on every push/PR to `main` and on a weekly schedule.
 
-## Acknowledgement
-- Webdesign by [Atom](https://redpixelthemes.com/templates/atom/)
-- Illustrations by [Storyset](https://storyset.com/idea)
+The link checker excludes the project template's placeholder canonical URL and the Google Maps location link, which blocks automated requests from GitHub Actions. These exceptions are listed in [.lycheeignore](.lycheeignore).
 
+## Acknowledgement
+- Webdesign by Atom, by [Red Pixel Themes](https://redpixelthemes.com/)
+- Illustrations by [Storyset](https://storyset.com/idea)

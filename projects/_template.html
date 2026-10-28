@@ -1,0 +1,226 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- TODO: replace PROJECT_TITLE, PROJECT_SLUG, PROJECT_DESCRIPTION -->
+    <title>PROJECT_TITLE | Christophe Van Dijck</title>
+    <meta name="description" content="PROJECT_DESCRIPTION" />
+    <meta name="author" content="Christophe Van Dijck" />
+    <meta name="robots" content="index, follow" />
+    <link
+      rel="canonical"
+      href="https://cvandijck.github.io/projects/PROJECT_SLUG/"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/img/icon.png"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/img/icon.svg" />
+    <link rel="apple-touch-icon" href="/assets/img/icon.png" />
+    <meta name="theme-color" content="#5540af" />
+    <meta property="og:title" content="PROJECT_TITLE | Christophe Van Dijck" />
+    <meta property="og:description" content="PROJECT_DESCRIPTION" />
+    <meta property="og:locale" content="en_US" />
+    <meta
+      property="og:url"
+      content="https://cvandijck.github.io/projects/PROJECT_SLUG/"
+    />
+    <meta property="og:site_name" content="Christophe Van Dijck" />
+    <meta
+      property="og:image"
+      content="https://cvandijck.github.io/assets/img/social.jpg"
+    />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
+      rel="preload"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/assets/styles/main.min.css"
+      rel="stylesheet"
+      media="screen"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </head>
+
+  <body
+    :class="{ 'overflow-hidden max-h-screen': mobileMenu }"
+    class="relative"
+    x-data="{ mobileMenu: false, nav: [ { href: '/#about', label: 'About' }, { href: '/#skills', label: 'Skills' }, { href: '/#work', label: 'Work' }, { href: '/#education', label: 'Education' }, { href: '/#projects', label: 'Projects' }, { href: '/#contact', label: 'Contact' } ] }"
+  >
+    <header class="relative z-50 w-full bg-primary py-3 sm:py-5">
+      <div class="container flex max-w-6xl items-center justify-between">
+        <a href="/">
+          <img
+            src="/assets/img/logo_white.svg"
+            class="h-12 lg:h-16"
+            alt="logo image"
+          />
+        </a>
+        <nav class="hidden lg:block" aria-label="Main navigation">
+          <ul class="flex items-center">
+            <template x-for="item in nav" :key="item.href">
+              <li class="group pl-6">
+                <a :href="item.href" class="nav-link" x-text="item.label"></a>
+                <span class="nav-underline group-hover:bg-yellow"></span>
+              </li>
+            </template>
+          </ul>
+        </nav>
+        <button
+          class="block lg:hidden"
+          @click="mobileMenu = true"
+          aria-label="Open menu"
+        >
+          <i class="bx bx-menu text-4xl text-white"></i>
+        </button>
+      </div>
+      <div
+        class="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden"
+        :class="{ 'opacity-100 pointer-events-auto': mobileMenu }"
+      >
+        <nav
+          class="absolute right-0 min-h-screen w-2/3 bg-primary px-8 py-4 shadow md:w-1/3"
+          aria-label="Mobile navigation"
+        >
+          <button
+            class="absolute right-0 top-0 mr-4 mt-4"
+            @click="mobileMenu = false"
+          >
+            <img
+              src="/assets/img/icon-close.svg"
+              class="h-10 w-auto"
+              alt="close menu"
+            />
+          </button>
+          <ul class="mt-8 flex flex-col">
+            <template x-for="item in nav" :key="item.href">
+              <li class="py-2">
+                <a :href="item.href" class="nav-link" x-text="item.label"></a>
+              </li>
+            </template>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="relative">
+      <section class="min-h-0 bg-grey-50">
+        <div class="container max-w-6xl py-10 md:py-12">
+          <a
+            href="/#projects"
+            class="inline-flex items-center font-body text-sm font-semibold text-primary hover:text-grey-20"
+          >
+            <i class="bx bx-left-arrow-alt pr-2 text-xl" aria-hidden="true"></i>
+            Back to projects
+          </a>
+          <h1
+            class="pt-6 font-header text-3xl font-semibold text-primary sm:text-4xl"
+          >
+            PROJECT_TITLE
+          </h1>
+          <p class="pt-3 font-body text-lg text-grey-20 sm:text-xl">
+            One-line tagline for the project
+          </p>
+        </div>
+      </section>
+
+      <!--
+        Content sections alternate background (white / bg-grey-50) and
+        image side (flex-row / flex-row-reverse). Copy a block and flip both.
+        The base "section" style is min-h-screen, so min-h-0 is required.
+      -->
+      <section class="min-h-0 justify-start py-10 md:py-12">
+        <div
+          class="container flex max-w-6xl flex-col gap-8 lg:flex-row-reverse lg:items-center lg:gap-24"
+        >
+          <div class="lg:w-2/3">
+            <h2 class="section-heading-lg !text-4xl sm:!text-5xl lg:!text-5xl">
+              Overview
+            </h2>
+            <p class="pt-6 text-justify font-body leading-relaxed text-grey-20">
+              [Add a short overview here.]
+            </p>
+          </div>
+          <img
+            src="/assets/img/under-construction.svg"
+            alt="Overview"
+            class="w-full max-w-sm object-contain lg:w-1/3"
+          />
+        </div>
+      </section>
+
+      <section class="min-h-0 justify-start bg-grey-50 py-10 md:py-12">
+        <div
+          class="container flex max-w-6xl flex-col gap-8 lg:flex-row lg:items-center lg:gap-16"
+        >
+          <div class="lg:w-2/3">
+            <h2 class="section-heading-lg !text-4xl sm:!text-5xl lg:!text-5xl">
+              Details
+            </h2>
+            <p class="pt-6 text-justify font-body leading-relaxed text-grey-20">
+              [Add details here.]
+            </p>
+          </div>
+          <img
+            src="/assets/img/under-construction.svg"
+            alt="Details"
+            class="w-full max-w-sm object-contain lg:w-1/3"
+          />
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-primary">
+      <div
+        class="container flex max-w-6xl flex-col justify-between py-6 sm:flex-row"
+      >
+        <p
+          class="text-center font-body text-sm not-italic text-white md:text-left"
+        >
+          © Copyright 2023. <br class="md:hidden" />
+          All right reserved, Christophe Van Dijck.<br /><a
+            href="https://storyset.com/idea"
+            >Illustrations by Storyset</a
+          >, Webdesign by ATOM.
+        </p>
+        <div class="social-icons justify-center pt-5 sm:justify-start sm:pt-0">
+          <a href="mailto:christophe.vdijck@gmail.com?SUBJECT=I want to connect"
+            ><i class="bx bxs-envelope social-icon hover:text-yellow"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/cvandijck/"
+            ><i class="bx bxl-linkedin social-icon hover:text-yellow"></i
+          ></a>
+          <a href="https://github.com/cvandijck"
+            ><i class="bx bxl-github social-icon hover:text-yellow"></i
+          ></a>
+          <a href="https://wa.me/+32485403370"
+            ><i class="bx bxl-whatsapp social-icon hover:text-yellow"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
