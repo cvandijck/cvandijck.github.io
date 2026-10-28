@@ -90,6 +90,28 @@ html {
   @apply rounded px-8 py-12 shadow hover:bg-primary transition-colors duration-200;
 }
 
+@media (max-width: 767px) {
+  .card.active {
+    @apply bg-primary;
+  }
+
+  .card.active .card-icon img:first-child {
+    display: block;
+  }
+
+  .card.active .card-icon img:last-child {
+    display: none;
+  }
+
+  .card.active .skill-title {
+    @apply text-yellow;
+  }
+
+  .card.active .skill-desc {
+    @apply visible text-white;
+  }
+}
+
 .card-icon {
   @apply mx-auto h-52 w-52 text-center xl:h-56 xl:w-56;
 }
