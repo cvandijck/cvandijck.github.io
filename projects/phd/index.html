@@ -470,8 +470,9 @@
                 2. Radiation
               </h4>
               <p class="pt-2 font-body text-grey-20">
-                CT is cheap and widely available, but uses ionising radiation,
-                and a planning scan has to include the hip.
+                CT is cheap and widely available, but it uses ionising
+                radiation, which carries a health risk. And a planning scan has
+                to include the hip, to find the leg's mechanical axis.
               </p>
             </div>
             <div class="rounded bg-white p-6 shadow">
@@ -590,11 +591,11 @@
             class="mx-auto max-w-3xl pt-6 text-center font-body leading-relaxed text-grey-20"
           >
             A shape model describes a whole population, yet my hypothesis was
-            that it can be used to predict missing information for
-            <em>one</em> patient: <strong>derive</strong> information from the
-            shape, <strong>reconstruct</strong> what was not scanned, or
-            <strong>augment</strong> what is available with what is missing. One
-            application per barrier.
+            that it can predict missing information for
+            <em>one</em> patient. It can <strong>derive</strong> information
+            hidden in a bone's shape, <strong>reconstruct</strong> a part that
+            was never scanned, or <strong>augment</strong> a scan with something
+            it cannot show. One application per barrier.
           </p>
           <div class="grid gap-6 pt-8 md:grid-cols-3">
             <div class="rounded bg-primary p-6 text-white">
@@ -614,7 +615,7 @@
                 Reconstruct
               </h3>
               <p class="pt-2 font-body">
-                The hip end of the thigh bone, so it need not be scanned
+                The hip end of the thigh bone, so the hip need not be scanned
               </p>
             </div>
             <div class="rounded bg-primary p-6 text-white">
@@ -640,8 +641,8 @@
             A 3D bone is a cloud of points joined into triangles. To build a
             shape model you need <strong>correspondence</strong>: every bone
             must have the same number of points, and point <em>n</em> must sit
-            at the same anatomical spot on every bone. I built two tools for
-            this.
+            at the same anatomical spot on every bone. I developed two tools:
+            one to build such models, and one to apply them to a new bone.
           </p>
           <div class="grid gap-10 pt-8 md:grid-cols-2 lg:gap-16">
             <div>
@@ -660,10 +661,11 @@
                 aria-label="Template femur being warped onto a target femur"
               ></video>
               <p class="pt-4 font-body leading-relaxed text-grey-20">
-                I improved a <strong>warping algorithm</strong> that deforms a
-                template onto each training bone. The resulting models are as
-                good as the state of the art, which only works for specific
-                shapes, whereas mine works for <em>any</em> anatomy.
+                I improved a <strong>warping algorithm</strong> that deforms one
+                template bone onto every training bone, which gives all of them
+                the same points. The resulting models are as good as those of
+                the state-of-the-art method, which has to be developed again for
+                each anatomy, whereas mine works for <em>any</em> shape.
               </p>
             </div>
             <div>
@@ -683,10 +685,10 @@
               ></video>
               <p class="pt-4 font-body leading-relaxed text-grey-20">
                 I also built a <strong>fitter</strong> that finds the slider
-                settings that best explain a new bone, even when part of it is
-                missing. Tests with artificially removed surface show that the
-                error grows with the missing area, but stays limited unless the
-                bone end itself is gone.
+                settings that best describe a new bone, even when part of it is
+                missing (the grey patches). Tests with artificially removed
+                surface show that the error grows with the missing area, but
+                stays limited unless a bone end is largely missing.
               </p>
             </div>
           </div>
@@ -801,23 +803,27 @@
             <div>
               <p class="font-body leading-relaxed text-grey-20">
                 The mechanical axis runs from the hip joint to the ankle, so a
-                knee CT normally includes the hip, along with
-                radiation-sensitive tissue. Cutting the scan off halfway the
-                femur would spare them, but then the hip is missing.
+                knee CT normally has to include the hip, and with it the
+                radiation-sensitive tissue around it. Stopping the scan halfway
+                up the thigh bone would spare them, but then the hip joint is no
+                longer in the image.
               </p>
               <p class="pt-4 font-body leading-relaxed text-grey-20">
-                The bottom half of the bone alone does not tell the model
-                enough. But every CT scan starts with a free
-                <strong>topogram</strong>: a flat, X-ray-like overview image.
-                From it we take two measurements (femoral neck angle and femur
-                length) and the 2D positions of three landmarks.
+                The lower half of the bone alone says too little about the upper
+                half to predict it reliably. But every CT scan starts with a
+                free <strong>topogram</strong>: a flat, X-ray-like overview
+                image. From it we take two measurements (the angle of the
+                femoral neck, just below the hip ball, and the femur length) and
+                the 2D positions of three landmarks: the two bony bumps called
+                trochanters and the centre of the hip ball.
               </p>
               <p class="pt-4 font-body leading-relaxed text-grey-20">
                 The shape model is <strong>conditioned</strong> on the
-                measurements, which shrinks the space of plausible bones. The 2D
-                landmarks become 3D lines pointing straight out of the topogram,
-                and the model is fitted so that its landmarks lie on these
-                lines.
+                measurements: it only considers bones that match them, which
+                shrinks the space of plausible shapes. A 2D landmark does not
+                tell us how deep the point lies, so it becomes a 3D line
+                pointing straight out of the topogram, and the model is fitted
+                so that its landmarks lie on these lines.
               </p>
               <div class="flex flex-wrap items-end gap-12 py-8">
                 <div>
@@ -826,7 +832,7 @@
                   >
                     12%
                   </p>
-                  <p class="font-body text-grey-20">of the dose, women</p>
+                  <p class="font-body text-grey-20">of the usual dose, women</p>
                 </div>
                 <div>
                   <p
@@ -834,19 +840,20 @@
                   >
                     8%
                   </p>
-                  <p class="font-body text-grey-20">of the dose, men</p>
+                  <p class="font-body text-grey-20">of the usual dose, men</p>
                 </div>
               </div>
               <p class="pb-2 font-body text-sm text-grey-20">
                 Simulated effective radiation dose of the proposed protocol
-                compared to a conventional scan.
+                compared to a conventional scan that includes the hip.
               </p>
               <p class="pt-4 font-body leading-relaxed text-grey-20">
                 <strong>The outcome:</strong> without the topogram the femur
                 comes out far too short. With it, the orientation of the
                 mechanical axis in the front view is as accurate as the manual
                 process. In the side view it is less reliable, because nothing
-                constrains it there.
+                constrains it there. A second topogram from the side could help,
+                but then both legs overlap in the image.
               </p>
             </div>
             <div class="grid gap-6">
@@ -908,18 +915,20 @@
               </p>
               <p class="pt-4 font-body leading-relaxed text-grey-20">
                 Cartilage thickness is not random: it follows the bone's shape.
-                So I built models that combine bone and cartilage, for each bone
-                and for the whole joint, and asked the model to predict the
-                cartilage from a CT-derived bone.
+                So I built models that describe bone and cartilage together, for
+                each bone and for the whole joint, and asked them to predict the
+                cartilage from a bone model taken from a CT scan.
               </p>
               <p class="pt-4 font-body leading-relaxed text-grey-20">
                 Two strategies work: predict the cartilage model's sliders from
                 the bone's sliders (<em>explicit</em>), or fit one combined
-                model to the bone and let it fill in the cartilage
-                (<em>implicit</em>). A final correction step makes the cartilage
-                follow the real bone exactly. Modelling the bones together with
-                their relative position needs far fewer details to reach the
-                same accuracy.
+                bone-and-cartilage model to the bone and let it fill in the
+                missing cartilage (<em>implicit</em>). Because a model with few
+                sliders never matches the real bone perfectly, a final step
+                reshapes the predicted cartilage so that it sits exactly on the
+                patient's bone. Modelling both bones together with their
+                relative position needs far fewer sliders to reach the same
+                accuracy.
               </p>
               <p class="pt-4 font-body leading-relaxed text-grey-20">
                 <strong>Outcome:</strong> clearly better than assuming an
