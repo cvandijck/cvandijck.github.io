@@ -1,1 +1,7 @@
 linkedin\.com
+
+# Placeholder canonical URL in the project page template.
+^https://cvandijck\.github\.io/projects/PROJECT_SLUG/$
+
+# Google Maps blocks automated requests from GitHub Actions runners.
+^https://maps\.app\.goo\.gl/YS4VJ65Kb2HrhW5d6$
